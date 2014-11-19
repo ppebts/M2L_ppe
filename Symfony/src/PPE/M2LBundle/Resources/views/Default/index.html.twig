@@ -1,1 +1,14 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+
+{% block body %}
+
+	{% for actualite in actualiteList %}
+	    <div class="article">
+	    	<p>{{ actualite.id }}</p>
+	    	<p>{{ actualite.contenu }}</p>
+	    	<p>{{ actualite.image }}</p>
+
+	    </div>
+	{% endfor %}
+
+{% endblock %}
