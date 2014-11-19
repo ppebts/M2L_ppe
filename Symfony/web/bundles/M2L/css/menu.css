@@ -1,6 +1,5 @@
-html, body{margin: 0}
-#menu{position: fixed;width: 100%;background: #18568c;padding: 5px}
+#menu{position: fixed;top: 0;left: 0;height:45px;width: 100%;background: #18568c;padding: 5px}
 #menu ul{list-style: none;margin: 0px;text-align:center}
-#menu ul li{display: inline-block;line-height: 40px;margin: 0px 8px}
+#menu ul li{display: inline-block;line-height: 45px;margin: 0px 8px}
 #menu ul li a{text-decoration: none; color: #fff;font-family: 'Lato';font-weight: 300}
 #menu img#logo{width: 40px;float: left;}
