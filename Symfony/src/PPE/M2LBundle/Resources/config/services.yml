@@ -1,0 +1,4 @@
+services:
+#    ppem2_l.example:
+#        class: PPE\M2LBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+ppem2_l_homepage:
+    path:     /
+    defaults: { _controller: PPEM2LBundle:Default:index }

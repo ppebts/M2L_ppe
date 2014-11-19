@@ -1,0 +1,4 @@
+ppem2_l:
+    resource: "@PPEM2LBundle/Resources/config/routing.yml"
+    prefix:   /
+
