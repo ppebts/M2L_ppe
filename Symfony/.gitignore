@@ -1,5 +1,4 @@
 /web/bundles/
-!/web/bundles/M2L
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
