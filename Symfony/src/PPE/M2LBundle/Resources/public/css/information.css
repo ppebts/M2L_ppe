@@ -1,0 +1,10 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1200px) { 
+	#information_parent{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}	
+	#information_parent .information_block{width: 600px;text-align:center; margin: auto}
+	#information_parent .information_block .information_titre{background: #1abc9c;color: #fff;height: 40px;}
+	#information_parent .information_block .information_titre h1{margin: 0; margin: 0}
+	#information_parent .information_block .information_content{background: #fff;}
+	#information_parent .information_block .information_content p{margin: 0}
+
+}

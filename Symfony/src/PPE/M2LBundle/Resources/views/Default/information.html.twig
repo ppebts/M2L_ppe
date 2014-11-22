@@ -1,13 +1,12 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
-<div id="information_content">
+<div id="information_parent">
 	{% for information in infoList %}
-	    <div class="information">
-
-	    	<div class="information_texte">
-
+	    	<div class="information_block">
+				<div class="information_titre">
 	    		<h1>{{ information.titre }}</h1>
+	    		</div>
 	    		<div class="information_content">
 	    		<p>{{ information.contenu }}</p>
 				</div>
