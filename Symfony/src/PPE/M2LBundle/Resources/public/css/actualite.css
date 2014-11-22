@@ -3,6 +3,6 @@
 	#actualite_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}	
 	#actualite_content .article{background: #fff;width:1000px; height: 300px; margin: 10px auto}
 	#actualite_content .article .img-actualite{float: left;width: 600px;height:300px;}
-	#actualite_content .article .article_texte{width:380px;margin:auto 10px ;height : 300px;float: right; text-align: center}
+	#actualite_content .article .article_texte{width:380px;margin:auto 10px ;height : 290px;float: right; text-align: center;padding: 5px 0px;overflow-y: auto}
 	#actualite_content .article .article_texte .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
 }
