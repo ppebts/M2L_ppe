@@ -1,6 +1,16 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
+<div id="information_content">
+	{% for information in infoList %}
+	    <div class="information">
 
+	    	<div class="information_texte">
+
+	    		<h1>{{ information.titre }}</h1>
+	    		<p>{{ information.contenu }}</p>
+
+	    </div><br/>
+	{% endfor %}
+</div>
 {% endblock %}
-Informations _ 
