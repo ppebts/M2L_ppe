@@ -1,3 +1,27 @@
 ppem2_l_homepage:
     path:     /
     defaults: { _controller: PPEM2LBundle:Default:index }
+
+ppem2_l_informations:
+    path:     /informations
+    defaults: { _controller: PPEM2LBundle:Default:information }
+
+ppem2_l_reservations:
+    path:     /reservations
+    defaults: { _controller: PPEM2LBundle:Default:reservations }
+
+ppem2_l_annonces:
+    path:     /annonces
+    defaults: { _controller: PPEM2LBundle:Default:annonces }
+
+ppem2_l_formations:
+    path:     /formations
+    defaults: { _controller: PPEM2LBundle:Default:formations }
+
+ppem2_l_ligues:
+    path:     /ligues
+    defaults: { _controller: PPEM2LBundle:Default:ligues }
+
+ppem2_l_contact:
+    path:     /contact
+    defaults: { _controller: PPEM2LBundle:Default:contact }

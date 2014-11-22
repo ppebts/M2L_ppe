@@ -131,6 +131,36 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::indexAction',  '_route' => 'ppem2_l_homepage',);
         }
 
+        // ppem2_l_informations
+        if ($pathinfo === '/informations') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::informationAction',  '_route' => 'ppem2_l_informations',);
+        }
+
+        // ppem2_l_reservations
+        if ($pathinfo === '/reservations') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::reservationsAction',  '_route' => 'ppem2_l_reservations',);
+        }
+
+        // ppem2_l_annonces
+        if ($pathinfo === '/annonces') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::annoncesAction',  '_route' => 'ppem2_l_annonces',);
+        }
+
+        // ppem2_l_formations
+        if ($pathinfo === '/formations') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::formationsAction',  '_route' => 'ppem2_l_formations',);
+        }
+
+        // ppem2_l_ligues
+        if ($pathinfo === '/ligues') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::liguesAction',  '_route' => 'ppem2_l_ligues',);
+        }
+
+        // ppem2_l_contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ppem2_l_contact',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

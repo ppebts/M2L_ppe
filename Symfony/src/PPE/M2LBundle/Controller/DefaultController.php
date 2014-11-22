@@ -2,7 +2,10 @@
 
 namespace PPE\M2LBundle\Controller;
 use PPE\M2LBundle\Entity\actualite;
+use PPE\M2LBundle\Entity\information;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -14,5 +17,16 @@ class DefaultController extends Controller
         $actualiteList = $repo->findAll();
         return $this->render('PPEM2LBundle:Default:index.html.twig', array("actualiteList"=>$actualiteList));
     }
+
+public function information()
+    {
+    	$doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:information");
+        $infoList = $repo->findAll();
+        return $this->render('PPEM2LBundle:Default:information.html.twig', array("infoList"=>$infoList));
+        
+    }
+
 
 }
