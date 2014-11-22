@@ -5,12 +5,12 @@
 	{% for information in infoList %}
 	    	<div class="information_block">
 				<div class="information_titre">
-	    		<h2>{{ information.titre }}</h2>
+	    		<h1>{{ information.titre }}</h1>
 	    		</div>
 	    		<div class="information_content">
 	    		<p>{{ information.contenu }}</p>
 				</div>
-	    </div>
+	    </div><br/>
 	{% endfor %}
 </div>
 {% endblock %}
