@@ -18,14 +18,13 @@ class DefaultController extends Controller
         return $this->render('PPEM2LBundle:Default:index.html.twig', array("actualiteList"=>$actualiteList));
     }
 
-public function information()
+public function informationAction()
     {
     	$doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:information");
         $infoList = $repo->findAll();
         return $this->render('PPEM2LBundle:Default:information.html.twig', array("infoList"=>$infoList));
-        
     }
 
 
