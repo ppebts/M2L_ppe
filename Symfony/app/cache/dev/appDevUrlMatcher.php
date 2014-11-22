@@ -143,17 +143,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // ppem2_l_annonces
         if ($pathinfo === '/annonces') {
-            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::annoncesAction',  '_route' => 'ppem2_l_annonces',);
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::annonceAction',  '_route' => 'ppem2_l_annonces',);
         }
 
         // ppem2_l_formations
         if ($pathinfo === '/formations') {
-            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::formationsAction',  '_route' => 'ppem2_l_formations',);
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::formationAction',  '_route' => 'ppem2_l_formations',);
         }
 
         // ppem2_l_ligues
         if ($pathinfo === '/ligues') {
-            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::liguesAction',  '_route' => 'ppem2_l_ligues',);
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::ligueAction',  '_route' => 'ppem2_l_ligues',);
         }
 
         // ppem2_l_contact

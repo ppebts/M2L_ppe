@@ -12,15 +12,15 @@ ppem2_l_reservations:
 
 ppem2_l_annonces:
     path:     /annonces
-    defaults: { _controller: PPEM2LBundle:Default:annonces }
+    defaults: { _controller: PPEM2LBundle:Default:annonce }
 
 ppem2_l_formations:
     path:     /formations
-    defaults: { _controller: PPEM2LBundle:Default:formations }
+    defaults: { _controller: PPEM2LBundle:Default:formation }
 
 ppem2_l_ligues:
     path:     /ligues
-    defaults: { _controller: PPEM2LBundle:Default:ligues }
+    defaults: { _controller: PPEM2LBundle:Default:ligue }
 
 ppem2_l_contact:
     path:     /contact

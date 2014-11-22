@@ -27,5 +27,18 @@ public function informationAction()
         return $this->render('PPEM2LBundle:Default:information.html.twig', array("infoList"=>$infoList));
     }
 
+public function annonceAction()
+    {
+        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array());
+    }
 
+public function formationAction()
+    {
+        return $this->render('PPEM2LBundle:Default:formation.html.twig', array());
+    }
+
+public function ligueAction()
+    {
+        return $this->render('PPEM2LBundle:Default:ligue.html.twig', array());
+    }    
 }
