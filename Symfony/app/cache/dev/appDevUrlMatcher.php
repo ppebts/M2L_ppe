@@ -27,6 +27,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/js/10f3619')) {
+            // _assetic_10f3619
+            if ($pathinfo === '/js/10f3619.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_10f3619',);
+            }
+
+            if (0 === strpos($pathinfo, '/js/10f3619_part_1_')) {
+                // _assetic_10f3619_0
+                if ($pathinfo === '/js/10f3619_part_1_information_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_10f3619_0',);
+                }
+
+                // _assetic_10f3619_1
+                if ($pathinfo === '/js/10f3619_part_1_jquery_2.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_10f3619_1',);
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
