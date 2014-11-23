@@ -2,20 +2,55 @@
 
 {% block body %}
 <div id="actualite_content">
+	{% set i = 1 %}
 	{% for actualite in actualiteList %}
 	    <div class="article">
 
 	    	<img src="{{ actualite.image }}" class="img-responsive img-actualite" />
 
 	    	<div class="article_texte">
+	    		<div class="article_titre">
+		    		<div class="trait"></div>
+		    		<h1>{{ actualite.titre }}</h1>
+		    		<div class="trait"></div>
+	    		</div>
+	
+	    		<p>{{ actualite.contenu | truncate(300, true, '...') }}</p>
+	    		{% if actualite.contenu|length > 500 %}
+	    		<a href="#article_fancybox_{{ i }}" class="fancybox">Voir l'article</a>
+				{% endif %}
+	    	</div>
+		</div><br/>
+		{% if actualite.contenu|length > 500 %}
+	    	<div id="article_fancybox_{{ i }}" style="display:none">
+				<div class="img_container">
+	    		<img src="{{ actualite.image }}" class="img_fancybox" />
+				</div>
+	    		<div class="texte_fancybox">
 
 	    		<h1>{{ actualite.titre }}</h1>
-	    		<div class="trait"></div>
 	    		<p>{{ actualite.contenu }}</p>
 
-	    	</div>
+	    		</div>
 
-	    </div><br/>
+	  		</div>
+	  	{% endif %}
+	  	{% set i = i + 1 %}
 	{% endfor %}
 </div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+		$('.fancybox').fancybox({
+			helpers : {
+			        overlay : {
+			            css : {
+			                'background' : 'rgba(58, 42, 45, 0.95)'
+			            }
+			        }
+			    },
+			'autoSize' : false,
+			'width' : '70%'
+		});
+	});
+</script>
 {% endblock %}

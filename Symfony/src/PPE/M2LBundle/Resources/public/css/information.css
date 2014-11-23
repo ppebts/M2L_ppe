@@ -4,6 +4,6 @@
 	#information_parent .information_block{width: 600px;text-align:center; margin:0 auto;border-top: 1px solid #18B293;border-bottom: 1px solid #18B293}
 	#information_parent .information_block .information_titre{cursor:pointer;background: #1abc9c;color: #fff;height: 28px;}
 	#information_parent .information_block .information_titre h3{margin: 0; margin: 0;line-height: 28px}
-	#information_parent .information_block .information_content{background: #fff;}
+	#information_parent .information_block .information_content{background: #fff;max-height: 500px}
 	#information_parent .information_block .information_content p{text-align:justify;margin: 0;padding: 35px 5px;}
 }

@@ -8,12 +8,14 @@
 	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/actualite.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/global.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/information.css') }}"/>
+   	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.css') }}">
 	{% endblock %}
 
 	{% block javascripts %}
 		{% javascripts '@PPEM2LBundle/Resources/public/js/*' %}
    		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/jquery.js') }}"></script>
-   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/information.js') }}"></script>
+      	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/information.js') }}"></script>
+   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.js') }}"></script>
 		{% endjavascripts %}
 	{% endblock %}
 

@@ -3,6 +3,13 @@
 	#actualite_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}	
 	#actualite_content .article{background: #fff;width:1000px; height: 300px; margin: 10px auto}
 	#actualite_content .article .img-actualite{float: left;width: 600px;height:300px;}
-	#actualite_content .article .article_texte{width:380px;margin:auto 10px ;height : 290px;float: right; text-align: justify;padding: 5px 0px;overflow-y: auto}
-	#actualite_content .article .article_texte .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
+	#actualite_content .article .article_texte{width:380px;margin:auto 10px ;height : 290px;float: right; text-align: center;padding: 5px 0px;overflow-y: auto}
+	#actualite_content .article .article_texte .article_titre{text-align: center;margin-top: 30px}
+	#actualite_content .article .article_texte .article_titre h1{margin: 0}
+	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
+	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
+	.img_container{height: 200px; overflow: hidden;width: 100%}
+	.img_fancybox{width: 1000px;margin-top: -25%}
+	.texte_fancybox{text-align: justify;}
+	.texte_fancybox h1{text-align: center}
 }
