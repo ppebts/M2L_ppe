@@ -1,6 +1,7 @@
 $( document ).ready(function() {
+
 	$('.information_content').hide();
-	$('.information_titre').click(function(){
+	$('.information_titre').click(function(){ // au click sur un titre : expand le content
 		$('.expanded').removeClass('expanded').addClass('closed').next('.information_content').not(':animated').slideUp();
 		$(this).removeClass('closed').addClass('expanded').next('.information_content').not(':animated').slideDown();			
 	});
@@ -9,5 +10,6 @@ $( document ).ready(function() {
 	},function(){
 		$(this).css("background", "#1abc9c");
     }
-	)
+	);
+
 });

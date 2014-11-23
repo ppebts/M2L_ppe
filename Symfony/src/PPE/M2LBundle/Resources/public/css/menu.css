@@ -1,5 +1,8 @@
-#menu{position: fixed;top: 0;left: 0;height:45px;width: 100%;background: #18568c;padding: 5px}
-#menu ul{list-style: none;margin: 0px;text-align:center}
-#menu ul li{display: inline-block;line-height: 45px;margin: 0px 8px}
-#menu ul li a{text-decoration: none; color: #fff;font-family: 'Lato';font-weight: 300}
-#menu img#logo{width: 40px;float: left;}
+#menu{position: fixed;top: 0;left: 0;height:55px;width: 100%;background: #18568c;}
+#menu ul{list-style: none;margin: 0px;text-align:center;height: 100%}
+#menu #center{float: left;margin-left: calc(50% - 288.5px);padding: 0; }
+#menu #right{float: right; }
+#menu ul li{display: inline-block;line-height: 45px;height: 100%;padding: 0px 7px;}
+#menu ul li a{line-height: 55px;text-decoration: none; color: #fff;font-family: 'Lato';font-weight: 300}
+#menu img#logo{width: 40px}
+#menu a#logo_link{position: absolute;left: 43px;top:5px;}

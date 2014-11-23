@@ -1,7 +1,7 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
-<div id="information_parent">
+<div id="information_parent" class="block_shadow">
 	{% for information in infoList %}
 	    	<div class="information_block">
 				<div class="information_titre closed">
@@ -13,4 +13,9 @@
 	    </div>
 	{% endfor %}
 </div>
+<script>
+		$(document).load(function(){
+			$('.information_titre').first().trigger('click');
+	})	
+</script>
 {% endblock %}
