@@ -27,19 +27,42 @@
 			$(this).css('background', '#18568C');
 		});
 
-		$(document).scroll(function() { // réduit le menu quand on scroll a plus de 10px
-	    if( $(this).scrollTop() > 10 ) {
-			$('#menu').animate({height : "30px"}, 300);
-			$('#logo').animate({width : "25px"}, 300);
-			$('#logo_link').animate({top : "0"}, 300);
-			$('#menu > ul > li > a').animate({lineHeight :"30px"}, 300);
-		}else{
-			$('#menu').animate({height : "55px"}, 300);
-			$('#logo').animate({width : "40px"}, 300);	
-			$('#logo_link').animate({top : "5px"}, 300);
-			$('#menu > ul > li > a').animate({lineHeight :"55px"}, 300);
-		}
-	});
+	// 	$(document).scroll(function() { // réduit le menu quand on scroll a plus de 10px
+	//     if( $(this).scrollTop() > 10 ) {
+	// 		$('#menu').animate({height : "30px"});
+	// 		$('#logo').animate({width : "25px"});
+	// 		$('#logo_link').animate({top : "0"});
+	// 		$('#menu > ul > li > a').animate({lineHeight :"30px"});
+	// 		$.finish();
+	// 	}else{
+	// 		$('#menu').animate({height : "55px"});
+	// 		$('#logo').animate({width : "40px"});	
+	// 		$('#logo_link').animate({top : "5px"});
+	// 		$('#menu > ul > li > a').animate({lineHeight :"55px"});
+	// 	}
+	// });
+$(function(){
+    $('#menu').data('size','big');
+});
+
+$(window).scroll(function(){
+    var $nav = $('#menu');
+    if ($('body').scrollTop() > 0) {
+        if ($nav.data('size') == 'big') {
+            $nav.data('size','small').stop().animate({height:'30px'},100);
+			$('#logo').animate({width : "25px"},100);
+			$('#logo_link').animate({top : "0"},100);
+			$('#menu > ul > li > a').animate({lineHeight :"30px"},100);
+        }
+    } else {
+        if ($nav.data('size') == 'small') {
+            $nav.data('size','big').stop().animate({height:'55px'},100);
+			$('#logo').animate({width : "40px"},100);	
+			$('#logo_link').animate({top : "5px"},100);
+			$('#menu > ul > li > a').animate({lineHeight :"55px"},100);
+        }  
+    }
+});
 });
 </script>
 </div>
