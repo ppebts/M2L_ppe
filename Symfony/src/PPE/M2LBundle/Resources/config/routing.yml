@@ -25,3 +25,15 @@ ppem2_l_ligues:
 ppem2_l_contact:
     path:     /contact
     defaults: { _controller: PPEM2LBundle:Default:contact }
+
+ppem2_l_connexion:
+    path:     /connexion
+    defaults: { _controller: PPEM2LBundle:Default:connexion }
+
+ppem2_l_inscription:
+    path:     /inscription
+    defaults: { _controller: PPEM2LBundle:Default:inscription }
+
+ppem2_l_account:
+    path:     /account
+    defaults: { _controller: PPEM2LBundle:Default:account }

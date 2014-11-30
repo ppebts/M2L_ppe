@@ -44,5 +44,17 @@ public function ligueAction()
 public function contactAction()
     {
         return $this->render('PPEM2LBundle:Default:contact.html.twig', array());
+    } 
+public function connexionAction()
+    {
+        return $this->render('PPEM2LBundle:Default:connexion.html.twig', array());
+    }  
+public function inscriptionAction()
+    {
+        return $this->render('PPEM2LBundle:Default:inscription.html.twig', array());
+    }  
+public function accountAction()
+    {
+        return $this->render('PPEM2LBundle:Default:account.html.twig', array());
     }  
 }
