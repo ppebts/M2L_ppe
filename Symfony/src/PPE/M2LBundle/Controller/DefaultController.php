@@ -41,4 +41,8 @@ public function ligueAction()
     {
         return $this->render('PPEM2LBundle:Default:ligue.html.twig', array());
     }    
+public function contactAction()
+    {
+        return $this->render('PPEM2LBundle:Default:contact.html.twig', array());
+    }  
 }
