@@ -22,6 +22,15 @@ class formation
     private $id;
 
     /**
+     * @var ArrayCollection formation $utilisateur
+     *
+     * Inverse Side
+     *
+     * @ORM\ManyToMany(targetEntity="utilisateur", mappedBy="formation", cascade={"persist", "merge"})
+     */
+     private $utilisateur;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="intitule", type="string", length=255)

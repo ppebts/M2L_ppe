@@ -22,6 +22,20 @@ class sos_partenaire
     private $id;
 
     /**
+     * @var utilisateur $utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="sos_partenaire", cascade={"persist", "merge"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
+
+    /**
+    * @ORM\OneToOne(targetEntity="sport", cascade={"persist", "merge"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $sport;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
