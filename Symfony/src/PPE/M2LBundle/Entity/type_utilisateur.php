@@ -22,13 +22,6 @@ class type_utilisateur
     private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="type", type="integer")
-     */
-    private $type;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="libele", type="string", length=255)

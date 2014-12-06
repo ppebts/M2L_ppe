@@ -20,6 +20,18 @@ class utilisateur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+    * @ORM\OneToOne(targetEntity="type_utilisateur", cascade={"persist", "merge"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $type_utilisateur;
+    
+    /**
+    * @ORM\OneToMany(targetEntity="annonce", cascade={"persist", "merge"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $annonce;
 
     /**
      * @var string
