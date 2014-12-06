@@ -28,10 +28,25 @@ class utilisateur
     private $type_utilisateur;
     
     /**
-    * @ORM\OneToMany(targetEntity="annonce", cascade={"persist", "merge"})
+     * @var ArrayCollection formation $formation
+     * Owning Side
+     *
+     * @ORM\ManyToMany(targetEntity="formation", inversedBy="utilisateur", cascade={"persist", "merge"})
+     * @ORM\JoinColumn(nullable=false)
+    */
+    private $formation;
+
+    /**
+    * @ORM\OneToMany(targetEntity="annonce", mappedBy="utilisateur", cascade={"persist", "merge"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $annonce;
+
+    /**
+    * @ORM\OneToMany(targetEntity="sos_partenaire", mappedBy="utilisateur", cascade={"persist", "merge"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $sos_partenaire;
 
     /**
      * @var string

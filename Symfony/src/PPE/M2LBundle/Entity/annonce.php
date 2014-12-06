@@ -22,6 +22,14 @@ class annonce
     private $id;
 
     /**
+     * @var utilisateur $utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="annonce", cascade={"persist", "merge"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateur;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
