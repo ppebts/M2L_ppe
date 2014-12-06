@@ -1,6 +1,20 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
+
+	<div id="annonce_recherche">
+		<input type="text" class="search" placeholder="Que cherchez-vous ?" />
+		<select class="select">
+			<option value="" disabled selected>- Sport -</option>
+			<option value="sport">tennis</option>
+			<option value="sport">football</option>
+			<option value="sport">handball</option>
+			<option value="sport">basketball</option>
+		</select>
+		<input type="submit" class="submit" value="Rechercher">
+	</div>
+
+
 <div id="annonce_content">
 	{% set i = 1 %}
 	{% for annonce in annonceList %}
@@ -23,9 +37,15 @@
 
     	<div id="annonce_fancybox_{{ i }}" style="display:none">
     		<div class="texte_fancybox">
+    			{% for utilisateur in userList %}
+				
+				<h2>{{ utilisateur.prenom|upper }} {{ utilisateur.nom|upper }}</h2>
+				<img src="{{ asset('bundles/ppem2l/img/phone.png') }}" style="float:left;margin-left:4px" alt="phone"/>
+	    		<p>{{ utilisateur.telephone }}</p>
+	    	 	<img src="{{ asset('bundles/ppem2l/img/mail.png') }}" style="float:left" alt="mail"/>
+		    	<a href="mailto:{{ utilisateur.email }}"><p>{{ utilisateur.email }}</p></a>
 
-    			{% for utilisateur in annonceList %}
-    			    {{ utilisateur.id }}
+
     			{% endfor %}
     		</div>
   		</div>

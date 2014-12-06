@@ -35,7 +35,7 @@ public function annonceAction()
         $annonceList = $repo->findAll();
         $repo2 = $em->getRepository("PPEM2LBundle:utilisateur");
         $userList = $repo2->findAll();
-        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList, "userList", $userList));
+        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList, "userList"=>$userList));
 
 
     }

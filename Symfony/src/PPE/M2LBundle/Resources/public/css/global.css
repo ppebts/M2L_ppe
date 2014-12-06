@@ -1,4 +1,5 @@
 body{margin: 0;background: #e1e1e1}
-h1, h2, h3{font-family: 'Lato'; font-weight: 700}
-p, a{font-family: 'Lato'; font-weight: 300}
+h1, h2, h3, th{font-family: 'Lato'; font-weight: 700}
+p, a, td{font-family: 'Lato'; font-weight: 300}
 .block_shadow{box-shadow: 1px 1px 10px #b5b5b5;}
+a{text-decoration: none}
