@@ -35,13 +35,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             if (0 === strpos($pathinfo, '/js/10f3619_part_1_')) {
                 // _assetic_10f3619_0
-                if ($pathinfo === '/js/10f3619_part_1_information_1.js') {
+                if ($pathinfo === '/js/10f3619_part_1_actualite_1.js') {
                     return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_10f3619_0',);
                 }
 
                 // _assetic_10f3619_1
-                if ($pathinfo === '/js/10f3619_part_1_jquery_2.js') {
+                if ($pathinfo === '/js/10f3619_part_1_global_2.js') {
                     return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_10f3619_1',);
+                }
+
+                // _assetic_10f3619_2
+                if ($pathinfo === '/js/10f3619_part_1_information_3.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_10f3619_2',);
+                }
+
+                // _assetic_10f3619_3
+                if ($pathinfo === '/js/10f3619_part_1_jquery_4.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '10f3619',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_10f3619_3',);
                 }
 
             }
@@ -177,9 +187,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::ligueAction',  '_route' => 'ppem2_l_ligues',);
         }
 
-        // ppem2_l_contact
-        if ($pathinfo === '/contact') {
-            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ppem2_l_contact',);
+        if (0 === strpos($pathinfo, '/con')) {
+            // ppem2_l_contact
+            if ($pathinfo === '/contact') {
+                return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::contactAction',  '_route' => 'ppem2_l_contact',);
+            }
+
+            // ppem2_l_connexion
+            if ($pathinfo === '/connexion') {
+                return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'ppem2_l_connexion',);
+            }
+
+        }
+
+        // ppem2_l_inscription
+        if ($pathinfo === '/inscription') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::inscriptionAction',  '_route' => 'ppem2_l_inscription',);
+        }
+
+        // ppem2_l_account
+        if ($pathinfo === '/account') {
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::accountAction',  '_route' => 'ppem2_l_account',);
         }
 
         // _welcome
