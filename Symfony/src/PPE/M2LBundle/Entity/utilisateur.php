@@ -22,11 +22,11 @@ class utilisateur
     private $id;
     
     /**
-    * @ORM\OneToOne(targetEntity="type_utilisateur", cascade={"persist", "merge"})
+    * @ORM\OneToOne(targetEntity="typeUtilisateur", cascade={"persist", "merge"})
     * @ORM\JoinColumn(nullable=false)
     */
-    private $type_utilisateur;
-    
+    private $typeUtilisateur;
+
     /**
      * @var ArrayCollection formation $formation
      * Owning Side
@@ -43,10 +43,10 @@ class utilisateur
     private $annonce;
 
     /**
-    * @ORM\OneToMany(targetEntity="sos_partenaire", mappedBy="utilisateur", cascade={"persist", "merge"})
+    * @ORM\OneToMany(targetEntity="sosPartenaire", mappedBy="utilisateur", cascade={"persist", "merge"})
     * @ORM\JoinColumn(nullable=false)
     */
-    private $sos_partenaire;
+    private $sosPartenaire;
 
     /**
      * @var string

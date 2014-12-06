@@ -1,0 +1,17 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1200px) { 
+	#annonce_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}	
+	#annonce_content .annonce{width:830px; height: 300px; margin: 10px auto}
+	#annonce_content .annonce .annonce_img{text-align: center;float: left; width: 380px;height:290px;overflow: hidden}
+	#annonce_content .annonce .annonce_img img{height:100%;}
+	#annonce_content .annonce .annonce_texte{background: #fff;width:380px;margin:auto 10px ;height : 290px;float: right; text-align: justify;padding: 5px 0px;overflow-y: auto;padding: 0 15px}
+	#annonce_content .annonce .annonce_texte .description{margin-bottom: 0}
+	#annonce_content .annonce .annonce_texte .prix{text-align: center;font-weight: 700;margin:0;}
+	#annonce_content .annonce .annonce_texte .annonce_titre{text-align: center;margin-top: 15px}
+	#annonce_content .annonce .annonce_texte .annonce_titre h1{margin: 0}
+	#annonce_content .annonce .annonce_texte a{text-decoration: none;color: #18568C;}
+	.img_container{height: 200px; overflow: hidden;width: 100%}
+	.img_fancybox{width: 1000px;margin-top: -25%}
+	.texte_fancybox{text-align: justify;}
+	.texte_fancybox h1{text-align: center}
+}

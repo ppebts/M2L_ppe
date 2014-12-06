@@ -29,7 +29,15 @@ public function informationAction()
 
 public function annonceAction()
     {
-        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array());
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:annonce");
+        $annonceList = $repo->findAll();
+        $repo2 = $em->getRepository("PPEM2LBundle:utilisateur");
+        $userList = $repo2->findAll();
+        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList, "userList", $userList));
+
+
     }
 
 public function formationAction()

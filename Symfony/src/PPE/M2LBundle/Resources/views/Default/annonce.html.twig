@@ -1,5 +1,48 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
- - 
+<div id="annonce_content">
+	{% set i = 1 %}
+	{% for annonce in annonceList %}
+	    <div class="annonce">
+
+			<div class="block_shadow annonce_img"><img src="{{ annonce.image }}" class="img-responsive img_annonce" /></div>
+
+	    	<div class="annonce_texte block_shadow">
+	    		<div class="annonce_titre">
+		    		<h1>{{ annonce.titre }}</h1>
+	    		</div>
+	
+	    		<p class="description"><span style="font-weight:700">Description :</span><br/><br/>
+	    			{{ annonce.description }}
+	    		</p>
+	    		<p class="prix">{{ annonce.prix }}€</p>
+	    		<a href="#annonce_fancybox_{{ i }}" class="fancybox">Contacter le vendeur</a>
+	    	</div>
+		</div><br/>
+
+    	<div id="annonce_fancybox_{{ i }}" style="display:none">
+    		<div class="texte_fancybox">
+
+    			{% for utilisateur in annonceList %}
+    			    {{ utilisateur.id }}
+    			{% endfor %}
+    		</div>
+  		</div>
+	  	{% set i = i + 1 %}
+	{% endfor %}
+</div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+		$('.fancybox').fancybox({
+			helpers : {
+			        overlay : {
+			            css : {
+			                'background' : 'rgba(58, 42, 45, 0.95)'
+			            }
+			        }
+			    },
+		});
+	});
+</script>
 {% endblock %}

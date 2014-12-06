@@ -5,12 +5,12 @@ namespace PPE\M2LBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * sos_partenaire
+ * sosPartenaire
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\sos_partenaireRepository")
+ * @ORM\Table("sos_partenaire")
+ * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\sosPartenaireRepository")
  */
-class sos_partenaire
+class sosPartenaire
 {
     /**
      * @var integer
@@ -24,7 +24,7 @@ class sos_partenaire
     /**
      * @var utilisateur $utilisateur
      *
-     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="sos_partenaire", cascade={"persist", "merge"})
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="sosPartenaire", cascade={"persist", "merge"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
@@ -38,9 +38,9 @@ class sos_partenaire
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=255)
+     * @ORM\Column(name="titree", type="string", length=255)
      */
-    private $titre;
+    private $titree;
 
     /**
      * @var string
@@ -82,33 +82,33 @@ class sos_partenaire
     }
 
     /**
-     * Set titre
+     * Set titree
      *
-     * @param string $titre
-     * @return sos_partenaire
+     * @param string $titree
+     * @return sosPartenaire
      */
-    public function setTitre($titre)
+    public function setTitree($titree)
     {
-        $this->titre = $titre;
+        $this->titree = $titree;
     
         return $this;
     }
 
     /**
-     * Get titre
+     * Get titree
      *
      * @return string 
      */
-    public function getTitre()
+    public function getTitree()
     {
-        return $this->titre;
+        return $this->titree;
     }
 
     /**
      * Set description
      *
      * @param string $description
-     * @return sos_partenaire
+     * @return sosPartenaire
      */
     public function setDescription($description)
     {
@@ -131,7 +131,7 @@ class sos_partenaire
      * Set date
      *
      * @param \DateTime $date
-     * @return sos_partenaire
+     * @return sosPartenaire
      */
     public function setDate($date)
     {
@@ -154,7 +154,7 @@ class sos_partenaire
      * Set heure
      *
      * @param \DateTime $heure
-     * @return sos_partenaire
+     * @return sosPartenaire
      */
     public function setHeure($heure)
     {
@@ -177,7 +177,7 @@ class sos_partenaire
      * Set niveau
      *
      * @param string $niveau
-     * @return sos_partenaire
+     * @return sosPartenaire
      */
     public function setNiveau($niveau)
     {

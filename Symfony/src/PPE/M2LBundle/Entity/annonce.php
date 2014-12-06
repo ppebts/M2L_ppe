@@ -39,7 +39,7 @@ class annonce
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="string", length=270)
      */
     private $description;
 

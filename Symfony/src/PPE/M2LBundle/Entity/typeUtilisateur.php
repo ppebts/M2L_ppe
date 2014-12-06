@@ -5,12 +5,12 @@ namespace PPE\M2LBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * type_utilisateur
+ * typeUtilisateur
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\type_utilisateurRepository")
+ * @ORM\Table("type_utilisateur")
+ * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\typeUtilisateurRepository")
  */
-class type_utilisateur
+class typeUtilisateur
 {
     /**
      * @var integer
@@ -40,33 +40,10 @@ class type_utilisateur
     }
 
     /**
-     * Set type
-     *
-     * @param integer $type
-     * @return type_utilisateur
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return integer 
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
      * Set libele
      *
      * @param string $libele
-     * @return type_utilisateur
+     * @return typeUtilisateur
      */
     public function setLibele($libele)
     {
