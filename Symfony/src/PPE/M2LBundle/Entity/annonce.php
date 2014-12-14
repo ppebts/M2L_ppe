@@ -25,7 +25,7 @@ class Annonce
      * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\Utilisateur")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $utilisateur;
+    private $utilisateurAnonce;
 
     /**
      * @var string
@@ -159,25 +159,25 @@ class Annonce
     }
 
     /**
-     * Set utilisateur
+     * Set utilisateurAnonce
      *
-     * @param \PPE\M2LBundle\Utilisateur $utilisateur
+     * @param \PPE\M2LBundle\Entity\Utilisateur $utilisateurAnonce
      * @return Annonce
      */
-    public function setUtilisateur(\PPE\M2LBundle\Utilisateur $utilisateur)
+    public function setUtilisateurAnonce(\PPE\M2LBundle\Entity\Utilisateur $utilisateurAnonce)
     {
-        $this->utilisateur = $utilisateur;
+        $this->utilisateurAnonce = $utilisateurAnonce;
     
         return $this;
     }
 
     /**
-     * Get utilisateur
+     * Get utilisateurAnonce
      *
-     * @return \PPE\M2LBundle\Utilisateur 
+     * @return \PPE\M2LBundle\Entity\Utilisateur 
      */
-    public function getUtilisateur()
+    public function getUtilisateurAnonce()
     {
-        return $this->utilisateur;
+        return $this->utilisateurAnonce;
     }
 }

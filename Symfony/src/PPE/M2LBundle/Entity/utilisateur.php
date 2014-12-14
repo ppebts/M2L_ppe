@@ -22,6 +22,11 @@ class Utilisateur
     private $id;
 
     /**
+     * @ORM\ManyToMany(targetEntity="PPE\M2LBundle\Entity\Formation", cascade={"persist"})
+     */
+    private $formations;
+
+    /**
      * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\TypeUtilisateur", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -269,5 +274,45 @@ class Utilisateur
     public function getTypeUtilisateur()
     {
         return $this->typeUtilisateur;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->formations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add formations
+     *
+     * @param \PPE\M2LBundle\Entity\Fromation $formations
+     * @return Utilisateur
+     */
+    public function addFormation(\PPE\M2LBundle\Entity\Fromation $formations)
+    {
+        $this->formations[] = $formations;
+    
+        return $this;
+    }
+
+    /**
+     * Remove formations
+     *
+     * @param \PPE\M2LBundle\Entity\Fromation $formations
+     */
+    public function removeFormation(\PPE\M2LBundle\Entity\Fromation $formations)
+    {
+        $this->formations->removeElement($formations);
+    }
+
+    /**
+     * Get formations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFormations()
+    {
+        return $this->formations;
     }
 }

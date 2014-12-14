@@ -22,6 +22,18 @@ class SosPartenaire
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\Sport", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $sport;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\Utilisateur")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $utilisateurSos;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
@@ -180,5 +192,51 @@ class SosPartenaire
     public function getNiveau()
     {
         return $this->niveau;
+    }
+
+    /**
+     * Set utilisateurSos
+     *
+     * @param \PPE\M2LBundle\Entity\Utilisateur $utilisateurSos
+     * @return SosPartenaire
+     */
+    public function setUtilisateurSos(\PPE\M2LBundle\Entity\Utilisateur $utilisateurSos)
+    {
+        $this->utilisateurSos = $utilisateurSos;
+    
+        return $this;
+    }
+
+    /**
+     * Get utilisateurSos
+     *
+     * @return \PPE\M2LBundle\Entity\Utilisateur 
+     */
+    public function getUtilisateurSos()
+    {
+        return $this->utilisateurSos;
+    }
+
+    /**
+     * Set sport
+     *
+     * @param \PPE\M2LBundle\Entity\Sport $sport
+     * @return SosPartenaire
+     */
+    public function setSport(\PPE\M2LBundle\Entity\Sport $sport)
+    {
+        $this->sport = $sport;
+    
+        return $this;
+    }
+
+    /**
+     * Get sport
+     *
+     * @return \PPE\M2LBundle\Entity\Sport 
+     */
+    public function getSport()
+    {
+        return $this->sport;
     }
 }
