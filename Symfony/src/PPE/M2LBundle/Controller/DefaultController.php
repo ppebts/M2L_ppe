@@ -1,8 +1,14 @@
 <?php
 
 namespace PPE\M2LBundle\Controller;
-use PPE\M2LBundle\Entity\actualite;
-use PPE\M2LBundle\Entity\information;
+use PPE\M2LBundle\Entity\Actualite;
+use PPE\M2LBundle\Entity\Information;
+use PPE\M2LBundle\Entity\Annonce;
+use PPE\M2LBundle\Entity\Utilisateur;
+use PPE\M2LBundle\Entity\SosPartenaire;
+use PPE\M2LBundle\Entity\Sport;
+use PPE\M2LBundle\Entity\TypeUtilisateur;
+use PPE\M2LBundle\Entity\Formation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,7 +19,7 @@ class DefaultController extends Controller
     {
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:actualite");
+        $repo = $em->getRepository("PPEM2LBundle:Actualite");
         $actualiteList = $repo->findAll();
         return $this->render('PPEM2LBundle:Default:index.html.twig', array("actualiteList"=>$actualiteList));
     }
@@ -22,7 +28,7 @@ public function informationAction()
     {
     	$doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:information");
+        $repo = $em->getRepository("PPEM2LBundle:Information");
         $infoList = $repo->findAll();
         return $this->render('PPEM2LBundle:Default:information.html.twig', array("infoList"=>$infoList));
     }
@@ -31,9 +37,9 @@ public function annonceAction()
     {
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:annonce");
+        $repo = $em->getRepository("PPEM2LBundle:Annonce");
         $annonceList = $repo->findAll();
-        $repo2 = $em->getRepository("PPEM2LBundle:utilisateur");
+        $repo2 = $em->getRepository("PPEM2LBundle:Utilisateur");
         $userList = $repo2->findAll();
         return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList, "userList"=>$userList));
 

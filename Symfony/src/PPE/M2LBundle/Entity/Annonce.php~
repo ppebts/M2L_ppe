@@ -22,7 +22,7 @@ class Annonce
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\Utilisateur")
+     * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Utilisateur")
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
@@ -156,28 +156,5 @@ class Annonce
     public function getPrix()
     {
         return $this->prix;
-    }
-
-    /**
-     * Set utilisateur
-     *
-     * @param \PPE\M2LBundle\Utilisateur $utilisateur
-     * @return Annonce
-     */
-    public function setUtilisateur(\PPE\M2LBundle\Utilisateur $utilisateur)
-    {
-        $this->utilisateur = $utilisateur;
-    
-        return $this;
-    }
-
-    /**
-     * Get utilisateur
-     *
-     * @return \PPE\M2LBundle\Utilisateur 
-     */
-    public function getUtilisateur()
-    {
-        return $this->utilisateur;
     }
 }

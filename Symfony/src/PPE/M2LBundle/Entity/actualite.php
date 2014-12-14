@@ -5,12 +5,12 @@ namespace PPE\M2LBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * actualite
+ * Actualite
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\actualiteRepository")
+ * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\ActualiteRepository")
  */
-class actualite
+class Actualite
 {
     /**
      * @var integer
@@ -57,7 +57,7 @@ class actualite
      * Set titre
      *
      * @param string $titre
-     * @return actualite
+     * @return Actualite
      */
     public function setTitre($titre)
     {
@@ -80,7 +80,7 @@ class actualite
      * Set contenu
      *
      * @param string $contenu
-     * @return actualite
+     * @return Actualite
      */
     public function setContenu($contenu)
     {
@@ -103,7 +103,7 @@ class actualite
      * Set image
      *
      * @param string $image
-     * @return actualite
+     * @return Actualite
      */
     public function setImage($image)
     {

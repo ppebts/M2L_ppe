@@ -5,12 +5,12 @@ namespace PPE\M2LBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * sport
+ * Sport
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\sportRepository")
+ * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\SportRepository")
  */
-class sport
+class Sport
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class sport
      * Set nom
      *
      * @param string $nom
-     * @return sport
+     * @return Sport
      */
     public function setNom($nom)
     {

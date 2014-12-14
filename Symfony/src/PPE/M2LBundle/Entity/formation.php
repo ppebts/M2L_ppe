@@ -5,12 +5,12 @@ namespace PPE\M2LBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * formation
+ * Formation
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\formationRepository")
+ * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\FormationRepository")
  */
-class formation
+class Formation
 {
     /**
      * @var integer
@@ -22,20 +22,11 @@ class formation
     private $id;
 
     /**
-     * @var ArrayCollection formation $utilisateur
-     *
-     * Inverse Side
-     *
-     * @ORM\ManyToMany(targetEntity="utilisateur", mappedBy="formation", cascade={"persist", "merge"})
-     */
-     private $utilisateur;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="intitule", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $intitule;
+    private $nom;
 
     /**
      * @var string
@@ -47,16 +38,16 @@ class formation
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="date")
+     * @ORM\Column(name="duree", type="time")
      */
-    private $dateDebut;
+    private $duree;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_fin", type="date")
+     * @ORM\Column(name="debut", type="datetime")
      */
-    private $dateFin;
+    private $debut;
 
     /**
      * @var string
@@ -77,33 +68,33 @@ class formation
     }
 
     /**
-     * Set intitule
+     * Set nom
      *
-     * @param string $intitule
-     * @return formation
+     * @param string $nom
+     * @return Formation
      */
-    public function setIntitule($intitule)
+    public function setNom($nom)
     {
-        $this->intitule = $intitule;
+        $this->nom = $nom;
     
         return $this;
     }
 
     /**
-     * Get intitule
+     * Get nom
      *
      * @return string 
      */
-    public function getIntitule()
+    public function getNom()
     {
-        return $this->intitule;
+        return $this->nom;
     }
 
     /**
      * Set description
      *
      * @param string $description
-     * @return formation
+     * @return Formation
      */
     public function setDescription($description)
     {
@@ -123,56 +114,56 @@ class formation
     }
 
     /**
-     * Set dateDebut
+     * Set duree
      *
-     * @param \DateTime $dateDebut
-     * @return formation
+     * @param \DateTime $duree
+     * @return Formation
      */
-    public function setDateDebut($dateDebut)
+    public function setDuree($duree)
     {
-        $this->dateDebut = $dateDebut;
+        $this->duree = $duree;
     
         return $this;
     }
 
     /**
-     * Get dateDebut
+     * Get duree
      *
      * @return \DateTime 
      */
-    public function getDateDebut()
+    public function getDuree()
     {
-        return $this->dateDebut;
+        return $this->duree;
     }
 
     /**
-     * Set dateFin
+     * Set debut
      *
-     * @param \DateTime $dateFin
-     * @return formation
+     * @param \DateTime $debut
+     * @return Formation
      */
-    public function setDateFin($dateFin)
+    public function setDebut($debut)
     {
-        $this->dateFin = $dateFin;
+        $this->debut = $debut;
     
         return $this;
     }
 
     /**
-     * Get dateFin
+     * Get debut
      *
      * @return \DateTime 
      */
-    public function getDateFin()
+    public function getDebut()
     {
-        return $this->dateFin;
+        return $this->debut;
     }
 
     /**
      * Set lieu
      *
      * @param string $lieu
-     * @return formation
+     * @return Formation
      */
     public function setLieu($lieu)
     {

@@ -247,27 +247,4 @@ class Utilisateur
     {
         return $this->dateNaissance;
     }
-
-    /**
-     * Set typeUtilisateur
-     *
-     * @param \PPE\M2LBundle\Entity\TypeUtilisateur $typeUtilisateur
-     * @return Utilisateur
-     */
-    public function setTypeUtilisateur(\PPE\M2LBundle\Entity\TypeUtilisateur $typeUtilisateur)
-    {
-        $this->typeUtilisateur = $typeUtilisateur;
-    
-        return $this;
-    }
-
-    /**
-     * Get typeUtilisateur
-     *
-     * @return \PPE\M2LBundle\Entity\TypeUtilisateur 
-     */
-    public function getTypeUtilisateur()
-    {
-        return $this->typeUtilisateur;
-    }
 }

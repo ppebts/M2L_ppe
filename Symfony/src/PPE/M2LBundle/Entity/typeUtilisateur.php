@@ -5,12 +5,12 @@ namespace PPE\M2LBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * typeUtilisateur
+ * TypeUtilisateur
  *
- * @ORM\Table("type_utilisateur")
- * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\typeUtilisateurRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\TypeUtilisateurRepository")
  */
-class typeUtilisateur
+class TypeUtilisateur
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class typeUtilisateur
      * Set libele
      *
      * @param string $libele
-     * @return typeUtilisateur
+     * @return TypeUtilisateur
      */
     public function setLibele($libele)
     {
