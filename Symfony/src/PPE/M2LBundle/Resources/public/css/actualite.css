@@ -8,8 +8,8 @@
 	#actualite_content .article .article_texte .article_titre h1{margin: 0}
 	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
 	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
-	.img_container{height: 200px; overflow: hidden;width: 100%}
-	.img_fancybox{width: 1000px;margin-top: -25%}
-	.texte_fancybox{text-align: justify;}
-	.texte_fancybox h1{text-align: center}
+	.actualite_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
+	.actualite_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
+	.actualite_fancybox .texte_fancybox{text-align: justify;}
+	.actualite_fancybox .texte_fancybox h1{text-align: center}
 }
