@@ -289,7 +289,7 @@ class Utilisateur
      * @param \PPE\M2LBundle\Entity\Fromation $formations
      * @return Utilisateur
      */
-    public function addFormation(\PPE\M2LBundle\Entity\Fromation $formations)
+    public function addFormation(\PPE\M2LBundle\Entity\Formation $formations)
     {
         $this->formations[] = $formations;
     
@@ -301,7 +301,7 @@ class Utilisateur
      *
      * @param \PPE\M2LBundle\Entity\Fromation $formations
      */
-    public function removeFormation(\PPE\M2LBundle\Entity\Fromation $formations)
+    public function removeFormation(\PPE\M2LBundle\Entity\Formation $formations)
     {
         $this->formations->removeElement($formations);
     }

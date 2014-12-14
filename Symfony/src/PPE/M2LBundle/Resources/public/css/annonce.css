@@ -11,11 +11,10 @@
 	#annonce_content .annonce .annonce_texte .annonce_titre h1{margin: 0}
 	#annonce_content .annonce .annonce_texte a{text-decoration: none;color: #18568C;}
 
-	.img_container{height: 200px; overflow: hidden;width: 100%}
-	.img_fancybox{width: 1000px;margin-top: -25%}
-	.texte_fancybox{text-align: center;width: 150px;}
-	.texte_fancybox h2{margin-top: 5px}
-	.text_fancybox a{color: #18568C;}
+	.Annonce_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
+	.annonce_fancybox .texte_fancybox{text-align: center;width: 150px;}
+	.annonce_fancybox .texte_fancybox h2{margin-top: 5px}
+	.annonce_fancybox .text_fancybox a{color: #18568C;}
 	
 	#annonce_recherche{margin: 70px auto 0px auto; text-align: center;background: #ffffff;width: 810px;height: 30px;padding: 10px 0px}
 	#annonce_recherche input{height: 30px}

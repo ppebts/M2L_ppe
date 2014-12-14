@@ -16,12 +16,12 @@
 	    		</div>
 	
 	    		<p>{{ actualite.contenu | truncate(300, true, '...') }}</p>
-	    		{% if actualite.contenu|length > 500 %}
+	    		{% if actualite.contenu|length > 300 %}
 	    		<a href="#article_fancybox_{{ i }}" class="fancybox">Lire la suite</a>
 				{% endif %}
 	    	</div>
 		</div><br/>
-		{% if actualite.contenu|length > 500 %}
+		{% if actualite.contenu|length > 300 %}
 	    	<div id="article_fancybox_{{ i }}" style="display:none">
 				<div class="img_container">
 	    		<img src="{{ actualite.image }}" class="img_fancybox" />
