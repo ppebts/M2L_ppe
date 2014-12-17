@@ -42,6 +42,15 @@ public function annonceAction()
         return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList));
     }
 
+public function rechercheAction()
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Annonce");
+        $annonceList = $repo->findAll();
+        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList));
+    }
+
 public function formationAction()
     {
         return $this->render('PPEM2LBundle:Default:formation.html.twig', array());
