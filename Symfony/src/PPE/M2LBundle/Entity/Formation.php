@@ -56,6 +56,13 @@ class Formation
      */
     private $lieu;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
+
 
     /**
      * Get id
@@ -180,5 +187,28 @@ class Formation
     public function getLieu()
     {
         return $this->lieu;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Formation
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    
+        return $this;
     }
 }

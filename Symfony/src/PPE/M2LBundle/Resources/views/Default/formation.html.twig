@@ -1,5 +1,25 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
--
+<div id="formation_content">
+	{% for formation in formationList %}
+
+<div class="formation block_shadow">
+	<div class="formation_texte">
+
+				<div class="formation_nom">	    		
+	    
+	    		<h1>{{ formation.nom }}</h1>
+	    
+	    		<div class="trait"></div>
+	    		</div>
+	    		<p>{{ formation.description }}
+	    		{{ formation.lieu }}
+	    		{{ formation.image }}
+	    		{{ formation.duree|date("H:i:s")}}
+	    		{{ formation.debut|date('Y-m-d')}}</p>
+				</div>
+</div>
+	{% endfor %}
+	</div>
 {% endblock %}

@@ -44,7 +44,11 @@ public function annonceAction()
 
 public function formationAction()
     {
-        return $this->render('PPEM2LBundle:Default:formation.html.twig', array());
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Formation");
+        $formationList = $repo->findAll();
+        return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList));
     }
 
 public function ligueAction()
