@@ -1,0 +1,15 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1200px) { 
+	#formation_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}
+	#formation_content .formation{background: #fff;width:1250px; height: 300px; margin: 10px auto}	
+	#formation_content .formation .formation_nom .trait{height:1px;border-top:1px solid #000;width:300px;margin:0 auto;}
+	#formation_content .formation .formation_texte {width:750px;margin:auto 10px ;height : 290px text-align: center;padding: 5px 0px;overflow-y: auto}
+	#formation_content .formation .formation_texte .formation_nom{text-align: center;margin-top: 30px}
+	#formation_content .formation .formation_texte .formation_nom h1{text-align:center;margin: 0}
+	#formation_content .formation .formation_texte a{text-decoration: none;color: #18568C;}
+	#formation_content .formation .img-formation{float: right;width: 320px;height:300px;margin-right: 40px;}
+	.formation_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
+	.formation_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
+	.formation_fancybox .texte_fancybox{text-align: justify;}
+	.formation_fancybox .texte_fancybox h1{text-align: center}
+}
