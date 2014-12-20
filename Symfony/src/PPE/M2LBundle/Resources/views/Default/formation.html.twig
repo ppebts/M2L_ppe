@@ -2,9 +2,12 @@
 
 {% block body %}
 <div id="formation_content">
+
+	{% set i = 1 %}
 	{% for formation in formationList %}
 
 <div class="formation block_shadow">
+	<img src="{{ formation.image }}"class="img-responsive img-formation">
 	<div class="formation_texte">
 
 				<div class="formation_nom">	    		
@@ -13,13 +16,45 @@
 	    
 	    		<div class="trait"></div>
 	    		</div>
-	    		<p>{{ formation.description }}
+	    		<p>{{ formation.description | truncate(300, true, '...') }}</p>
+	    		{% if formation.description|length > 300 %}
+	    		<a href="#formation_fancybox_{{ i }}" class="fancybox">Lire la suite</a>
+				{% endif %}
+				<br/>
+		{% if formation.description|length > 300 %}
+	    	<div id="formation_fancybox_{{ i }}" class="formation_fancybox" style="display:none">
+	    		<div class="texte_fancybox">
+
+	    		<h1>{{ formation.nom }}</h1>
+	    		<p>{{ formation.description }}</p>
+
+	    		</div>
+
+	  		</div>
+	  	{% endif %}
+	  	{% set i = i + 1 %}
+
+
 	    		{{ formation.lieu }}
-	    		{{ formation.image }}
 	    		{{ formation.duree|date("H:i:s")}}
 	    		{{ formation.debut|date('Y-m-d')}}</p>
 				</div>
 </div>
 	{% endfor %}
 	</div>
+	<script type="text/javascript">
+    $( document ).ready(function() {
+		$('.fancybox').fancybox({
+			helpers : {
+			        overlay : {
+			            css : {
+			                'background' : 'rgba(58, 42, 45, 0.95)'
+			            }
+			        }
+			    },
+			'autoSize' : false,
+			'width' : '70%'
+		});
+	});
+</script>
 {% endblock %}
