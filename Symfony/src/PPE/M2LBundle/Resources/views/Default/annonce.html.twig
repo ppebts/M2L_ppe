@@ -3,21 +3,17 @@
 {% block body %}
 
 	<div id="annonce_recherche">
-		<input type="text" class="search" placeholder="Que cherchez-vous ?" />
-		<select class="select">
-			<option value="" disabled selected>- Sport -</option>
-			<option value="sport">tennis</option>
-			<option value="sport">football</option>
-			<option value="sport">handball</option>
-			<option value="sport">basketball</option>
-		</select>
-		<input type="submit" onclick="window.location.reload(true);" class="submit" value="Rechercher">
+		<a href="#annonceAdd"><input type="button" value="Ajouter annonce" class="submit" /></a>
+	</div>
+
+	<div style="display:none">
+		
 	</div>
 
 <div id="annonce_content">
 	{% set i = 1 %}
 	{% for annonce in annonceList %}
-	    <div class="annonce">
+	    <div class="annonce" id="{{ i }}">
 
 			<div class="block_shadow annonce_img"><img src="{{ annonce.image }}" class="img-responsive img_annonce" /></div>
 
@@ -57,6 +53,12 @@
 			        }
 			    },
 		});
+
+		function tri()
+		{
+
+		}
+
 	});
 </script>
 {% endblock %}

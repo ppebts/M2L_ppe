@@ -3,7 +3,6 @@
 namespace PPE\M2LBundle\Controller;
 use PPE\M2LBundle\Entity\Actualite;
 use PPE\M2LBundle\Entity\Information;
-use PPE\M2LBundle\Entity\Annonce;
 use PPE\M2LBundle\Entity\Utilisateur;
 use PPE\M2LBundle\Entity\SosPartenaire;
 use PPE\M2LBundle\Entity\Sport;
@@ -31,24 +30,6 @@ public function informationAction()
         $repo = $em->getRepository("PPEM2LBundle:Information");
         $infoList = $repo->findAll();
         return $this->render('PPEM2LBundle:Default:information.html.twig', array("infoList"=>$infoList));
-    }
-
-public function annonceAction()
-    {
-        $doctrine = $this->getDoctrine();
-        $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:Annonce");
-        $annonceList = $repo->findAll();
-        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList));
-    }
-
-public function rechercheAction()
-    {
-        $doctrine = $this->getDoctrine();
-        $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:Annonce");
-        $annonceList = $repo->findAll();
-        return $this->render('PPEM2LBundle:Default:annonce.html.twig', array("annonceList"=>$annonceList));
     }
 
 public function formationAction()
