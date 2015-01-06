@@ -174,7 +174,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // ppem2_l_annonces
         if ($pathinfo === '/annonces') {
-            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\DefaultController::annonceAction',  '_route' => 'ppem2_l_annonces',);
+            return array (  '_controller' => 'PPE\\M2LBundle\\Controller\\AnnonceController::afficherAction',  '_route' => 'ppem2_l_annonces',);
         }
 
         // ppem2_l_formations
