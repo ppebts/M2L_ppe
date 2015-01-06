@@ -6,7 +6,7 @@
 	{% for actualite in actualiteList %}
 	    <div class="article block_shadow">
 
-	    	<img src="{{ actualite.image }}" class="img-responsive img-actualite" />
+	    	<img src="{{ asset('bundles/ppem2l/img/' ~ actualite.image) }}" class="img-responsive img-actualite" />
 
 	    	<div class="article_texte">
 	    		<div class="article_titre">
@@ -24,7 +24,7 @@
 		{% if actualite.contenu|length > 300 %}
 	    	<div id="article_fancybox_{{ i }}" class="actualite_fancybox" style="display:none">
 				<div class="img_container">
-	    			<img src="{{ actualite.image }}" class="img_fancybox" />
+	    			<img src="{{ asset('bundles/ppem2l/img/' ~ actualite.image) }}" class="img_fancybox" />
 				</div>
 	    		<div class="texte_fancybox">
 

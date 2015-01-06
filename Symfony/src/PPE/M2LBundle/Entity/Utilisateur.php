@@ -27,10 +27,10 @@ class Utilisateur
     private $formations;
 
     /**
-     * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\TypeUtilisateur", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\TypeUtilisateur")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $typeUtilisateur;
+    private $utilisateurType;
 
     /**
      * @var string
@@ -254,28 +254,6 @@ class Utilisateur
     }
 
     /**
-     * Set typeUtilisateur
-     *
-     * @param \PPE\M2LBundle\Entity\TypeUtilisateur $typeUtilisateur
-     * @return Utilisateur
-     */
-    public function setTypeUtilisateur(\PPE\M2LBundle\Entity\TypeUtilisateur $typeUtilisateur)
-    {
-        $this->typeUtilisateur = $typeUtilisateur;
-    
-        return $this;
-    }
-
-    /**
-     * Get typeUtilisateur
-     *
-     * @return \PPE\M2LBundle\Entity\TypeUtilisateur 
-     */
-    public function getTypeUtilisateur()
-    {
-        return $this->typeUtilisateur;
-    }
-    /**
      * Constructor
      */
     public function __construct()
@@ -314,5 +292,28 @@ class Utilisateur
     public function getFormations()
     {
         return $this->formations;
+    }
+
+    /**
+     * Set utilisateurType
+     *
+     * @param \PPE\M2LBundle\Entity\TypeUtilisateur $utilisateurType
+     * @return Utilisateur
+     */
+    public function setUtilisateurType(\PPE\M2LBundle\Entity\TypeUtilisateur $utilisateurType)
+    {
+        $this->utilisateurType = $utilisateurType;
+    
+        return $this;
+    }
+
+    /**
+     * Get utilisateurType
+     *
+     * @return \PPE\M2LBundle\Entity\TypeUtilisateur 
+     */
+    public function getUtilisateurType()
+    {
+        return $this->utilisateurType;
     }
 }

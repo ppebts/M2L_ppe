@@ -28,7 +28,6 @@ class TypeUtilisateur
      */
     private $libele;
 
-
     /**
      * Get id
      *
