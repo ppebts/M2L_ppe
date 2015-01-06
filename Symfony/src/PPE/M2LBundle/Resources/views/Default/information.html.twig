@@ -5,7 +5,7 @@
 	{% for information in infoList %}
 	    	<div class="information_block">
 				<div class="information_titre closed">
-	    		<h3>{{ information.titre }}</h3>
+	    		<h3>{{ information.titre|upper }}</h3>
 	    		</div>
 	    		<div class="information_content ">
 	    		<p>{{ information.contenu }}</p>

@@ -217,27 +217,4 @@ class SosPartenaire
         return $this->utilisateurSos;
     }
 
-
-    /**
-     * Set sport
-     *
-     * @param \PPE\M2LBundle\Entity\Sport $sport
-     * @return SosPartenaire
-     */
-    public function setSport(\PPE\M2LBundle\Entity\Sport $sport)
-    {
-        $this->sport = $sport;
-    
-        return $this;
-    }
-
-    /**
-     * Get sport
-     *
-     * @return \PPE\M2LBundle\Entity\Sport 
-     */
-    public function getSport()
-    {
-        return $this->sport;
-    }
 }
