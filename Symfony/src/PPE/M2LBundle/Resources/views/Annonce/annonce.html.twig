@@ -7,48 +7,24 @@
 	</div>
 
 	<div id="annonceAdd" style="display:none">
+ {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-		<form action="{{ path('ajouterAction') }}" method="post" {{ form_enctype(form) }}>
+    {# Les erreurs générales du formulaire. #}
+    {{ form_errors(form) }}
 
-		{# Les erreurs générales du formulaire. #}
-		{{ form_errors(form) }}
+	    <div class="form-group">
+	      {# Génération du label. #}
+	      {{ form_label(form.titre, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 
-		<div>
-		  {# Génération du label. #}
-		  {{ form_label(form.titre, "Titre de l'annonce") }}
+	      {# Affichage des erreurs pour ce champ précis. #}
+	      {{ form_errors(form.titre) }}
 
-		  {# Affichage des erreurs pour ce champ précis. #}
-		  {{ form_errors(form.titre) }}
-
-		  {# Génération de l'input. #}
-		  {{ form_widget(form.titre) }}
-		</div>
-
-		{# Idem pour un autre champ. #}
-		<div>
-		  {{ form_label(form.description, "Contenu de l'annonce") }}
-		  {{ form_errors(form.description) }}
-		  {{ form_widget(form.description) }}
-		</div>
-
-		<div>
-		  {{ form_label(form.image, "Image") }}
-		  {{ form_errors(form.image) }}
-		  {{ form_widget(form.image) }}
-		</div>
-
-		<div>
-		  {{ form_label(form.prix, "Prix de l'annonce") }}
-		  {{ form_errors(form.prix) }}
-		  {{ form_widget(form.prix) }}
-		</div>
-		{# Génération des champs pas encore écrits.
-		   Dans cet exemple, ce serait « date », « auteur » et « publication »,
-		   mais aussi le champ CSRF (géré automatiquement par Symfony !)
-		   et tous les champs cachés (type « hidden »). #}
-		{{ form_rest(form) }}
-
-		</form>
+	      <div class="col-sm-4">
+	        {# Génération de l'input. #}
+	        {{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
+	      </div>
+	    </div>
+	{{ form_end(form) }}
 
 	</div>
 
@@ -95,6 +71,12 @@
 			        }
 			    },
 		});
+
+		function tri()
+		{
+
+		}
+
 	});
 </script>
 {% endblock %}

@@ -12,7 +12,7 @@ ppem2_l_reservations:
 
 ppem2_l_annonces:
     path:     /annonces
-    defaults: { _controller: PPEM2LBundle:Default:annonce }
+    defaults: { _controller: PPEM2LBundle:Annonce:afficher }
 
 ppem2_l_formations:
     path:     /formations
