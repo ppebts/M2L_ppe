@@ -6,13 +6,13 @@
 	#annonce_content .annonce .annonce_img img{height:100%;}
 	#annonce_content .annonce .annonce_texte{background: #fff;width:380px;height : 290px;float: right; text-align: justify;padding: 5px 0px;overflow-y: auto;padding: 0 15px}
 	#annonce_content .annonce .annonce_texte .description{margin-bottom: 0}
-	#annonce_content .annonce .annonce_texte .prix{text-align: center;font-weight: 700;margin:0;}
-	#annonce_content .annonce .annonce_texte .annonce_titre{text-align: center;margin-top: 15px}
+	#annonce_content .annonce .annonce_texte .prix{text-align: center;font-weight: 700;margin-top:10px;}
+	#annonce_content .annonce .annonce_texte .annonce_titre{text-align: center;margin-top: 10px}
 	#annonce_content .annonce .annonce_texte .annonce_titre h1{margin: 0}
 	#annonce_content .annonce .annonce_texte a{text-decoration: none;color: #18568C;}
 
 	.Annonce_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
-	.annonce_fancybox .texte_fancybox{text-align: center;width: 150px;}
+	.annonce_fancybox .texte_fancybox{text-align: center;width: 100%;}
 	.annonce_fancybox .texte_fancybox h2{margin-top: 5px}
 	.annonce_fancybox .text_fancybox a{color: #18568C;}
 	
@@ -21,4 +21,8 @@
 	.search{background: #DFDFDF;border: none;width: 300px}
 	.select{background: #DFDFDF;border: none;width: 100px;height: 30px;}
 	.submit{background: #1ABC9C;border: none;color: #fff}
+	.form-group{margin: 10px 0}
+	.form-group input{width:300px; height:30px;}
+	.form-group textarea{width:300px; height:150px; max-width: 300px}
+	.form-group button{border: none; background:#1ABC9C;color: #fff;height: 30px;width: 300px;}
 }
