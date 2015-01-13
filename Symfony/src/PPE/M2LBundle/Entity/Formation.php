@@ -36,7 +36,7 @@ class Formation
     private $description;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
      * @ORM\Column(name="duree", type="integer")
      */
@@ -63,6 +63,12 @@ class Formation
      */
     private $image;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbparticipants", type="integer")
+     */
+    private $nbparticipants;
 
     /**
      * Get id
@@ -123,7 +129,7 @@ class Formation
     /**
      * Set duree
      *
-     * @param \DateTime $duree
+     * @param integer $duree
      * @return Formation
      */
     public function setDuree($duree)
@@ -136,7 +142,7 @@ class Formation
     /**
      * Get duree
      *
-     * @return \DateTime 
+     * @return integer 
      */
     public function getDuree()
     {
@@ -211,4 +217,29 @@ class Formation
     
         return $this;
     }
+
+    /**
+     * Get nbparticipants
+     *
+     * @return integer 
+     */
+    public function getnbparticipants()
+    {
+        return $this->nbparticipants;
+    }   
+
+    /**
+     * Set nbparticipants
+     *
+     * @param integer $nbparticipants
+     * @return Formation
+     */
+    public function setnbparticipants($nbparticipants)
+    {
+        $this->nbparticipants = $nbparticipants;
+    
+        return $this;
+    }
+
+
 }
