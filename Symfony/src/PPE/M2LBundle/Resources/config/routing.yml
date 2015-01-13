@@ -1,4 +1,4 @@
-ppem2_l_homepage:
+ppe_m2l_homepage:
     path:     /
     defaults: { _controller: PPEM2LBundle:Default:index }
 

@@ -6,14 +6,19 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class Annoncetype extends AbstractType
+class AnnonceType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('titre', 'text')
             ->add('description', 'textarea')
             ->add('image', 'text')
+            ->add('prix', 'text')
             ->add('prix', 'text')
             ->add('publier','submit');
     }
@@ -33,6 +38,6 @@ class Annoncetype extends AbstractType
      */
     public function getName()
     {
-        return 'ppem2_l_annonces';
+        return 'ppe_m2l_annonces';
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
 namespace PPE\M2LBundle\Controller;
-use PPE\M2LBundle\Entity\Annonce;
-use PPE\M2LBundle\Form\AnnonceType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use PPE\M2LBundle\Entity\Annonce;
+use PPE\M2LBundle\Form\Type\AnnonceType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -17,7 +18,7 @@ public function afficherAction(Request $request)
         $repo = $em->getRepository("PPEM2LBundle:Annonce");
         $annonceList = $repo->findAll();
 
-        $annonce = new Annonce;
+        $annonce = new Annonce();
         
         $form = $this->get('form.factory')->create(new AnnonceType(),$annonce);
 
