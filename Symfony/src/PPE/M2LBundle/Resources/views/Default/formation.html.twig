@@ -15,15 +15,11 @@
 	    
 	    		<div class="trait"></div>
 	    		</div>
-	    		<p>Description de la formation :<br />
-	    			{{ formation.description }}
-	    		</p>
-				<p>
-		    		Lieu : Salle {{ formation.lieu }} <br />
-		    		Durée : {{ formation.duree }} Heures<br />
-		    		Date : {{ formation.debut|date('d-m-Y')}} <br />
-		    		Nombre de participants : {{ formation.nbparticipants }} 
-		    	</p>
+	    		<p>{{ formation.description }}</p>
+				<br/>
+	    		Lieu : Salle {{ formation.lieu }} <br />
+	    		{{ formation.duree|date("H:i:s")}}
+	    		{{ formation.debut|date('Y-m-d')}}</p>
 				</div>
 </div>
 	{% endfor %}
