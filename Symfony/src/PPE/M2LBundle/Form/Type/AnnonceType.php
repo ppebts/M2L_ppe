@@ -3,29 +3,36 @@
 namespace PPE\M2LBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
-use PPE\M2LBundle\Form\Type\DeskPictureType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class DeskType extends AbstractType
+class Annoncetype extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre')
-            ->add('description')
-            ->add('image')
-            ->add('prix');
+            ->add('titre', 'text')
+            ->add('description', 'textarea')
+            ->add('image', 'text')
+            ->add('prix', 'text')
+            ->add('publier','submit');
     }
 
-    public function getDefaultOptions(array $options)
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
-            'data_class' => 'PPE\M2LBundle\Entity\Annonce',
-        );
+        $resolver->setDefaults(array(
+            'data_class' => 'PPE\M2LBundle\Entity\Annonce'
+        ));
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
-        return 'Annonce';
+        return 'ppem2_l_annonces';
     }
 }

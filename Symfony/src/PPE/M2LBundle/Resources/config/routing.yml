@@ -2,38 +2,38 @@ ppem2_l_homepage:
     path:     /
     defaults: { _controller: PPEM2LBundle:Default:index }
 
-ppem2_l_informations:
+ppe_m2l_informations:
     path:     /informations
     defaults: { _controller: PPEM2LBundle:Default:information }
 
-ppem2_l_reservations:
+ppe_m2l_reservations:
     path:     /reservations
     defaults: { _controller: PPEM2LBundle:Default:reservations }
 
-ppem2_l_annonces:
+ppe_m2l_annonces:
     path:     /annonces
     defaults: { _controller: PPEM2LBundle:Annonce:afficher }
 
-ppem2_l_formations:
+ppe_m2l_formations:
     path:     /formations
     defaults: { _controller: PPEM2LBundle:Default:formation }
 
-ppem2_l_ligues:
+ppe_m2l_ligues:
     path:     /ligues
     defaults: { _controller: PPEM2LBundle:Default:ligue }
 
-ppem2_l_contact:
+ppe_m2l_contact:
     path:     /contact
     defaults: { _controller: PPEM2LBundle:Default:contact }
 
-ppem2_l_connexion:
+ppe_m2l_connexion:
     path:     /connexion
     defaults: { _controller: PPEM2LBundle:Default:connexion }
 
-ppem2_l_inscription:
+ppe_m2l_inscription:
     path:     /inscription
     defaults: { _controller: PPEM2LBundle:Default:inscription }
 
-ppem2_l_account:
+ppe_m2l_account:
     path:     /account
     defaults: { _controller: PPEM2LBundle:Default:account }
