@@ -63,6 +63,12 @@ class Formation
      */
     private $image;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbparticipants", type="integer")
+     */
+    private $nbparticipants;
 
     /**
      * Get id
@@ -208,6 +214,29 @@ class Formation
     public function setImage($image)
     {
         $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get nbparticipants
+     *
+     * @return integer 
+     */
+    public function getNbparticipants()
+    {
+        return $this->nbparticipants;
+    }
+    
+    /**
+     * Set nbparticipants
+     *
+     * @param integer $nbparticipants
+     * @return Formation
+     */
+    public function setNbparticipants($nbparticipants)
+    {
+        $this->nbparticipants = $nbparticipants;
     
         return $this;
     }
