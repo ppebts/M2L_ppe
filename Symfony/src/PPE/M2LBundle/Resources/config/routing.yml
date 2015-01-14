@@ -27,12 +27,12 @@ ppe_m2l_contact:
     defaults: { _controller: PPEM2LBundle:Default:contact }
 
 ppe_m2l_connexion:
-    path:     /connexion
-    defaults: { _controller: PPEM2LBundle:Default:connexion }
+    path:     /login
+    defaults: { _controller: PPEM2LBundle:Auth:login }
 
 ppe_m2l_inscription:
     path:     /inscription
-    defaults: { _controller: PPEM2LBundle:Default:inscription }
+    defaults: { _controller: PPEM2LBundle:Auth:inscription }
 
 ppe_m2l_account:
     path:     /account
