@@ -1,0 +1,39 @@
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+
+{% block body %}
+<div id="contact">
+	
+	<span> CONTACT </span>
+	{{ form_start(form) }}
+
+
+	{{ form_label(form.name, "Votre nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+	<br/>
+	{{ form_errors(form.name) }}
+	{{ form_widget(form.name, {'label_attr': {'class': 'from-control'}}) }}
+<br/>
+	{{ form_label(form.email, "Votre email", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+	<br/>
+	{{ form_errors(form.email) }}
+	{{ form_widget(form.email, {'label_attr': {'class': 'from-control'}}) }}
+
+<br/>
+
+	{{ form_label(form.message, "Votre message", {'label_attr': {'class': 'col-sm-3 control-label text_contact'  }}) }}
+	<br/>
+	{{ form_errors(form.message) }}
+	{{ form_widget(form.message, {'label_attr': {'class': 'from-control'}}) }}
+
+<br/>
+	{{ form_widget(form.envoyer) }}
+</div>
+	
+
+
+
+
+	{{ form_end(form) }}
+
+
+
+{% endblock %}
