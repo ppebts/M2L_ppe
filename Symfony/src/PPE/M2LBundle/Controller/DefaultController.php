@@ -8,6 +8,7 @@ use PPE\M2LBundle\Entity\SosPartenaire;
 use PPE\M2LBundle\Entity\Sport;
 use PPE\M2LBundle\Entity\TypeUtilisateur;
 use PPE\M2LBundle\Entity\Formation;
+use PPE\M2LBundle\Entity\Ligue;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,8 +44,13 @@ public function formationAction()
 
 public function ligueAction()
     {
-        return $this->render('PPEM2LBundle:Default:ligue.html.twig', array());
-    }    
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Ligue");
+        $ligueList = $repo->findAll();
+        return $this->render('PPEM2LBundle:Default:ligue.html.twig', array("ligueList"=>$ligueList));
+    }
+
 public function contactAction()
     {
         return $this->render('PPEM2LBundle:Default:contact.html.twig', array());

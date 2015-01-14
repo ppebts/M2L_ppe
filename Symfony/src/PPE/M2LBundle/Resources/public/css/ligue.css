@@ -1,0 +1,12 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1200px) { 
+#ligue_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}
+#ligue_content #ligue_index{width :250px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 20px 20px 0px;}
+#ligue_content #ligue_index ul  { padding-left: 10px;}
+#ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
+#ligue_content #ligue_index a:hover {font-weight: bold;}
+#ligue_content #ligue{width: 1250px; height: 200px; margin : 10px auto; background-color: #fff;}
+#ligue_content #ligue img {float:left;width: 200px;height:200px;margin: 0 30px 0 30px ;}
+#ligue_content #ligue #ligue_text {padding-right: 20px;}
+#ligue_content #ligue #ligue_text p{text-align: justify;}
+}

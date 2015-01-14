@@ -1,5 +1,31 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 
 {% block body %}
--()
+
+<div id="ligue_content">
+	<div id="ligue_index">
+	<ul>
+		{% for ligue in ligueList %}
+				<li> <a href="#{{ ligue.id }}"> {{ ligue.nom }} </a> </li>
+		{% endfor %}
+	</ul>
+	</div>
+	
+
+{% for ligue in ligueList %}
+<div id="ligue">
+	<img src="{{ asset('bundles/ppem2l/img/ligue/' ~ ligue.image) }}">
+	
+	<div id="ligue_text">
+		<div class="ligue_nom" id="{{ ligue.id }}">	    		
+    		<h1> {{ ligue.nom }} </h1>
+   		</div>
+   		<p> {{ ligue.description }} </p>
+   		<a href='{{ ligue.url }}'> Se rendre sur le site </a>
+	</div>
+
+</div>
+{% endfor %}
+
+</div>
 {% endblock %}
