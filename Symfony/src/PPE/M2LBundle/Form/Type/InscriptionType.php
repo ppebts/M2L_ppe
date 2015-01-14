@@ -17,11 +17,17 @@ class InscriptionType extends AbstractType
         $builder
             ->add('nom', 'text')
             ->add('prenom', 'text')
-            ->add('civilite', 'text')
+            ->add('civilite', 'choice', array(
+                'choices' => array(
+                    'm' => 'Masculin',
+                    'f' => 'Féminin'),
+                'required' => true,
+                ))
             ->add('email', 'text')
             ->add('mdp', 'text')
             ->add('telephone','text')
             ->add('date_naissance', 'date')
+            ->add('utilisateurType', 'hidden')
             ->add('Enregistrer', 'submit');
     }
 
