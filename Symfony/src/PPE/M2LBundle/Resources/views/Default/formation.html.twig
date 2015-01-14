@@ -18,8 +18,8 @@
 	    		<p>{{ formation.description }}</p>
 				<br/>
 	    		Lieu : Salle {{ formation.lieu }} <br />
-	    		Durée : {{ formation.duree|date("H:i:s")}} <br />
-	    		Date de début : {{ formation.debut|date('Y-m-d')}} <br />
+	    		Durée : {{ formation.duree }} Min <br />
+	    		Date de début : {{ formation.debut|date('d-m-Y')}} <br />
 	    		Nombre de participants : {{ formation.nbparticipants }}
 	    		</p>
 				</div>
