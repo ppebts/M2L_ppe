@@ -28,10 +28,10 @@ ppe_m2l_contact:
 
 ppe_m2l_connexion:
     path:     /login
-    defaults: { _controller: PPEM2LBundle: }
+    defaults: { _controller: PPEM2LBundle:Auth:login }
 
 ppe_m2l_inscription:
-    path:     /login
+    path:     /inscription
     defaults: { _controller: PPEM2LBundle:Auth:inscription }
 
 ppe_m2l_account:
