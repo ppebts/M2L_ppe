@@ -1,0 +1,36 @@
+
+{% block body %}
+
+Liste des formations
+
+<a href="{{ path( 'ppe_m2l_back_formations' ) }}">Ajouter</a>
+<table border="1" cellspacing="0">
+	<tr>
+			<th>Id</th>
+			<th>Nom</th>
+			<th>Description</th>
+			<th>Durée</th>
+			<th>Début</th>
+			<th>Lieu</th>
+			<th>Image</th>
+			<th>Nombre de participants</th>
+	</tr>
+{% for formation in formationList %}
+	<tr>
+
+			<td>{{ formation.id }}</td>
+			<td>{{ formation.nom }}</td>
+			<td>{{ formation.description }}</td>
+			<td>{{ formation.duree }}</td>
+			<td>{{ formation.debut|date('d-m-Y') }}</td>
+			<td>{{ formation.lieu }}</td>
+			<td>{{ formation.image }}</td>
+			<td>{{ formation.nbparticipants }}</td>
+			
+			<td><a href="{{ path( 'ppe_m2l_back_formationedit',{'id': formation.id}   ) }}">Editer</a></td>
+			<td><a href="">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
