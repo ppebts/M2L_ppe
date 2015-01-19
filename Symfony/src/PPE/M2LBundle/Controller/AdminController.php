@@ -70,6 +70,35 @@ public function editinformationAction($id,Request $request)
          return $this->render('PPEM2LBundle:Information:editinfo.html.twig', array('form'=>$form->createView()));
      
     }
+
+
+public function editannonceAction($id,Request $request)
+     {
+        /* Récupère l'annonce */
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Annonce");
+        $annonce = $repo->find($id);
+
+        /* $annonce renseigné donc formulaire renseigné */
+
+        $form = $this->get('form.factory')->create(new AnnoncesType(),$annonce);
+        $form->handleRequest($request);  
+
+        /* Vérification du formulaire */
+
+        if ( $form->isValid()){
+                $doctrine = $this->getDoctrine();
+                $em = $doctrine->getManager();
+                $em->persist($annonce);
+                $em->flush();
+                return $this->redirect($this->generateUrl('ppe_m2l_back_annonceedit', array('id'=> $annonce->getId())));
+
+        }        
+         return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
+     
+    }
 public function getannoncesAction()
      {
         /* Récupère toutes les annonces */
@@ -98,32 +127,5 @@ public function addannonceAction(Request $request)
         return $this->render('PPEM2LBundle:Annonce:addannonce.html.twig', array("form"=>$form->createView(),));
     }
 
-public function editannonceAction($id,Request $request)
-     {
-        /* Récupère l'annonce */
-
-        $doctrine = $this->getDoctrine();
-        $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:Annonce");
-        $annonce = $repo->find($id);
-
-        /* $annonce renseigné donc formulaire renseigné */
-
-        $form = $this->get('form.factory')->create(new AnnoncesType(),$annonce);
-        $form->handleRequest($request);  
-
-        /* Vérification du formulaire */
-
-        if ( $form->isValid()){
-                $doctrine = $this->getDoctrine();
-                $em = $doctrine->getManager();
-                $em->persist($annonce);
-                $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_annonce', array('id'=> $annonce->getId())));
-
-        }        
-         return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
-     
-    }
 
 }

@@ -39,7 +39,7 @@ ppe_m2l_account:
     defaults: { _controller: PPEM2LBundle:Default:account }
 
 ppe_m2l_back_information:
-    path: /admin/listeinfo
+    path:    /admin/listeinfo
     defaults: { _controller: PPEM2LBundle:Admin:getinformations}
 
 ppe_m2l_back_informations:
@@ -60,7 +60,7 @@ ppe_m2l_back_annonces:
     path:    /admin/annonces
     defaults: { _controller: PPEM2LBundle:Admin:addannonce}
 
-ppe_m2l_back_annonce:
+ppe_m2l_back_annonceedit:
     path:    /admin/editannonce/{id}
     defaults: { _controller: PPEM2LBundle:Admin:editannonce}
     requirements:
