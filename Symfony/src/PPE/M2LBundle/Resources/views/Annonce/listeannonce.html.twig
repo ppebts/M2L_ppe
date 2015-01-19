@@ -1,0 +1,30 @@
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+{% block body %}
+
+Liste des annonces
+
+<a href="{{ path( 'ppe_m2l_back_annonces' ) }}">Ajouter</a>
+<table border="1" cellspacing="0">
+	<tr>
+			<th>Id</th>
+			<th>Titre</th>
+			<th>Description</th>
+			<th>Image</th>
+			<th>Prix</th>
+	</tr>
+{% for annonce in annonceList %}
+	<tr>
+
+			<td>{{ annonce.id }}</td>
+			<td>{{ annonce.titre }}</td>
+			<td>{{ annonce.description }}</td>
+			<td>{{ annonce.image }}</td>
+			<td>{{ annonce.prix }}</td>
+			
+			<td><a href="{{ path( 'ppe_m2l_back_annonce',{'id': annonce.id}   ) }}">Editer</a></td>
+			<td><a href="">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>
+{% endblock %}

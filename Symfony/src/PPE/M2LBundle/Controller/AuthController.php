@@ -14,8 +14,7 @@ class AuthController extends Controller
 
 public function inscriptionAction(Request $request)
     {
-        $utilisateur = new Utilisateur();   
-        $utilisateur->setUtilisateurType(2);
+        $utilisateur = new Utilisateur();
         
         $form = $this->get('form.factory')->create(new InscriptionType(),$utilisateur);
         $form->handleRequest($request);

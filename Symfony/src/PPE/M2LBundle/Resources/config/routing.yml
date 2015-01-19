@@ -37,3 +37,31 @@ ppe_m2l_inscription:
 ppe_m2l_account:
     path:     /account
     defaults: { _controller: PPEM2LBundle:Default:account }
+
+ppe_m2l_back_information:
+    path: /admin/listeinfo
+    defaults: { _controller: PPEM2LBundle:Admin:getinformations}
+
+ppe_m2l_back_informations:
+    path:    /admin/informations
+    defaults: { _controller: PPEM2LBundle:Admin:addinformation}
+
+ppe_m2l_back_info:
+    path:    /admin/editinfo/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:editinformation}
+    requirements:
+        id: \d+
+
+ppe_m2l_back_annonce:
+    path:    /admin/listeannonce
+    defaults: { _controller: PPEM2LBundle:Admin:getannonces}
+
+ppe_m2l_back_annonces:
+    path:    /admin/annonces
+    defaults: { _controller: PPEM2LBundle:Admin:addannonce}
+
+ppe_m2l_back_annonce:
+    path:    /admin/editannonce/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:editannonce}
+    requirements:
+        id: \d+

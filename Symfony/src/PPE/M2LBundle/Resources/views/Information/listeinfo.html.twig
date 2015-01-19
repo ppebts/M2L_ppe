@@ -1,0 +1,26 @@
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+{% block body %}
+
+Liste des informations
+
+<a href="{{ path( 'ppe_m2l_back_informations' ) }}">Ajouter</a>
+<table border="1" cellspacing="0">
+	<tr>
+			<th>Id</th>
+			<th>Titre</th>
+			<th>Contenu</th>
+	</tr>
+{% for information in infoList %}
+	<tr>
+
+			<td>{{ information.id }}</td>
+			<td>{{ information.titre }}</td>
+			<td>{{ information.contenu }}</td>
+			
+			<td><a href="{{ path( 'ppe_m2l_back_info',{'id': information.id}  ) }}">Editer</a></td>
+			<td><a href="">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
