@@ -75,6 +75,14 @@ ppe_m2l_back_formationedit:
 ppe_m2l_ligues:
     path:     /ligues
     defaults: { _controller: PPEM2LBundle:Default:ligue }
+
+ppe_m2l_back_ligue:
+    path:    /admin/listeligue
+    defaults: { _controller: PPEM2LBundle:Admin:getligues}
+
+ppe_m2l_back_ligues:
+    path:    /admin/ligues
+    defaults: { _controller: PPEM2LBundle:Admin:addligue}
 # Fin Ligues
 # Contact
 

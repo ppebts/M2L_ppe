@@ -10,6 +10,9 @@ use PPE\M2LBundle\Form\Type\AnnoncesType;
 use PPE\M2LBundle\Entity\Formation;
 use PPE\M2LBundle\Form\Type\FormationType;
 use PPE\M2LBundle\Form\Type\FormationsType;
+use PPE\M2LBundle\Entity\Ligue;
+use PPE\M2LBundle\Form\Type\LigueType;
+use PPE\M2LBundle\Form\Type\LiguesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
@@ -190,4 +193,32 @@ class AdminController extends Controller
      
     }    
                                                 /* Fin Formations */
+                                                /* Ligues */
+
+    public function getliguesAction()
+     {
+        /* Récupère toutes les ligues */
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Ligue");
+        $ligueList = $repo->findAll();
+
+
+         return $this->render('PPEM2LBundle:Ligue:listeligue.html.twig', array("ligueList"=>$ligueList));
+     }
+    public function addligueAction(Request $request)
+    {
+        $ligue = new Ligue();
+        
+        $form = $this->get('form.factory')->create(new LigueType(),$ligue);
+        $form->handleRequest($request);
+        if ( $form->isValid()){
+            $doctrine = $this->getDoctrine();
+            $em = $doctrine->getManager();
+            $em->persist($ligue);
+            $em->flush();
+        }
+        return $this->render('PPEM2LBundle:Ligue:addligue.html.twig', array("form"=>$form->createView(),));
+    }
 }

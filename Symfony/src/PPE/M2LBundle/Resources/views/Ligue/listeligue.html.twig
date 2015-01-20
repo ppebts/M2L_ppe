@@ -1,0 +1,34 @@
+
+{% block body %}
+
+Liste des ligues
+
+<a href="{{ path( 'ppe_m2l_back_ligues' ) }}">Ajouter</a>
+<table border="1" cellspacing="0">
+	<tr>
+			<th>Id</th>
+			<th>Nom</th>
+			<th>Description</th>
+			<th>URL</th>
+			<th>Image</th>
+			<th>Sport</th>
+
+	</tr>
+{% for ligue in ligueList %}
+	<tr>
+
+			<td>{{ ligue.id }}</td>
+			<td>{{ ligue.nom }}</td>
+			<td>{{ ligue.description }}</td>
+			<td>{{ ligue.url }}</td>
+			<td>{{ ligue.image }}</td>
+			<td>{{ ligue.sport }}</td>
+
+			
+			<td><a href="">Editer</a></td>
+			<td><a href="">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
