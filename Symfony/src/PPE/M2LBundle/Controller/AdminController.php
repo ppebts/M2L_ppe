@@ -221,4 +221,31 @@ class AdminController extends Controller
         }
         return $this->render('PPEM2LBundle:Ligue:addligue.html.twig', array("form"=>$form->createView(),));
     }
+    public function editligueAction($id,Request $request)
+     {
+        /* Récupère la lgieu */
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Ligue");
+        $ligue = $repo->find($id);
+
+        /* $ligue renseigné donc formulaire renseigné */
+
+        $form = $this->get('form.factory')->create(new LiguesType(),$ligue);
+        $form->handleRequest($request);  
+
+        /* Vérification du formulaire */
+
+        if ( $form->isValid()){
+                $doctrine = $this->getDoctrine();
+                $em = $doctrine->getManager();
+                $em->persist($ligue);
+                $em->flush();
+                return $this->redirect($this->generateUrl('ppe_m2l_back_ligueedit', array('id'=> $ligue->getId())));
+
+        }        
+         return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));
+     
+    }  
 }

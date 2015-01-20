@@ -25,7 +25,7 @@ Liste des ligues
 			<td>{{ ligue.sport }}</td>
 
 			
-			<td><a href="">Editer</a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_ligueedit',{'id': ligue.id}   ) }}">Editer</a></td>
 			<td><a href="">Supprimer</a></td>
 	</tr>
 {% endfor %}
