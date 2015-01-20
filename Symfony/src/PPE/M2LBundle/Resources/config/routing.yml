@@ -20,7 +20,7 @@ ppe_m2l_ligues:
 
 ppe_m2l_contact:
     path:     /contact
-    defaults: { _controller: PPEM2LBundle:Default:contact }
+    defaults: { _controller: PPEM2LBundle:Contact:contact }
 # Fin Contact
 # Authentification
 
