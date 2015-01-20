@@ -93,7 +93,7 @@ ppe_m2l_contact:
 # Authentification
 ppe_m2l_login:
     pattern:   /login
-    defaults:  { _controller: PPEM2LBundle:Security:login }
+    defaults:  { _controller: PPEUserBundle:Security:login }
 
 ppe_m2l_login_check:
     pattern:   /login_check
