@@ -1,0 +1,30 @@
+
+{% block body %}
+
+Liste des actualités
+
+<a href="">Ajouter</a>
+<table border="1" cellspacing="0">
+	<tr>
+			<th>Id</th>
+			<th>Titre</th>
+			<th>Contenu</th>
+			<th>Image</th>
+
+	</tr>
+{% for actualite in actualiteList %}
+	<tr>
+
+			<td>{{ actualite.id }}</td>
+			<td>{{ actualite.titre }}</td>
+			<td>{{ actualite.contenu }}</td>
+			<td>{{ actualite.image }}</td>
+
+			
+			<td><a href="">Editer</a></td>
+			<td><a href="">Supprimer</a></td>
+	</tr>
+{% endfor %}
+
+</table>
+{% endblock %}

@@ -20,7 +20,21 @@ use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends Controller
 {
+                                                    /* Actualités */
+    public function getactualitesAction()
+     {
+        /* Récupère toutes les actualités */
 
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Actualite");
+        $actualiteList = $repo->findAll();
+
+
+         return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList));
+     }                                              
+
+                                                    /* Fin Actualités */
                                                     /* Informations */
     public function getinformationsAction()
      {
@@ -247,5 +261,6 @@ class AdminController extends Controller
         }        
          return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));
      
-    }  
+    }
+                                                    /* Fin ligues */  
 }

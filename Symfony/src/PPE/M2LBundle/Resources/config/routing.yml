@@ -2,6 +2,10 @@
 ppe_m2l_homepage:
     path:     /
     defaults: { _controller: PPEM2LBundle:Default:index }
+
+ppe_m2l_back_actualite:
+    path:    /admin/listeactualite
+    defaults: { _controller: PPEM2LBundle:Admin:getactualites}
 # Fin Accueil
 
 # Informations
@@ -97,9 +101,7 @@ ppe_m2l_contact:
 # Fin Contact
 
 # Authentification
-ppe_m2l_connexion:
-    pattern:   /login
-    defaults:  { _controller: PPEM2LBundle:Auth:login }
+
 
 ppe_m2l_inscription:
     path:     /inscription
