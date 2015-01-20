@@ -4,38 +4,6 @@ ppe_m2l_homepage:
     path:     /
     defaults: { _controller: PPEM2LBundle:Default:index }
 # Fin Accueil
-# Reservations
-
-ppe_m2l_reservations:
-    path:     /reservations
-    defaults: { _controller: PPEM2LBundle:Default:reservations }
-# Fin Reservations
-# Ligues
-
-ppe_m2l_ligues:
-    path:     /ligues
-    defaults: { _controller: PPEM2LBundle:Default:ligue }
-# Fin Ligues
-# Contact
-
-ppe_m2l_contact:
-    path:     /contact
-    defaults: { _controller: PPEM2LBundle:Contact:contact }
-# Fin Contact
-# Authentification
-
-ppe_m2l_connexion:
-    path:     /login
-    defaults: { _controller: PPEM2LBundle:Auth:login }
-
-ppe_m2l_inscription:
-    path:     /inscription
-    defaults: { _controller: PPEM2LBundle:Auth:inscription }
-
-ppe_m2l_account:
-    path:     /account
-    defaults: { _controller: PPEM2LBundle:Default:account }
-# Fin Authentification
 # Informations
 
 ppe_m2l_informations:
@@ -56,6 +24,12 @@ ppe_m2l_back_info:
     requirements:
         id: \d+
 # Fin Informations
+# Reservations
+
+ppe_m2l_reservations:
+    path:     /reservations
+    defaults: { _controller: PPEM2LBundle:Default:reservations }
+# Fin Reservations
 # Annonces 
 
 ppe_m2l_annonces:
@@ -96,3 +70,29 @@ ppe_m2l_back_formationedit:
     requirements:
         id: \d+
 # Fin Formations
+# Ligues
+
+ppe_m2l_ligues:
+    path:     /ligues
+    defaults: { _controller: PPEM2LBundle:Default:ligue }
+# Fin Ligues
+# Contact
+
+ppe_m2l_contact:
+    path:     /contact
+    defaults: { _controller: PPEM2LBundle:Contact:contact }
+# Fin Contact
+# Authentification
+
+ppe_m2l_connexion:
+    path:     /login
+    defaults: { _controller: PPEM2LBundle:Auth:login }
+
+ppe_m2l_inscription:
+    path:     /inscription
+    defaults: { _controller: PPEM2LBundle:Auth:inscription }
+
+ppe_m2l_account:
+    path:     /account
+    defaults: { _controller: PPEM2LBundle:Default:account }
+# Fin Authentification
