@@ -13,6 +13,9 @@ use PPE\M2LBundle\Form\Type\FormationsType;
 use PPE\M2LBundle\Entity\Ligue;
 use PPE\M2LBundle\Form\Type\LigueType;
 use PPE\M2LBundle\Form\Type\LiguesType;
+use PPE\M2LBundle\Entity\Actualite;
+use PPE\M2LBundle\Form\Type\ActualiteType;
+use PPE\M2LBundle\Form\Type\ActualitesType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,7 +35,52 @@ class AdminController extends Controller
 
 
          return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList));
-     }                                              
+     }
+
+    public function addactualiteAction(Request $request)
+    {
+        $actualite = new Actualite();
+        
+        $form = $this->get('form.factory')->create(new ActualiteType(),$actualite);
+        $form->handleRequest($request);
+        if ( $form->isValid()){
+            $doctrine = $this->getDoctrine();
+            $em = $doctrine->getManager();
+            $em->persist($actualite);
+            $em->flush();
+        }
+        return $this->render('PPEM2LBundle:Actualite:addactualite.html.twig', array("form"=>$form->createView(),));
+    }
+
+    public function editactualiteAction($id,Request $request)
+     {
+        /* Récupère l'actualite */
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Actualite");
+        $actualite = $repo->find($id);
+
+        /* $information renseigné donc formulaire renseigné */
+
+        $form = $this->get('form.factory')->create(new ActualitesType(),$actualite);
+        $form->handleRequest($request);  
+
+        /* Vérification du formulaire */
+
+        if ( $form->isValid()){
+                $doctrine = $this->getDoctrine();
+                $em = $doctrine->getManager();
+                $em->persist($actualite);
+                $em->flush();
+                return $this->redirect($this->generateUrl('ppe_m2l_back_info', array('id'=> $actualite->getId())));
+
+        }        
+         return $this->render('PPEM2LBundle:Actualite:editactualite.html.twig', array('form'=>$form->createView()));
+     
+    }
+
+
 
                                                     /* Fin Actualités */
                                                     /* Informations */

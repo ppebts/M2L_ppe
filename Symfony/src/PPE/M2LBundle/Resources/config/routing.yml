@@ -6,6 +6,16 @@ ppe_m2l_homepage:
 ppe_m2l_back_actualite:
     path:    /admin/listeactualite
     defaults: { _controller: PPEM2LBundle:Admin:getactualites}
+
+ppe_m2l_back_actualites:
+    path:    /admin/actualites
+    defaults: { _controller: PPEM2LBundle:Admin:addactualite}
+
+ppe_m2l_back_actu:
+    path:    /admin/editactu/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:editactualite}
+    requirements:
+        id: \d+
 # Fin Accueil
 
 # Informations
@@ -101,7 +111,6 @@ ppe_m2l_contact:
 # Fin Contact
 
 # Authentification
-
 
 ppe_m2l_inscription:
     path:     /inscription

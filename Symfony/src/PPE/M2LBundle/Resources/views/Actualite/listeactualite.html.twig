@@ -3,7 +3,7 @@
 
 Liste des actualités
 
-<a href="">Ajouter</a>
+<a href="{{ path( 'ppe_m2l_back_actualites' ) }}">Ajouter</a>
 <table border="1" cellspacing="0">
 	<tr>
 			<th>Id</th>
@@ -21,7 +21,7 @@ Liste des actualités
 			<td>{{ actualite.image }}</td>
 
 			
-			<td><a href="">Editer</a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_actu',{'id': actualite.id}   ) }}">Editer</a></td>
 			<td><a href="">Supprimer</a></td>
 	</tr>
 {% endfor %}
