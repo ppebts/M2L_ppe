@@ -27,11 +27,11 @@ class SosPartenaire
      */
     private $sport;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\Utilisateur")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $utilisateurSos;
+//    /**
+//     * @ORM\ManyToOne(targetEntity="PPE\UserBundle\Entity\Utilisateur")
+//     * @ORM\JoinColumn(nullable=false)
+//     */
+//    private $utilisateurSos;
 
     /**
      * @var string
