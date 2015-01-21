@@ -4,7 +4,7 @@ security:
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
-        PPE\UserBundle\Entity\User: plaintext
+        PPE\UserBundle\Entity\User: sha512
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
@@ -13,41 +13,23 @@ security:
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         main:
-            entity: { class: PPE\UserBundle\Entity\Utilisateur, property: username }
+            id: fos_user.user_provider.username
 
     # the main part of the security, where you can set up firewalls
     # for specific sections of your app
     firewalls:
-        main_login:
-            # Cette expression régulière permet de prendre /login (mais pas /login_check !)
-            pattern:   ^/login$
-            anonymous: true 
-        # On autorise alors les anonymes sur ce pare-feu
-        # the login page has to be accessible for everybody
         main:
-            anonymous: true
-            provider:  main
+            pattern:        ^/
+            anonymous:      true
+            provider:       main
             form_login:
-                login_path: login
-                check_path: login_check
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
             logout:
-                path:   logout
-                target: /
-
-        # secures part of the application
-        demo_secured_area:
-            pattern:    ^/demo/secured/
-            # it's important to notice that in this case _demo_security_check and _demo_login
-            # are route names and that they are specified in the AcmeDemoBundle
-            form_login:
-                check_path: _demo_security_check
-                login_path: _demo_login
-            logout:
-                path:   _demo_logout
-                target: _demo
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+                path:       fos_user_security_logout
+                target:     /platform
+            remember_me:
+                key:        %secret% # %secret% est un paramètre de parameters.yml
 
     # with these settings you can restrict or allow access for different parts
     # of your application based on roles, ip, host or methods
