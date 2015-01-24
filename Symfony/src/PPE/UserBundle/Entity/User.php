@@ -198,4 +198,10 @@ class User extends BaseUser
     {
         return $this->born_date;
     }
+
+    public function setEmail($email){
+        parent::setEmail($email);
+        $this->setUsername($email);
+    }
+
 }

@@ -9,6 +9,8 @@ class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        parent::buildForm($builder, $options);
+        $builder->remove('username');
         // add your custom field
         $builder->add('last_name');
         $builder->add('first_name');
@@ -20,9 +22,7 @@ class RegistrationFormType extends AbstractType
             'expanded'  => true,
             'multiple'  => false,
             'empty_value'  => false,
-        ));
-        $builder->add('email');
-    }
+        ));    }
 
     public function getParent()
     {
