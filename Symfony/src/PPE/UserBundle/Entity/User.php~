@@ -58,8 +58,8 @@ class User extends BaseUser
      *
      * @Assert\NotBlank(message="Merci de renseigner votre numéro de téléphone.", groups={"Registration", "Profile"})
      * @Assert\Length(
-     *     min=5,
-     *     max="15",
+     *     min=10,
+     *     max="10",
      *     minMessage="The number is too short.",
      *     maxMessage="The number is too long.",
      *     groups={"Registration", "Profile"}
