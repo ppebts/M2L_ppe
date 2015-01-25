@@ -81,8 +81,6 @@
 			</div>
 		</div>
 
-		<input type="hidden" value="{{ app.user.id }}" name="id" />
-
 		{{ form_rest(form) }}
 
 		{{ form_end(form) }}
@@ -111,13 +109,13 @@
 
     	<div id="annonce_fancybox_{{ i }}" class="annonce_fancybox" style="display:none">
     		<div class="texte_fancybox">
-
-{# 				<h2>{{ annonce.utilisateur.firstName|upper }} {{ annonce.utilisateur.lastName|upper }}</h2>
+    			
+				<h2>{{ annonce.utilisateur.firstName|upper }} {{ annonce.utilisateur.lastName|upper }}</h2>
 				<img src="{{ asset('bundles/ppem2l/img/phone.png') }}" style="float:left;margin-left:4px" alt="phone"/>
 	    		<p>{{ annonce.utilisateur.phoneNumber }}</p>
 	    	 	<img src="{{ asset('bundles/ppem2l/img/mail.png') }}" style="float:left" alt="mail"/>
-		    	<a href="mailto:{{ annonce.utilisateur.email }}"><p>{{ annonce.utilisateur.email }}</p></a> #}
-		    	
+		    	<a href="mailto:{{ annonce.utilisateur.email }}"><p>{{ annonce.utilisateur.email }}</p></a>
+
     		</div>
   		</div>
 	  	{% set i = i + 1 %}

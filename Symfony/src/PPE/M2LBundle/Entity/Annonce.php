@@ -23,7 +23,7 @@ class Annonce
 
     /**
      * @ORM\ManyToOne(targetEntity="PPE\UserBundle\Entity\User", inversedBy="annonces")
-     * @ORM\JoinColumn(name="utilisateur_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="utilisateur_id", referencedColumnName="id", nullable=false)
      */
     private $utilisateur;
 

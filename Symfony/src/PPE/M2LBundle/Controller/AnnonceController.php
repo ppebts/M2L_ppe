@@ -20,16 +20,17 @@ public function afficherAction(Request $request)
         $annonceList = $repo->findAll();
 
         $annonce = new Annonce();
-        
-        $form = $this->get('form.factory')->create(new AnnonceType(),$annonce);
+        $form = $this->get('form.factory')->create(new AnnonceType(), $annonce);
+
 
         $form->handleRequest($request);
         if ( $form->isValid()){
+            $annonce->setUtilisateur($this->get('security.context')->getToken()->getUser());
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
             $em->persist($annonce);
             $em->flush();
-            return $this->redirect($this->generateUrl('ppe_m2l_annonces', array('id'=> $annonce->getId())));
+            return $this->redirect($this->generateUrl('ppe_m2l_annonces'));
           }
         
 

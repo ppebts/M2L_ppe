@@ -22,19 +22,19 @@ class RegistrationFormType extends AbstractType
                                                 ));
         $builder->add('phone_number');
         $builder->add('plainPassword', 'repeated', array(
-                'type' => 'password',
-                'options' => array('translation_domain' => 'FOSUserBundle'),
-                'first_options' => array('label' => 'form.password'),
-                'second_options' => array('label' => 'form.password_confirmation'),
-                'invalid_message' => 'fos_user.password.mismatch',
-            ));
+                                                        'type' => 'password',
+                                                        'options' => array('translation_domain' => 'FOSUserBundle'),
+                                                        'first_options' => array('label' => 'form.password'),
+                                                        'second_options' => array('label' => 'form.password_confirmation'),
+                                                        'invalid_message' => 'fos_user.password.mismatch',
+                                                        ));
         $builder->add('gender', 'choice', array(
-            'choices'   => array('m' => 'Mr', 'f' => 'Mme'),
-            'required'  => false,
-            'expanded'  => false,
-            'multiple'  => false,
-            'empty_value'  => false,
-        ));    
+                                                'choices'   => array('m' => 'Mr', 'f' => 'Mme'),
+                                                'required'  => false,
+                                                'expanded'  => false,
+                                                'multiple'  => false,
+                                                'empty_value'  => false,
+                                                ));    
     }
 
     public function getParent()
