@@ -59,9 +59,11 @@ class ProfileFormType extends AbstractType
                                                             'required'  => false,))
             ->add('email', 'email', array('label' => 'Adresse email'))
             ->add('phone_number', 'text', array('label' => 'Votre numéro'))
-            ->add('born_date', 'date', array(
-                                            'label' => 'Votre date de naissance', 'attr' => array(
-                                                                                                    'class'   => 'date')))
+            ->add('born_date', 'date',array(
+                                                'widget' => 'single_text',
+                                                'format' => 'yyyy-MM-dd',
+                                                'input' => 'datetime',
+                                                'attr' => array('class' => 'date')))
         ;
     }
 }

@@ -6,25 +6,30 @@
 	<span>CONTACT</span>
 	{{ form_start(form) }}
 
-
+<div class="input_form_register">
 	{{ form_label(form.name, "Votre nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 	<br/>
 	{{ form_errors(form.name) }}
 	{{ form_widget(form.name, {'label_attr': {'class': 'from-control'}}) }}
-<br/>
+	<br/>
+</div>
+
+<div class="input_form_register">
 	{{ form_label(form.email, "Votre email", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 	<br/>
 	{{ form_errors(form.email) }}
 	{{ form_widget(form.email, {'label_attr': {'class': 'from-control'}}) }}
+	<br/>
+</div>
 
-<br/>
-
+<div class="input_form_register">
 	{{ form_label(form.message, "Votre message", {'label_attr': {'class': 'col-sm-3 control-label text_contact'  }}) }}
 	<br/>
 	{{ form_errors(form.message) }}
 	{{ form_widget(form.message, {'label_attr': {'class': 'from-control'}}) }}
+	<br/>
+</div>
 
-<br/>
 	{{ form_widget(form.envoyer) }}
 </div>
 	

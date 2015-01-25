@@ -3,6 +3,6 @@
 #menu #center{float: left;margin-left: calc(50% - 288.5px);padding: 0; }
 #menu #right{float: right; }
 #menu ul li{display: inline-block;line-height: 45px;height: 100%;padding: 0px 7px;}
-#menu ul li a{line-height: 55px;text-decoration: none; color: #fff;font-family: 'Lato';font-weight: 300}
+#menu ul li a{line-height: 55px;text-decoration: none; color: #fff;font-family: 'Lato';font-weight: 300;display: block;height: 55px;}
 #menu img#logo{width: 40px}
 #menu a#logo_link{position: absolute;left: 43px;top:5px;}

@@ -1,8 +1,90 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
-    </div>
-</form>
+
+<div id="form_container">
+	
+	<div class="titre">MODIFIER</div>
+
+	{{ form_start(form) }}
+	<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+
+		<div class="input_form_register">
+				{{ form_label(form.first_name) }}
+			<br/>
+				{{ form_errors(form.first_name) }}
+				{{ form_widget(form.first_name) }}
+			<br/>
+		</div>
+
+		<div class="input_form_register">
+				{{ form_label(form.last_name) }}
+			<br/>
+				{{ form_errors(form.last_name) }}
+				{{ form_widget(form.last_name) }}
+			<br/>
+		</div>
+
+		<div class="input_form_register">
+				{{ form_label(form.email) }}
+			<br/>
+				{{ form_errors(form.email) }}
+				{{ form_widget(form.email) }}
+			<br/>
+		</div>
+
+		<div class="input_form_register">
+				{{ form_label(form.gender) }}
+			<br/>
+				{{ form_errors(form.gender) }}
+				{{ form_widget(form.gender) }}
+			<br/>
+		</div>
+
+		<div class="input_form_register">
+				{{ form_label(form.born_date) }}
+			<br/>
+				{{ form_errors(form.born_date) }}
+				{{ form_widget(form.born_date) }}
+			<br/>
+		</div>
+
+		<div class="input_form_register">
+				{{ form_label(form.phone_number) }}
+			<br/>
+				{{ form_errors(form.phone_number) }}
+				{{ form_widget(form.phone_number) }}
+			<br/>
+		</div>
+
+		<div class="input_form_register">
+				{{ form_label(form.current_password) }}
+			<br/>
+				{{ form_errors(form.current_password) }}
+				{{ form_widget(form.current_password) }}
+			<br/>
+		</div>
+				{{ form_rest(form) }}
+
+	        <input type="submit" class="ppe_submit" value="MODIFIER" />
+
+		</form>
+	{{ form_end(form)}}
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.date').prop('type', 'text').datepicker({
+		beforeShow: function(input, inst)
+		{
+			inst.dpDiv.css({marginTop: -input.offsetHeight - 100 + 'px', marginLeft: input.offsetWidth + 120 + 'px'});	
+			$('#ui-datepicker-div').addClass('ll-skin-melon');
+		},
+		changeMonth: true,
+    	changeYear: true,
+    	yearRange: "1935:2015",
+    	dateFormat: 'yy-mm-dd',
+    	regional: 'fr'
+    });
+});
+</script>
