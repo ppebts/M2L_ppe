@@ -1,6 +1,19 @@
 {# On étend notre layout #}
 {% extends "PPEM2LBundle:Default:layout.html.twig" %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/ppeuser/css/login.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('bundles/ppeuser/css/register.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('bundles/ppeuser/css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/ppeuser/css/melon.datepicker.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+      <script type="text/javascript" src="{{ asset('bundles/ppem2l/js/jquery.js') }}"></script>
+      {% javascripts '@PPEUserBundle/Resources/public/js/*' %}
+      <script type="text/javascript" src="{{ asset('bundles/ppeuser/js/jquery-ui.min.js') }}"></script>
+    {% endjavascripts %}
+{% endblock %}
 {# Dans notre layout, il faut définir le block body #}
 {% block body %}
 

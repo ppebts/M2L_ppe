@@ -12,17 +12,18 @@ h1, h2, h3, th{font-family: 'Lato'; font-weight: 700}
 a{text-decoration: none}
 
 
-#contact{
-
-	margin-top: 10% ;
-	margin-bottom:;
+#contact{ 
+	margin-top: calc(25% - 190px);
+	margin-top: -webkit-calc(25% - 190px);
+	margin-top: -moz-calc(25% - 190px);
+	margin-top: -ms-calc(25% - 190px);
 	margin-right: auto ;
 	margin-left: auto ; 
 	width: 500px;
 	text-align: center;
 	background-color: #fff;
 	font-family: 'Lato';
-	height: 300px;
+	height: 330px;
 }
 
 #contact span{
@@ -31,7 +32,8 @@ a{text-decoration: none}
 	width:100%;
 	display: block;
 	text-align: center; 
-	height: 25px;
+	height: 45px;
+	line-height: 45px;
 	color:#fff;
 }
 
@@ -60,6 +62,11 @@ a{text-decoration: none}
 #contact input{
 	background-color:#e1e1e1;
 	border:none; 
+	height: 25px;
+}
+
+#contact form{
+	padding: 10px 0 10px 0;
 }
 
 }
