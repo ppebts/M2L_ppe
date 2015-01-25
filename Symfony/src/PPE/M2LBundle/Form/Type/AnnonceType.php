@@ -2,12 +2,14 @@
 
 namespace PPE\M2LBundle\Form\Type;
 
+use PPE\UserBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AnnonceType extends AbstractType
 {
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -19,7 +21,6 @@ class AnnonceType extends AbstractType
             ->add('description', 'textarea')
             ->add('image', 'text')
             ->add('prix', 'text')
-            ->add('publier', 'submit')
             ->getForm();
     }
 

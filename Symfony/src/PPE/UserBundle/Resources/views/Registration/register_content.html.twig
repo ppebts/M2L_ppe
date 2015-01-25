@@ -2,12 +2,12 @@
 
 <div id="inscription">
 	
-	<span>INSCRIPTION</span>
+	<span>INSCRIVEZ-VOUS !</span>
 
 	{{ form_start(form) }}
 		<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.email, "Email", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.email) }}
@@ -15,7 +15,7 @@
 			<br/>
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.plainPassword.first, "Mot de passe", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.plainPassword.first) }}
@@ -23,7 +23,7 @@
 			<br/>
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.plainPassword.second, "Vérificaton", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.plainPassword.second) }}
@@ -31,7 +31,7 @@
 			<br/>
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.first_name, "Prénom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.first_name) }}
@@ -39,7 +39,7 @@
 			<br/>
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.last_name, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.last_name) }}
@@ -47,14 +47,14 @@
 			<br/>
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.born_date, "Date de naissance", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.born_date) }}
 			{{ form_widget(form.born_date, {'label_attr': {'class': 'from-control'}}) }}
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.phone_number, "Téléphone", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			{{ form_errors(form.phone_number) }}
@@ -62,7 +62,7 @@
 			<br/>
 		</div>
 
-		<div class="input_form">
+		<div class="input_form_register">
 			{{ form_label(form.gender, "Civilité", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
 			<div id="form_civilite">
@@ -73,7 +73,7 @@
 		</div>
 				{{ form_rest(form) }}
 
-	    <input type="submit" id="inscription_submit" value="{{ 'registration.submit'|trans }}" />
+	    <input type="submit" id="inscription_submit" value="ENREGISTRER" />
 
 		</form>
 	{{ form_end(form)}}
