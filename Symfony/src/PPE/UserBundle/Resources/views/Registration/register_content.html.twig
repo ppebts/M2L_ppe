@@ -1,0 +1,95 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div id="inscription">
+	
+	<span>INSCRIPTION</span>
+
+	{{ form_start(form) }}
+		<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+
+		<div class="input_form">
+			{{ form_label(form.email, "Email", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.email) }}
+			{{ form_widget(form.email, {'label_attr': {'class': 'from-control'}}) }}
+			<br/>
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.plainPassword.first, "Mot de passe", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.plainPassword.first) }}
+			{{ form_widget(form.plainPassword.first, {'label_attr': {'class': 'from-control'}}) }}
+			<br/>
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.plainPassword.second, "Vérificaton", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.plainPassword.second) }}
+			{{ form_widget(form.plainPassword.second, {'label_attr': {'class': 'from-control'}}) }}
+			<br/>
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.first_name, "Prénom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.first_name) }}
+			{{ form_widget(form.first_name, {'label_attr': {'class': 'from-control'}}) }}
+			<br/>
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.last_name, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.last_name) }}
+			{{ form_widget(form.last_name, {'label_attr': {'class': 'from-control'}}) }}
+			<br/>
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.born_date, "Date de naissance", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.born_date) }}
+			{{ form_widget(form.born_date, {'label_attr': {'class': 'from-control'}}) }}
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.phone_number, "Téléphone", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			{{ form_errors(form.phone_number) }}
+			{{ form_widget(form.phone_number, {'label_attr': {'class': 'from-control'}}) }}
+			<br/>
+		</div>
+
+		<div class="input_form">
+			{{ form_label(form.gender, "Civilité", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+			<br/>
+			<div id="form_civilite">
+				{{ form_errors(form.gender) }}
+				{{ form_widget(form.gender, {'label_attr': {'class': 'from-control'}}) }}
+				<br/>
+			</div>
+		</div>
+				{{ form_rest(form) }}
+
+	    <input type="submit" id="inscription_submit" value="{{ 'registration.submit'|trans }}" />
+
+		</form>
+	{{ form_end(form)}}
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.date').prop('type', 'text').datepicker({
+		beforeShow: function(input, inst)
+		{
+			inst.dpDiv.css({marginTop: -input.offsetHeight - 85 + 'px', marginLeft: input.offsetWidth + 150 + 'px'});	
+			$('#ui-datepicker-div').addClass('ll-skin-melon');
+		},
+		changeMonth: true,
+    	changeYear: true,
+    	yearRange: "1935:2015",
+    	dateFormat: 'yy-mm-dd'
+    });
+});
+</script>
