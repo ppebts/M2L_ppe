@@ -21,7 +21,7 @@ class User extends BaseUser
   protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="PPE\M2LBundle\Entity\Annonce", mappedBy="utilisateur_id")
+     * @ORM\OneToMany(targetEntity="PPE\M2LBundle\Entity\Annonce", mappedBy="utilisateur_id", cascade={"remove"})
      */
     protected $annonces;
 
@@ -192,6 +192,9 @@ class User extends BaseUser
     public function __construct()
     {
         $this->annonces = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct();
+        // your own logic
+        $this->roles = array('ROLE_USER');
     }
 
     /**

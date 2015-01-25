@@ -34,7 +34,7 @@ class RegistrationFormType extends AbstractType
                                                 'expanded'  => false,
                                                 'multiple'  => false,
                                                 'empty_value'  => false,
-                                                ));    
+                                                ));
     }
 
     public function getParent()

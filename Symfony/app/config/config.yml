@@ -85,3 +85,6 @@ fos_user:
     registration:
         form:
             type: ppe_user_registration
+    profile:
+        form:
+            type: ppe_user_profile

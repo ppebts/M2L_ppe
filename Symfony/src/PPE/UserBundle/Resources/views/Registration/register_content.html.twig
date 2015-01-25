@@ -2,7 +2,7 @@
 
 <div id="inscription">
 	
-	<span>INSCRIVEZ-VOUS !</span>
+	<div class="titre">INSCRIVEZ-VOUS !</div>
 
 	{{ form_start(form) }}
 		<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
@@ -83,7 +83,7 @@ $(document).ready(function(){
 	$('.date').prop('type', 'text').datepicker({
 		beforeShow: function(input, inst)
 		{
-			inst.dpDiv.css({marginTop: -input.offsetHeight - 105 + 'px', marginLeft: input.offsetWidth + 130 + 'px'});	
+			inst.dpDiv.css({marginTop: -input.offsetHeight + 207.1 + 'px', marginLeft: input.offsetWidth + 120 + 'px'});	
 			$('#ui-datepicker-div').addClass('ll-skin-melon');
 		},
 		changeMonth: true,

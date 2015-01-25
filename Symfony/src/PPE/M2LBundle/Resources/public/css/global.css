@@ -3,3 +3,4 @@ h1, h2, h3, th{font-family: 'Lato'; font-weight: 700}
 p, a, td{font-family: 'Lato'; font-weight: 300}
 .block_shadow{box-shadow: 1px 1px 10px #b5b5b5;}
 a{text-decoration: none}
+.titre{line-height: 45px;height:45px;font-family: 'Lato'; font-weight: 700;background-color:#1abc9c;width:100%;display: block;text-align: center;color:#fff;}
