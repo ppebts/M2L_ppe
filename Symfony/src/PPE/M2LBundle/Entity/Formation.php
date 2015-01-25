@@ -1,7 +1,7 @@
 <?php
 
 namespace PPE\M2LBundle\Entity;
-
+use PPE\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -69,6 +69,11 @@ class Formation
      * @ORM\Column(name="nbparticipants", type="integer")
      */
     private $nbparticipants;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="PPE\UserBundle\Entity\User", cascade={"persist"})
+     */
+    private $utilisateurs;
 
     /**
      * Get id
@@ -239,5 +244,68 @@ class Formation
         $this->nbparticipants = $nbparticipants;
     
         return $this;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->utilisateurs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add utilisateurs
+     *
+     * @param \PPE\UserBundle\Entity\User $utilisateurs
+     * @return Formation
+     */
+    public function addUser(\PPE\UserBundle\Entity\User $user)
+    {
+        $this->utilisateurs[] = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Remove utilisateurs
+     *
+     * @param \PPE\UserBundle\Entity\User $utilisateurs
+     */
+    public function removeUser(\PPE\UserBundle\Entity\User $user)
+    {
+        $this->utilisateurs->removeElement($user);
+    }
+
+    /**
+     * Get utilisateurs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUtilisateurs()
+    {
+        return $this->utilisateurs;
+    }
+
+    /**
+     * Add utilisateurs
+     *
+     * @param \PPE\UserBundle\Entity\User $utilisateurs
+     * @return Formation
+     */
+    public function addUtilisateur(\PPE\UserBundle\Entity\User $utilisateurs)
+    {
+        $this->utilisateurs[] = $utilisateurs;
+    
+        return $this;
+    }
+
+    /**
+     * Remove utilisateurs
+     *
+     * @param \PPE\UserBundle\Entity\User $utilisateurs
+     */
+    public function removeUtilisateur(\PPE\UserBundle\Entity\User $utilisateurs)
+    {
+        $this->utilisateurs->removeElement($utilisateurs);
     }
 }

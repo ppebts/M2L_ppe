@@ -27,11 +27,11 @@ class SosPartenaire
      */
     private $sport;
 
-//    /**
-//     * @ORM\ManyToOne(targetEntity="PPE\UserBundle\Entity\Utilisateur")
-//     * @ORM\JoinColumn(nullable=false)
-//     */
-//    private $utilisateurSos;
+    /**
+    * @ORM\ManyToOne(targetEntity="PPE\UserBundle\Entity\User")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $utilisateur;
 
     /**
      * @var string
@@ -239,5 +239,28 @@ class SosPartenaire
     public function getSport()
     {
         return $this->sport;
+    }
+
+    /**
+     * Set utilisateur
+     *
+     * @param \PPE\UserBundle\Entity\User $utilisateur
+     * @return SosPartenaire
+     */
+    public function setUtilisateur(\PPE\UserBundle\Entity\User $utilisateur)
+    {
+        $this->utilisateur = $utilisateur;
+    
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \PPE\UserBundle\Entity\User 
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
     }
 }

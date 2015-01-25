@@ -4,6 +4,7 @@ namespace PPE\M2LBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use PPE\M2LBundle\Entity\Annonce;
+use PPE\UserBundle\Entity\User;
 use PPE\M2LBundle\Form\Type\AnnonceType;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;

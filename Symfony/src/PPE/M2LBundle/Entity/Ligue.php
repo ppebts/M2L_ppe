@@ -182,4 +182,3 @@ class Ligue
         return $this->sport;
     }
 }
-  

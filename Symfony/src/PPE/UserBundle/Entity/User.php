@@ -2,6 +2,8 @@
 
 namespace PPE\UserBundle\Entity;
 
+use PPE\M2LBundle\Entity\Annonce;
+use PPE\M2LBundle\Entity\Formation;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -19,58 +21,39 @@ class User extends BaseUser
   protected $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="PPE\M2LBundle\Entity\Annonce", mappedBy="utilisateur_id")
+     */
+    protected $annonces;
+
+    /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank(message="Merci de renseigner votre prénom.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=3,
-     *     max="255",
-     *     minMessage="The name is too short.",
-     *     maxMessage="The name is too long.",
-     *     groups={"Registration", "Profile"}
-     * )
      */
     protected $first_name;
  
     /**
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank(message="Merci de renseigner votre nom.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=3,
-     *     max="255",
-     *     minMessage="The name is too short.",
-     *     maxMessage="The name is too long.",
-     *     groups={"Registration", "Profile"}
-     * )
      */
     protected $last_name;
 
     /**
      * @ORM\Column(type="string", length=2)
      *
-     * @Assert\NotBlank(message="Choisir votre civilite", groups={"Registration", "Profile"})
      */
     protected $gender;
 
     /**
      * @ORM\Column(type="string", length=10)
      *
-     * @Assert\NotBlank(message="Merci de renseigner votre numéro de téléphone.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=5,
-     *     max="15",
-     *     minMessage="The number is too short.",
-     *     maxMessage="The number is too long.",
-     *     groups={"Registration", "Profile"}
-     * )
+     *
      */
     protected $phone_number;
 
     /**
      * @ORM\Column(type="date")
      *
-     * @Assert\NotBlank(message="Merci de renseigner votre date de naissance.", groups={"Registration", "Profile"})
+     *
      */
     protected $born_date;
 
@@ -203,5 +186,44 @@ class User extends BaseUser
         parent::setEmail($email);
         $this->setUsername($email);
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->annonces = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add annonces
+     *
+     * @param \PPE\M2LBundle\Entity\Annonce $annonces
+     * @return User
+     */
+    public function addAnnonce(\PPE\M2LBundle\Entity\Annonce $annonces)
+    {
+        $this->annonces[] = $annonces;
+    
+        return $this;
+    }
+
+    /**
+     * Remove annonces
+     *
+     * @param \PPE\M2LBundle\Entity\Annonce $annonces
+     */
+    public function removeAnnonce(\PPE\M2LBundle\Entity\Annonce $annonces)
+    {
+        $this->annonces->removeElement($annonces);
+    }
+
+    /**
+     * Get annonces
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAnnonces()
+    {
+        return $this->annonces;
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace PPE\M2LBundle\Entity;
-
+use PPE\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,11 +21,11 @@ class Annonce
      */
     private $id;
 
-//    /**
-//     * @ORM\ManyToOne(targetEntity="PPE\UserBundle\Entity\Utilisateur")
-//     * @ORM\JoinColumn(nullable=false)
-//     */
-//    private $utilisateurAnonce;
+    /**
+     * @ORM\ManyToOne(targetEntity="PPE\UserBundle\Entity\User", inversedBy="annonces")
+     * @ORM\JoinColumn(name="utilisateur_id", referencedColumnName="id")
+     */
+    private $utilisateur;
 
     /**
      * @var string
@@ -159,25 +159,25 @@ class Annonce
     }
 
     /**
-     * Set utilisateurAnonce
+     * Set utilisateur
      *
-     * @param \PPE\M2LBundle\Entity\Utilisateur $utilisateurAnonce
+     * @param \PPE\UserBundle\Entity\User $utilisateur
      * @return Annonce
      */
-    public function setUtilisateurAnonce(\PPE\M2LBundle\Entity\Utilisateur $utilisateurAnonce)
+    public function setUtilisateur(\PPE\UserBundle\Entity\User $utilisateur)
     {
-        $this->utilisateurAnonce = $utilisateurAnonce;
+        $this->utilisateur = $utilisateur;
     
         return $this;
     }
 
     /**
-     * Get utilisateurAnonce
+     * Get utilisateur
      *
-     * @return \PPE\M2LBundle\Entity\Utilisateur 
+     * @return \PPE\UserBundle\Entity\User 
      */
-    public function getUtilisateurAnonce()
+    public function getUtilisateur()
     {
-        return $this->utilisateurAnonce;
+        return $this->utilisateur;
     }
 }

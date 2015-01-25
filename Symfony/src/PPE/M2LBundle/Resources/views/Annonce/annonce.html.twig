@@ -87,7 +87,6 @@
 	{% set i = 1 %}
 	{% for annonce in annonceList %}
 	    <div class="annonce" id="{{ i }}">
-
 			<div class="block_shadow annonce_img"><img src="{{ asset('bundles/ppem2l/img/' ~ annonce.image) }}" class="img-responsive img_annonce" /></div>
 
 	    	<div class="annonce_texte block_shadow">
@@ -104,12 +103,14 @@
 		</div><br/>
 
     	<div id="annonce_fancybox_{{ i }}" class="annonce_fancybox" style="display:none">
-    		<div class="texte_fancybox">				
-				<h2>{{ annonce.utilisateurAnonce.prenom|upper }} {{ annonce.utilisateurAnonce.nom|upper }}</h2>
+    		<div class="texte_fancybox">
+
+				<h2>{{ annonce.utilisateur.firstName|upper }} {{ annonce.utilisateur.lastName|upper }}</h2>
 				<img src="{{ asset('bundles/ppem2l/img/phone.png') }}" style="float:left;margin-left:4px" alt="phone"/>
-	    		<p>{{ annonce.utilisateurAnonce.telephone }}</p>
+	    		<p>{{ annonce.utilisateur.phoneNumber }}</p>
 	    	 	<img src="{{ asset('bundles/ppem2l/img/mail.png') }}" style="float:left" alt="mail"/>
-		    	<a href="mailto:{{ annonce.utilisateurAnonce.email }}"><p>{{ annonce.utilisateurAnonce.email }}</p></a>
+		    	<a href="mailto:{{ annonce.utilisateur.email }}"><p>{{ annonce.utilisateur.email }}</p></a>
+
     		</div>
   		</div>
 	  	{% set i = i + 1 %}
