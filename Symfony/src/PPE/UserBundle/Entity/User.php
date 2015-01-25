@@ -54,7 +54,7 @@ class User extends BaseUser
     protected $gender;
 
     /**
-     * @ORM\Column(type="integer", length=10)
+     * @ORM\Column(type="string", length=10)
      *
      * @Assert\NotBlank(message="Merci de renseigner votre numéro de téléphone.", groups={"Registration", "Profile"})
      * @Assert\Length(
