@@ -257,7 +257,7 @@ class AdminController extends Controller
                                                 /* Fin Formations */
                                                 /* Ligues */
 
-    public function getliguesAction()
+    public function getliguesAction(Request $request)
      {
         /* Récupère toutes les ligues */
 
@@ -266,8 +266,18 @@ class AdminController extends Controller
         $repo = $em->getRepository("PPEM2LBundle:Ligue");
         $ligueList = $repo->findAll();
 
+        $ligue = new Ligue();
+        
+        $form = $this->get('form.factory')->create(new LigueType(),$ligue);
+        $form->handleRequest($request);
+        if ( $form->isValid()){
+            $doctrine = $this->getDoctrine();
+            $em = $doctrine->getManager();
+            $em->persist($ligue);
+            $em->flush();
+        }
 
-         return $this->render('PPEM2LBundle:Ligue:listeligue.html.twig', array("ligueList"=>$ligueList));
+         return $this->render('PPEM2LBundle:Ligue:listeligue.html.twig', array("ligueList"=>$ligueList, "formAdd" => $form->createView(),));
      }
     public function addligueAction(Request $request)
     {
@@ -280,8 +290,10 @@ class AdminController extends Controller
             $em = $doctrine->getManager();
             $em->persist($ligue);
             $em->flush();
+            return $this->redirect($this->generateUrl('ppe_m2l_back_liste_ligues'));
+
         }
-        return $this->render('PPEM2LBundle:Ligue:addligue.html.twig', array("form"=>$form->createView(),));
+        return $this->render('PPEM2LBundle:Ligue:listeligue.html.twig', array("form"=>$form->createView(),));
     }
     public function editligueAction($id,Request $request)
      {
@@ -304,7 +316,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($ligue);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_ligue', array('id'=> $ligue->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_ligues', array('id'=> $ligue->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));

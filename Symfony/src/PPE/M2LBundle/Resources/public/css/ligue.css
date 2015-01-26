@@ -10,6 +10,14 @@
 #ligue_content #ligue #ligue_text {padding-right: 20px;}
 #ligue_content #ligue #ligue_text p{text-align: justify;}
 
-.list_ligues{float: left;height: 300px;margin-top: calc(25% - 290px);margin-top: -webkit-calc(25% - 290px);margin-top: -moz-calc(25% - 290px)margin-top: -ms-calc(25% - 290px);margin-left: auto;margin-right: auto;width: 400px;text-align: center; background: #fff}
+.list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+.list_ligues table{border: none; width: 100%}
+.list_ligues thead{background: #1ABC9C;}
+.list_ligues table thead th{border: none;color: #fff}
+.list_ligues table tbody td{border: none;padding: 10px;text-align: center}
 
+.add_ligue span{cursor: pointer}
+.add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 495px}
+#add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
 }

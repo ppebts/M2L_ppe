@@ -1,24 +1,21 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
-Liste des ligues
-
 <div class="list_ligues">
-	<a href="{{ path( 'ppe_m2l_back_add_ligues' ) }}">Ajouter</a>
+	<span class="titre_back">LIGUES INSCRITES</span>
 	<table border="1" cellspacing="0">
 		<thead>
-
-			
-				<th>Id</th>
+				<th width="5px">Id</th>
 				<th>Nom</th>
 				<th>Description</th>
 				<th>URL</th>
 				<th>Image</th>
 				<th>Sport</th>
-
+				<th colspan="2">Edition</th>
 		</thead>
-	{% for ligue in ligueList %}
 		<tbody>
+	{% for ligue in ligueList %}
+
 
 			<tr>
 
@@ -30,14 +27,80 @@ Liste des ligues
 				<td>{{ ligue.sport }}</td>
 
 				
-				<td><a href="{{ path( 'ppe_m2l_back_ligueedit',{'id': ligue.id}   ) }}">Editer</a></td>
-				<td><a href="">Supprimer</a></td>
+				<td><a href="{{ path( 'ppe_m2l_back_edit_ligues',{'id': ligue.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
+				<td><a href="#"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
 
 			</tr>
 
-		</tbody>
+		
 	{% endfor %}
-
+		</tbody>
 	</table>
 </div>
+
+<div id="add_ligue" title="AJOUTER UNE LIGUE">+</div>
+<div class="add_ligue">
+	<span class="titre_back">AJOUTER UNE LIGUE</span>
+		{{ form_start(formAdd) }}
+				<div class="input_form_register">
+					{{ form_label(formAdd.nom, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAdd.nom) }}
+					{{ form_widget(formAdd.nom, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAdd.description, "Description", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAdd.description) }}
+					{{ form_widget(formAdd.description, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAdd.url, "URL", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAdd.url) }}
+					{{ form_widget(formAdd.url, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAdd.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAdd.image) }}
+					{{ form_widget(formAdd.image, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAdd.sport, "Sport", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAdd.sport) }}
+					{{ form_widget(formAdd.sport, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+					{{ form_widget(formAdd.publier) }}
+
+		{{ form_end(formAdd) }}
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('#add_ligue').click(function(){
+	$('.add_ligue').animate({right: "0px"},300);
+	$('#add_ligue').animate({right: "-300px"},300);
+});
+$('.titre_back').click(function(){
+	$('.add_ligue').animate({right: "-300px"},300);
+	$('#add_ligue').animate({right: "0px"},300);
+});
+
+});
+
+</script>
 {% endblock %}
