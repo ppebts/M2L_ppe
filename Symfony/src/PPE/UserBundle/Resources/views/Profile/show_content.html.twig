@@ -36,8 +36,25 @@
 			<td class="left">Anniversaire :</td>
 			<td class="right">{{ user.bornDate|date('d-M-Y') }}</td>
 		</tr>
+	<tr class="spacer"></tr>
+		<tr>
+			<td class="left">Authorisations:</td>
+			{% if user.roles("USER_ADMIN") %}
+			<td class="right">Administrateur</td>
+			{% elseif user.roles("USER_USER") %}
+			<td class="right">Utilisateur</td>
+			{% endif %}
+
+		</tr>
 	</table>
-	<br/>
-	<br/>
+
 		<a href="{{ path( 'fos_user_profile_edit' ) }}">Modifier mon compte</a>
+</div>
+<div id="admin_panel">
+	<ul>
+		<li><a href="">Utilisateurs</a></li>
+		<li><a href="">Actualités</a></li>
+		<li><a href="">Annonces</a></li>
+		<li><a href="{{ path('ppe_m2l_back_list_ligues') }}">Ligues</a></li>
+	</ul>
 </div>

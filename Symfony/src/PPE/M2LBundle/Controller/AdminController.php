@@ -191,7 +191,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($annonce);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_annonceedit', array('id'=> $annonce->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_annonce', array('id'=> $annonce->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
@@ -248,7 +248,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($formation);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_formationedit', array('id'=> $formation->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_formation', array('id'=> $formation->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView()));
@@ -304,7 +304,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($ligue);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_ligueedit', array('id'=> $ligue->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_ligue', array('id'=> $ligue->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));

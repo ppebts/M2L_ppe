@@ -1,34 +1,43 @@
-
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
 Liste des ligues
 
-<a href="{{ path( 'ppe_m2l_back_ligues' ) }}">Ajouter</a>
-<table border="1" cellspacing="0">
-	<tr>
-			<th>Id</th>
-			<th>Nom</th>
-			<th>Description</th>
-			<th>URL</th>
-			<th>Image</th>
-			<th>Sport</th>
-
-	</tr>
-{% for ligue in ligueList %}
-	<tr>
-
-			<td>{{ ligue.id }}</td>
-			<td>{{ ligue.nom }}</td>
-			<td>{{ ligue.description }}</td>
-			<td>{{ ligue.url }}</td>
-			<td>{{ ligue.image }}</td>
-			<td>{{ ligue.sport }}</td>
+<div class="list_ligues">
+	<a href="{{ path( 'ppe_m2l_back_add_ligues' ) }}">Ajouter</a>
+	<table border="1" cellspacing="0">
+		<thead>
 
 			
-			<td><a href="{{ path( 'ppe_m2l_back_ligueedit',{'id': ligue.id}   ) }}">Editer</a></td>
-			<td><a href="">Supprimer</a></td>
-	</tr>
-{% endfor %}
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Description</th>
+				<th>URL</th>
+				<th>Image</th>
+				<th>Sport</th>
 
-</table>
+		</thead>
+	{% for ligue in ligueList %}
+		<tbody>
+
+			<tr>
+
+				<td>{{ ligue.id }}</td>
+				<td>{{ ligue.nom }}</td>
+				<td>{{ ligue.description }}</td>
+				<td>{{ ligue.url }}</td>
+				<td>{{ ligue.image }}</td>
+				<td>{{ ligue.sport }}</td>
+
+				
+				<td><a href="{{ path( 'ppe_m2l_back_ligueedit',{'id': ligue.id}   ) }}">Editer</a></td>
+				<td><a href="">Supprimer</a></td>
+
+			</tr>
+
+		</tbody>
+	{% endfor %}
+
+	</table>
+</div>
 {% endblock %}
