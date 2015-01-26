@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 14 Janvier 2015 à 15:56
+-- Généré le :  Lun 26 Janvier 2015 à 14:49
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -52,24 +52,14 @@ INSERT INTO `actualite` (`id`, `titre`, `contenu`, `image`) VALUES
 
 CREATE TABLE IF NOT EXISTS `annonce` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `utilisateur_id` int(11) NOT NULL,
   `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `prix` int(11) NOT NULL,
-  `utilisateurAnonce_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_39E8AA79DE504934` (`utilisateurAnonce_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
-
---
--- Contenu de la table `annonce`
---
-
-INSERT INTO `annonce` (`id`, `titre`, `description`, `image`, `prix`, `utilisateurAnonce_id`) VALUES
-(1, 'annonce', 'annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf annonce de ouf ', 'sandwich', 50, 1),
-(2, 'velo', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'velo.jpg', 150, 2),
-(3, 'raquette', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'raquette.jpg', 100, 2),
-(4, 'ballon', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'ballon.jpg', 50, 7);
+  KEY `IDX_39E8AA79FB88E14F` (`utilisateur_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -98,6 +88,20 @@ INSERT INTO `formation` (`id`, `nom`, `description`, `duree`, `debut`, `lieu`, `
 (2, 'word', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 41201, '2015-01-20 00:00:00', 'b4', 'word.png', 0),
 (3, 'excel', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 50401, '2015-01-20 00:00:00', 'c3', 'excel.png', 0),
 (4, 'powerpoint', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 50103, '2015-01-20 00:00:00', 'a3', 'powerpoint.png', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `formation_user`
+--
+
+CREATE TABLE IF NOT EXISTS `formation_user` (
+  `formation_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`formation_id`,`user_id`),
+  KEY `IDX_DA4C33095200282E` (`formation_id`),
+  KEY `IDX_DA4C3309A76ED395` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -161,28 +165,17 @@ INSERT INTO `ligue` (`id`, `nom`, `description`, `url`, `image`, `sport`) VALUES
 
 CREATE TABLE IF NOT EXISTS `sospartenaire` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sport_id` int(11) NOT NULL,
+  `utilisateur_id` int(11) NOT NULL,
   `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci NOT NULL,
   `date` date NOT NULL,
   `heure` time NOT NULL,
   `niveau` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `utilisateurSos_id` int(11) NOT NULL,
-  `sport_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_181A12638CCD9C74` (`utilisateurSos_id`),
-  KEY `IDX_181A1263AC78BCF8` (`sport_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
-
---
--- Contenu de la table `sospartenaire`
---
-
-INSERT INTO `sospartenaire` (`id`, `titre`, `description`, `date`, `heure`, `niveau`, `utilisateurSos_id`, `sport_id`) VALUES
-(6, 'sport', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2015-01-08', '12:30:00', 'expert', 1, 1),
-(7, 'sport', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2015-01-15', '13:30:00', 'naze', 1, 1),
-(8, 'sport', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2015-01-15', '14:00:00', 'expert', 6, 3),
-(9, 'sport', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2015-01-15', '15:50:00', 'bon', 7, 4),
-(10, 'sport', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2015-01-15', '11:00:00', 'bon', 8, 5);
+  KEY `IDX_181A1263AC78BCF8` (`sport_id`),
+  KEY `IDX_181A1263FB88E14F` (`utilisateur_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -194,91 +187,48 @@ CREATE TABLE IF NOT EXISTS `sport` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
-
---
--- Contenu de la table `sport`
---
-
-INSERT INTO `sport` (`id`, `nom`) VALUES
-(1, 'foot'),
-(2, 'tennis'),
-(3, 'ski'),
-(4, 'snowboard'),
-(5, 'curling'),
-(6, 'rugby'),
-(7, 'athlétisme'),
-(8, 'cyclisme'),
-(9, 'basket'),
-(10, 'baseball'),
-(11, 'skate');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `typeutilisateur`
+-- Structure de la table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `typeutilisateur` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `libele` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
-
---
--- Contenu de la table `typeutilisateur`
---
-
-INSERT INTO `typeutilisateur` (`id`, `libele`) VALUES
-(1, 'admin'),
-(2, 'ligue'),
-(3, 'salarié');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `utilisateur`
---
-
-CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `prenom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `civilite` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `mdp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `telephone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date_naissance` date NOT NULL,
-  `utilisateurType_id` int(11) NOT NULL,
+  `email_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `locked` tinyint(1) NOT NULL,
+  `expired` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+  `credentials_expired` tinyint(1) NOT NULL,
+  `credentials_expire_at` datetime DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `phone_number` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `born_date` date NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_9B80EC64926F6807` (`utilisateurType_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+  UNIQUE KEY `UNIQ_2DA1797792FC23A8` (`username_canonical`),
+  UNIQUE KEY `UNIQ_2DA17977A0D96FBF` (`email_canonical`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Contenu de la table `utilisateur`
+-- Contenu de la table `user`
 --
 
-INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `civilite`, `email`, `mdp`, `telephone`, `date_naissance`, `utilisateurType_id`) VALUES
-(1, 'magne', 'benjamin', 'monsieur', 'bmagne@ppe.com', 'azeaze', '0675070608', '2014-12-09', 1),
-(2, 'Hollande', 'François', 'monsieur', 'francoishollande@tocard.com', 'azeaze', '0674455344', '2014-12-12', 3),
-(6, 'sebastien', 'patrcik', 'mr', 'patrick@seb.com', 'azeaze', '0607050405', '2015-01-14', 3),
-(7, 'princet', 'alexis', 'mr', 'alexis.princet@y-nov.com', 'azeaze', '0506040506', '2015-01-14', 1),
-(8, 'mauray', 'florian', 'mr', 'florian.moray@y-nov.com', 'azeaze', '5040503040', '2015-01-22', 1),
-(9, 'durand', 'joffrey', 'mr', 'joffrey.durand@y-nov.com', 'azeaze', '0506040503', '2015-01-07', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `utilisateur_formation`
---
-
-CREATE TABLE IF NOT EXISTS `utilisateur_formation` (
-  `utilisateur_id` int(11) NOT NULL,
-  `formation_id` int(11) NOT NULL,
-  PRIMARY KEY (`utilisateur_id`,`formation_id`),
-  KEY `IDX_20EED493FB88E14F` (`utilisateur_id`),
-  KEY `IDX_20EED4935200282E` (`formation_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`, `first_name`, `last_name`, `gender`, `phone_number`, `born_date`) VALUES
+(1, 'alexis.princet@gmail.com', 'alexis.princet@gmail.com', 'alexis.princet@gmail.com', 'alexis.princet@gmail.com', 1, '660p549tafk8w0c00ko0c0cksw8s0c4', 'DyWtKUkRzw7aSz1aBR9x7PfDM4Ls7U9VHmuoEKXTNsw5k8r5MBj9tjh0TEiG6V8nqT3hfpRYjWTgDP3Ojq4mUw==', '2015-01-26 12:25:34', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:9:"ROLE_USER";}', 0, NULL, 'Alexis', 'PRINCET', 'm', '+336893540', '2015-01-01');
 
 --
 -- Contraintes pour les tables exportées
@@ -288,27 +238,21 @@ CREATE TABLE IF NOT EXISTS `utilisateur_formation` (
 -- Contraintes pour la table `annonce`
 --
 ALTER TABLE `annonce`
-  ADD CONSTRAINT `FK_39E8AA79DE504934` FOREIGN KEY (`utilisateurAnonce_id`) REFERENCES `utilisateur` (`id`);
+  ADD CONSTRAINT `FK_39E8AA79FB88E14F` FOREIGN KEY (`utilisateur_id`) REFERENCES `user` (`id`);
+
+--
+-- Contraintes pour la table `formation_user`
+--
+ALTER TABLE `formation_user`
+  ADD CONSTRAINT `FK_DA4C3309A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_DA4C33095200282E` FOREIGN KEY (`formation_id`) REFERENCES `formation` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `sospartenaire`
 --
 ALTER TABLE `sospartenaire`
-  ADD CONSTRAINT `FK_181A12638CCD9C74` FOREIGN KEY (`utilisateurSos_id`) REFERENCES `utilisateur` (`id`),
+  ADD CONSTRAINT `FK_181A1263FB88E14F` FOREIGN KEY (`utilisateur_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `FK_181A1263AC78BCF8` FOREIGN KEY (`sport_id`) REFERENCES `sport` (`id`);
-
---
--- Contraintes pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD CONSTRAINT `FK_9B80EC64926F6807` FOREIGN KEY (`utilisateurType_id`) REFERENCES `typeutilisateur` (`id`);
-
---
--- Contraintes pour la table `utilisateur_formation`
---
-ALTER TABLE `utilisateur_formation`
-  ADD CONSTRAINT `FK_20EED4935200282E` FOREIGN KEY (`formation_id`) REFERENCES `formation` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_20EED493FB88E14F` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
