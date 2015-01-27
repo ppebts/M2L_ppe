@@ -2,6 +2,7 @@
 
 namespace PPE\M2LBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -14,12 +15,26 @@ class LigueType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
           $builder
             ->add('nom', 'text')
             ->add('description', 'textarea')
             ->add('url', 'text')
             ->add('image', 'text')
             ->add('sport', 'text')
+            ->add('userLigue', 'entity', array(
+                                                'class' => 'PPEUserBundle:User',
+                                                'property' => 'username',
+                                                 'query_builder' => function(EntityRepository $er) {
+                                                    return $er->createQueryBuilder('u')
+                                                        ->where('u.role = "ROLE_USER" ')
+                                                        ->where('u.roles LIKE :roles')
+                                                        ->setParameter('roles', '%ROLE_LIGUE%')
+                                                        ->orderBy('u.first_name', 'ASC');
+                                                        },
+                                                ))
+                                                        
+                                                         
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();
     }

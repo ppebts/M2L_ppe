@@ -58,6 +58,11 @@ class User extends BaseUser
     protected $born_date;
 
     /**
+     * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\Ligue", mappedBy="userLigue")
+     */
+     private $ligue;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -228,5 +233,28 @@ class User extends BaseUser
     public function getAnnonces()
     {
         return $this->annonces;
+    }
+
+    /**
+     * Set ligue
+     *
+     * @param \PPE\M2LBundle\Entity\Ligue $ligue
+     * @return User
+     */
+    public function setLigue(\PPE\M2LBundle\Entity\Ligue $ligue = null)
+    {
+        $this->ligue = $ligue;
+    
+        return $this;
+    }
+
+    /**
+     * Get ligue
+     *
+     * @return \PPE\M2LBundle\Entity\Ligue 
+     */
+    public function getLigue()
+    {
+        return $this->ligue;
     }
 }

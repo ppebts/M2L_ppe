@@ -266,10 +266,12 @@ class AdminController extends Controller
         $repo = $em->getRepository("PPEM2LBundle:Ligue");
         $ligueList = $repo->findAll();
 
+
         $ligue = new Ligue();
-        
+
         $form = $this->get('form.factory')->create(new LigueType(),$ligue);
         $form->handleRequest($request);
+
         if ( $form->isValid()){
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
@@ -277,26 +279,8 @@ class AdminController extends Controller
             $em->flush();
             return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues'));
         }
-
          return $this->render('PPEM2LBundle:Ligue:listeligue.html.twig', array("ligueList"=>$ligueList, "formAdd" => $form->createView(),));
      }
-
-    // public function addligueAction(Request $request)
-    // {
-    //     $ligue = new Ligue();
-        
-    //     $form = $this->get('form.factory')->create(new LigueType(),$ligue);
-    //     $form->handleRequest($request);
-    //     if ( $form->isValid()){
-    //         $doctrine = $this->getDoctrine();
-    //         $em = $doctrine->getManager();
-    //         $em->persist($ligue);
-    //         $em->flush();
-    //         return $this->redirect($this->generateUrl('ppe_m2l_back_liste_ligues'));
-
-    //     }
-    //     return $this->render('PPEM2LBundle:Ligue:listeligue.html.twig', array("form"=>$form->createView(),));
-    // }
 
     public function editligueAction($id,Request $request)
      {
@@ -320,7 +304,6 @@ class AdminController extends Controller
                 $em->persist($ligue);
                 $em->flush();
                 return $this->redirect($this->generateUrl('ppe_m2l_back_edit_ligues', array('id'=> $ligue->getId())));
-
         }        
          return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));
      
@@ -331,5 +314,28 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Auth:adminPanel.html.twig', array());
 
     }
-                                                    /* Fin ligues */  
+
+    public function deleteligueAction($id)
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Ligue");
+        $ligue = $repo->find($id);
+
+        $em->remove($ligue);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array()));
+    }
+
+    public function maLigueAction()
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Ligue");
+        $ligue = $repo->find($id);
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array()));
+    }
+                                               /* Fin ligues */  
 }

@@ -6,7 +6,8 @@
 	<table border="1" cellspacing="0">
 		<thead>
 				<th width="5px">Id</th>
-				<th>Nom</th>
+				<th>Gérant</th>
+				<th>Ligue</th>
 				<th>Description</th>
 				<th>URL</th>
 				<th>Image</th>
@@ -18,8 +19,8 @@
 
 
 			<tr>
-
 				<td>{{ ligue.id }}</td>
+				<td>{{ ligue.userLigue.email }}</td>
 				<td>{{ ligue.nom }}</td>
 				<td>{{ ligue.description }}</td>
 				<td>{{ ligue.url }}</td>
@@ -28,7 +29,7 @@
 
 				
 				<td><a href="{{ path( 'ppe_m2l_back_edit_ligues',{'id': ligue.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
-				<td><a href="#"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
+				<td><a href="{{ path( 'ppe_m2l_back_delete_ligues',{'id': ligue.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
 
 			</tr>
 
@@ -42,11 +43,20 @@
 <div class="add_ligue">
 	<span class="titre_back">AJOUTER UNE LIGUE</span>
 		{{ form_start(formAdd) }}
+
 				<div class="input_form_register">
 					{{ form_label(formAdd.nom, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
 					{{ form_errors(formAdd.nom) }}
 					{{ form_widget(formAdd.nom, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAdd.userLigue, "Admin de la ligue", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAdd.userLigue) }}
+					{{ form_widget(formAdd.userLigue, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
 
@@ -91,14 +101,14 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-$('#add_ligue').click(function(){
-	$('.add_ligue').animate({right: "0px"},300);
-	$('#add_ligue').animate({right: "-300px"},300);
-});
-$('.titre_back').click(function(){
-	$('.add_ligue').animate({right: "-300px"},300);
-	$('#add_ligue').animate({right: "0px"},300);
-});
+	$('#add_ligue').click(function(){
+		$('.add_ligue').animate({right: "0px"},300);
+		$('#add_ligue').animate({right: "-300px"},300);
+	});
+	$('.titre_back').click(function(){
+		$('.add_ligue').animate({right: "-300px"},300);
+		$('#add_ligue').animate({right: "0px"},300);
+	});
 
 });
 

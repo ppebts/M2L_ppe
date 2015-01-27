@@ -93,9 +93,11 @@ ppe_m2l_back_list_ligues:
     path:    /admin/listligues
     defaults: { _controller: PPEM2LBundle:Admin:getligues}
 
-# ppe_m2l_back_add_ligues:
-#     path:    /admin/addligues
-#     defaults: { _controller: PPEM2LBundle:Admin:addligue}
+ppe_m2l_back_delete_ligues:
+    path:    /admin/deleteligue/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:deleteligue}
+    requirements:
+        id: \d+
 
 ppe_m2l_back_edit_ligues:
     path:    /admin/editligues/{id}
@@ -124,3 +126,7 @@ ppe_m2l_account:
 ppe_m2l_admin_panel:
     path:     /admin/
     defaults: { _controller: PPEM2LBundle:Admin:adminPanel }
+
+ppe_m2l_ligue_maligue:
+    path:    /maligue
+    defaults: { _controller: PPEM2LBundle:Admin:maLigue}

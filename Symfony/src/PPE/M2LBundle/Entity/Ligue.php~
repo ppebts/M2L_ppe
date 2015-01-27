@@ -187,27 +187,4 @@ class Ligue
     {
         return $this->sport;
     }
-
-    /**
-     * Set userLigue
-     *
-     * @param \PPE\UserBundle\Entity\User $userLigue
-     * @return Ligue
-     */
-    public function setUserLigue(\PPE\UserBundle\Entity\User $userLigue = null)
-    {
-        $this->userLigue = $userLigue;
-    
-        return $this;
-    }
-
-    /**
-     * Get userLigue
-     *
-     * @return \PPE\UserBundle\Entity\User 
-     */
-    public function getUserLigue()
-    {
-        return $this->userLigue;
-    }
 }
