@@ -20,7 +20,7 @@ class LiguesType extends AbstractType
             ->add('url', 'text')
             ->add('image', 'text')
             ->add('sport', 'text')
-            ->add('publier', 'submit')
+            ->add('publier', 'submit', array('attr' => array('class' => 'submit_back')))
             ->getForm();
     }
 
@@ -39,6 +39,6 @@ class LiguesType extends AbstractType
      */
     public function getName()
     {
-        return 'ppe_m2l_back_ligues';
+        return 'ppe_m2l_ligue_maligue';
     }
 }

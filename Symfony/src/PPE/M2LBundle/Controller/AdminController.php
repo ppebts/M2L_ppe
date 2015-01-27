@@ -303,7 +303,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($ligue);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_ligues', array('id'=> $ligue->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array('id'=> $ligue->getId())));
         }        
          return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));
      
@@ -364,7 +364,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($ligue);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_edit_maligue', array('id'=> $ligue->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_ligue_maligue', array('id'=> $ligue->getId())));
         }        
          return $this->render('PPEM2LBundle:Ligue:editmaligue.html.twig', array('form'=>$form->createView()));
      
