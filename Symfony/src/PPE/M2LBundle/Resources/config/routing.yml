@@ -130,3 +130,10 @@ ppe_m2l_admin_panel:
 ppe_m2l_ligue_maligue:
     path:    /maligue
     defaults: { _controller: PPEM2LBundle:Admin:maLigue}
+
+
+ppe_m2l_edit_maligue:
+    path:    /maligue/edit/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:editMaLigue}
+    requirements:
+        id: \d+

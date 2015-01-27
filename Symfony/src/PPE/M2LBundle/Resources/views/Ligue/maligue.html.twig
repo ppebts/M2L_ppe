@@ -1,0 +1,19 @@
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+
+{% block body %}
+
+	<div id="ma_ligue">
+			{% for maligue in ligue %}
+
+			    <div class="titre">{{ maligue.nom }}</div>
+	  		    <img src="{{ maligue.image }}"/>
+			    <p>Sport associé : {{ maligue.sport }}</p>
+			    <p id="description_maligue">{{ maligue.description }}</p>
+			    <a href="{{ maligue.url }}">{{ maligue.url }}</a><br/>
+
+				<a href="{{ path( 'ppe_m2l_edit_maligue',{'id': maligue.id}   ) }}">Modifier les infos</a>
+
+			{% endfor %}
+	</div>
+
+{% endblock %}

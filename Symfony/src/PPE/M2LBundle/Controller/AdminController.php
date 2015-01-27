@@ -333,9 +333,41 @@ class AdminController extends Controller
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Ligue");
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $id = $user->getId();
+
+        $query = $repo->createQueryBuilder('l')
+            ->where('l.userLigue = '.$id.' ');
+        
+        $res = $query->getQuery()->getResult(); 
+
+        return $this->render('PPEM2LBundle:Ligue:maligue.html.twig', array('ligue' => $res));
+    }
+
+    public function editMaLigueAction($id,Request $request )
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Ligue");
         $ligue = $repo->find($id);
 
-        return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array()));
+        /* $ligue renseigné donc formulaire renseigné */
+
+        $form = $this->get('form.factory')->create(new LiguesType(),$ligue);
+        $form->handleRequest($request);  
+
+        /* Vérification du formulaire */
+
+        if ( $form->isValid()){
+                $doctrine = $this->getDoctrine();
+                $em = $doctrine->getManager();
+                $em->persist($ligue);
+                $em->flush();
+                return $this->redirect($this->generateUrl('ppe_m2l_edit_maligue', array('id'=> $ligue->getId())));
+        }        
+         return $this->render('PPEM2LBundle:Ligue:editmaligue.html.twig', array('form'=>$form->createView()));
+     
     }
                                                /* Fin ligues */  
 }

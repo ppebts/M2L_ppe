@@ -20,4 +20,8 @@
 .add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 .add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 555px}
 #add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+#ma_ligue{width: 500px;margin: 75px auto 0px auto;background: #fff;text-align: center;}
+#description_maligue{}
+
 }
