@@ -77,6 +77,11 @@ services:
         class: Twig_Extensions_Extension_Text
         tags:
             - { name: twig.extension }
+    ppe_login_success_handler:
+        class:  PPE\UserBundle\Component\Authentication\Handler\LoginSuccessHandler
+        arguments:  [@router, @security.context]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' } 
 
 fos_user:
     db_driver:     orm                       # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début

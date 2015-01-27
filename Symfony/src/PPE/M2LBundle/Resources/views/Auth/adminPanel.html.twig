@@ -1,0 +1,15 @@
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+
+{% block body %}
+    
+	<div id="admin_panel">
+		<div class="titre_back">ADMIN PANEL</div>
+		<ul>
+			<li><a href="">Utilisateurs</a></li>
+			<li><a href="">Actualités</a></li>
+			<li><a href="">Annonces</a></li>
+			<li><a href="{{ path('ppe_m2l_back_list_ligues') }}">Ligues</a></li>
+		</ul>
+	</div>
+
+{% endblock %}

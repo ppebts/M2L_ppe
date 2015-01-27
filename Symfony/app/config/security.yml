@@ -25,6 +25,8 @@ security:
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
+                success_handler: ppe_login_success_handler
+                failure_path: null
             logout:
                 path:       fos_user_security_logout
                 target:     /

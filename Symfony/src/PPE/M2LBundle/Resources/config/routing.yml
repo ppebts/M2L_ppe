@@ -93,9 +93,9 @@ ppe_m2l_back_list_ligues:
     path:    /admin/listligues
     defaults: { _controller: PPEM2LBundle:Admin:getligues}
 
-ppe_m2l_back_add_ligues:
-    path:    /admin/addligues
-    defaults: { _controller: PPEM2LBundle:Admin:addligue}
+# ppe_m2l_back_add_ligues:
+#     path:    /admin/addligues
+#     defaults: { _controller: PPEM2LBundle:Admin:addligue}
 
 ppe_m2l_back_edit_ligues:
     path:    /admin/editligues/{id}
@@ -120,3 +120,7 @@ ppe_m2l_account:
     path:     /account
     defaults: { _controller: PPEM2LBundle:Default:account }
 # Fin Authentification
+
+ppe_m2l_admin_panel:
+    path:     /admin/
+    defaults: { _controller: PPEM2LBundle:Admin:adminPanel }

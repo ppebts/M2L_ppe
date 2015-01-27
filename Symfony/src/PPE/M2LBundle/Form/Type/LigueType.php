@@ -39,6 +39,6 @@ class LigueType extends AbstractType
      */
     public function getName()
     {
-        return 'ppe_m2l_back_add_ligues';
+        return 'ppe_m2l_back_liste_ligues';
     }
 }

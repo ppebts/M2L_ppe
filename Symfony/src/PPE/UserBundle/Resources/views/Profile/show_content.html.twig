@@ -38,10 +38,10 @@
 		</tr>
 	<tr class="spacer"></tr>
 		<tr>
-			<td class="left">Authorisations:</td>
-			{% if user.roles("USER_ADMIN") %}
+			<td class="left">Autorisations:</td>
+			{% if is_granted("ROLE_ADMIN") %}
 			<td class="right">Administrateur</td>
-			{% elseif user.roles("USER_USER") %}
+			{% elseif is_granted("ROLE_USER") %}
 			<td class="right">Utilisateur</td>
 			{% endif %}
 
@@ -49,13 +49,4 @@
 	</table>
 
 		<a href="{{ path( 'fos_user_profile_edit' ) }}">Modifier mon compte</a>
-</div>
-<div id="admin_panel">
-	<div class="titre_back">ADMIN PANEL</div>
-	<ul>
-		<li><a href="">Utilisateurs</a></li>
-		<li><a href="">Actualités</a></li>
-		<li><a href="">Annonces</a></li>
-		<li><a href="{{ path('ppe_m2l_back_list_ligues') }}">Ligues</a></li>
-	</ul>
 </div>

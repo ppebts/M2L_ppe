@@ -6,6 +6,10 @@
 	
 <a href="{{ path( 'ppe_m2l_homepage' ) }}" id="logo_link"><img id="logo" src="{{ asset('bundles/ppem2l/img/logo.png') }}" alt=""></a>
 
+{% if is_granted("ROLE_ADMIN") %}
+	<a id="panel_link" href="{{ path( 'ppe_m2l_admin_panel' ) }}" id="logo_link">Panel</a>	
+{% endif %}	
+
 	<ul id="center">
 		<li><a href="{{ path( 'ppe_m2l_informations' ) }}">Informations</a></li>
 		<li><a href="{{ path( 'ppe_m2l_reservations' ) }}">Réservations</a></li>
