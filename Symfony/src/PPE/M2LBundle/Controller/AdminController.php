@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller
 {
                                                     /* Actualités */
-    public function getactualitesAction()
+    public function getactualitesAction(Request $request)
      {
         /* Récupère toutes les actualités */
 
@@ -33,12 +33,6 @@ class AdminController extends Controller
         $repo = $em->getRepository("PPEM2LBundle:Actualite");
         $actualiteList = $repo->findAll();
 
-
-         return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList));
-     }
-
-    public function addactualiteAction(Request $request)
-    {
         $actualite = new Actualite();
         
         $form = $this->get('form.factory')->create(new ActualiteType(),$actualite);
@@ -48,9 +42,12 @@ class AdminController extends Controller
             $em = $doctrine->getManager();
             $em->persist($actualite);
             $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_actualite'));
         }
-        return $this->render('PPEM2LBundle:Actualite:addactualite.html.twig', array("form"=>$form->createView(),));
-    }
+         return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList, "formAddactu" => $form->createView(),));
+
+     }
 
     public function editactualiteAction($id,Request $request)
      {
@@ -73,7 +70,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($actualite);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_info', array('id'=> $actualite->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_actualite', array('id'=> $actualite->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Actualite:editactualite.html.twig', array('form'=>$form->createView()));
@@ -166,7 +163,7 @@ class AdminController extends Controller
                                                 /* Fin Infomations */
                                                 /* Annonces */
 
-    public function getannoncesAction()
+    public function getannoncesAction(Request $request)
      {
         /* Récupère toutes les annonces */
 
@@ -175,12 +172,6 @@ class AdminController extends Controller
         $repo = $em->getRepository("PPEM2LBundle:Annonce");
         $annonceList = $repo->findAll();
 
-
-         return $this->render('PPEM2LBundle:Annonce:listeannonce.html.twig', array("annonceList"=>$annonceList));
-     }
-
-    public function addannonceAction(Request $request)
-    {
         $annonce = new Annonce();
         
         $form = $this->get('form.factory')->create(new AnnonceType(),$annonce);
@@ -190,9 +181,13 @@ class AdminController extends Controller
             $em = $doctrine->getManager();
             $em->persist($annonce);
             $em->flush();
+        return $this->redirect($this->generateUrl('ppe_m2l_back_annonce'));    
         }
-        return $this->render('PPEM2LBundle:Annonce:addannonce.html.twig', array("form"=>$form->createView(),));
-    }
+
+
+         return $this->render('PPEM2LBundle:Annonce:listeannonce.html.twig', array("annonceList"=>$annonceList, "formAjout" => $form->createView(),));
+                                        
+     }
 
     public function editannonceAction($id,Request $request)
      {
@@ -220,7 +215,7 @@ class AdminController extends Controller
         }        
          return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
      
-    }
+    } 
         public function deleteannonceAction($id)
     {
         $doctrine = $this->getDoctrine();

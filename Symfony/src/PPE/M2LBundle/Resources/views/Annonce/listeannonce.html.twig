@@ -3,7 +3,6 @@
 
 <div class="list_annonces">
 	<span class="titre_back">Annonces déposées</span>
-<a href="{{ path( 'ppe_m2l_back_annonces' ) }}">Ajouter</a>
 <table border="1" cellspacing="0">
 	<thead>
 			<th>Id</th>
@@ -31,4 +30,61 @@
 </table>
 </div>
 
+
+<div id="add_annonce" title="Ajouter une acutalite">+</div>
+<div class="add_annonce">
+	<span class="titre_back">AJOUTER UNE ACTUALITE</span>
+		{{ form_start(formAjout) }}
+
+				<div class="input_form_register">
+					{{ form_label(formAjout.titre, "Titre", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAjout.titre) }}
+					{{ form_widget(formAjout.titre, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAjout.description, "Description de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAjout.description) }}
+					{{ form_widget(formAjout.description, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAjout.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAjout.image) }}
+					{{ form_widget(formAjout.image, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAjout.prix, "Prix", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAjout.prix) }}
+					{{ form_widget(formAjout.prix, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+					{{ form_widget(formAjout.publier) }}
+
+		{{ form_end(formAjout) }}
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('#add_annonce').click(function(){
+		$('.add_annonce').animate({right: "0px"},300);
+		$('#add_annonce').animate({right: "-300px"},300);
+	});
+	$('.titre_back').click(function(){
+		$('.add_annonce').animate({right: "-300px"},300);
+		$('#add_annonce').animate({right: "0px"},300);
+	});
+
+});
+
+</script>
 {% endblock %}

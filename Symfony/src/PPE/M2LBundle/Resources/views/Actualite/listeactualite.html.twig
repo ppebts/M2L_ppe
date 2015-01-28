@@ -3,7 +3,6 @@
 
 <div class="list_actualites">
 	<span class="titre_back">Actualités</span>
-<a href="{{ path( 'ppe_m2l_back_actualites' ) }}">Ajouter</a>
 <table border="1" cellspacing="0">
 	<thead>
 			<th>Id</th>
@@ -25,8 +24,62 @@
 			
 			<td><a href="{{ path( 'ppe_m2l_back_actu',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
 			<td><a href="{{ path( 'ppe_m2l_back_delete_actualites',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
-	</tbody>
-{% endfor %}
+			</tr>
 
-</table>
+		
+	{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+<div id="add_actualite" title="AJOUTER UNE ACTUALITE">+</div>
+<div class="add_actualite">
+	<span class="titre_back">AJOUTER UNE ACTUALITE</span>
+		{{ form_start(formAddactu) }}
+
+				<div class="input_form_register">
+					{{ form_label(formAddactu.titre, "Titre de la l'actualité", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddactu.titre) }}
+					{{ form_widget(formAddactu.titre, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddactu.contenu, "Contenu", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddactu.contenu) }}
+					{{ form_widget(formAddactu.contenu, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddactu.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddactu.image) }}
+					{{ form_widget(formAddactu.image, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+
+					{{ form_widget(formAddactu.publier) }}
+
+		{{ form_end(formAddactu) }}
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('#add_actualite').click(function(){
+		$('.add_actualite').animate({right: "0px"},300);
+		$('#add_actualite').animate({right: "-300px"},300);
+	});
+	$('.titre_back').click(function(){
+		$('.add_actualite').animate({right: "-300px"},300);
+		$('#add_actualite').animate({right: "0px"},300);
+	});
+
+});
+
+</script>
 {% endblock %}
