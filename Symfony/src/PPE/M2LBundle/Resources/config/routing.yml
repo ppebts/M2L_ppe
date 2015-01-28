@@ -16,6 +16,13 @@ ppe_m2l_back_actu:
     defaults: { _controller: PPEM2LBundle:Admin:editactualite}
     requirements:
         id: \d+
+
+ppe_m2l_back_delete_actualites:
+    path:    /admin/deleteactualite/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:deleteactualite}
+    requirements:
+        id: \d+
+
 # Fin Accueil
 
 # Informations
@@ -36,6 +43,13 @@ ppe_m2l_back_info:
     defaults: { _controller: PPEM2LBundle:Admin:editinformation}
     requirements:
         id: \d+
+
+ppe_m2l_back_delete_informations:
+    path:    /admin/deleteinformation/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:deleteinformation}
+    requirements:
+        id: \d+
+
 # Fin Informations
 
 # Reservations
@@ -62,6 +76,12 @@ ppe_m2l_back_annonceedit:
     defaults: { _controller: PPEM2LBundle:Admin:editannonce}
     requirements:
         id: \d+
+
+ppe_m2l_back_delete_annonces:
+    path:    /admin/deleteannonce/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:deleteannonce}
+    requirements:
+        id: \d+
 # Fin Annonces
 
 # Formations
@@ -82,6 +102,13 @@ ppe_m2l_back_formationedit:
     defaults: { _controller: PPEM2LBundle:Admin:editformation}
     requirements:
         id: \d+
+
+ppe_m2l_back_delete_formations:
+    path:    /admin/deleteformation/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:deleteformation}
+    requirements:
+        id: \d+
+
 # Fin Formations
 
 # Ligues
@@ -93,15 +120,25 @@ ppe_m2l_back_list_ligues:
     path:    /admin/listligues
     defaults: { _controller: PPEM2LBundle:Admin:getligues}
 
+ppe_m2l_back_edit_ligues:
+    path:    /admin/editligues/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:editligue}
+    requirements:
+        id: \d+
+
 ppe_m2l_back_delete_ligues:
     path:    /admin/deleteligue/{id}
     defaults: { _controller: PPEM2LBundle:Admin:deleteligue}
     requirements:
         id: \d+
 
-ppe_m2l_back_edit_ligues:
-    path:    /admin/editligues/{id}
-    defaults: { _controller: PPEM2LBundle:Admin:editligue}
+ppe_m2l_ligue_maligue:
+    path:    /maligue
+    defaults: { _controller: PPEM2LBundle:Admin:maLigue}
+
+ppe_m2l_edit_maligue:
+    path:    /maligue/edit/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:editMaLigue}
     requirements:
         id: \d+
 # Fin Ligues
@@ -127,13 +164,3 @@ ppe_m2l_admin_panel:
     path:     /admin/
     defaults: { _controller: PPEM2LBundle:Admin:adminPanel }
 
-ppe_m2l_ligue_maligue:
-    path:    /maligue
-    defaults: { _controller: PPEM2LBundle:Admin:maLigue}
-
-
-ppe_m2l_edit_maligue:
-    path:    /maligue/edit/{id}
-    defaults: { _controller: PPEM2LBundle:Admin:editMaLigue}
-    requirements:
-        id: \d+

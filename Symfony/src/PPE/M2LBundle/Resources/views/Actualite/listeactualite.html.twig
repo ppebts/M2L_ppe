@@ -21,8 +21,8 @@ Liste des actualités
 			<td>{{ actualite.image }}</td>
 
 			
-			<td><a href="{{ path( 'ppe_m2l_back_actu',{'id': actualite.id}   ) }}">Editer</a></td>
-			<td><a href="">Supprimer</a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_actu',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_delete_actualites',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
 	</tr>
 {% endfor %}
 

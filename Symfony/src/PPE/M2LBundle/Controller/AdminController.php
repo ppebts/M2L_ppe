@@ -79,6 +79,18 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Actualite:editactualite.html.twig', array('form'=>$form->createView()));
      
     }
+            public function deleteactualiteAction($id)
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Actualite");
+        $actualite = $repo->find($id);
+
+        $em->remove($actualite);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_actualite', array()));
+    }
 
 
 
@@ -139,6 +151,18 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Information:editinfo.html.twig', array('form'=>$form->createView()));
      
     }
+        public function deleteinformationAction($id)
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Information");
+        $information = $repo->find($id);
+
+        $em->remove($information);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_information', array()));
+    }
                                                 /* Fin Infomations */
                                                 /* Annonces */
 
@@ -197,6 +221,18 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
      
     }
+        public function deleteannonceAction($id)
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Annonce");
+        $annonce = $repo->find($id);
+
+        $em->remove($annonce);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_annonce', array()));
+    }
                                                 /* Fin Annonces */
                                                 /* Formations */
 
@@ -248,12 +284,24 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($formation);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_formation', array('id'=> $formation->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_formationedit', array('id'=> $formation->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView()));
      
-    }    
+    } 
+        public function deleteformationAction($id)
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Formation");
+        $formation = $repo->find($id);
+
+        $em->remove($formation);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_formation', array()));
+    }
                                                 /* Fin Formations */
                                                 /* Ligues */
 
@@ -284,7 +332,7 @@ class AdminController extends Controller
 
     public function editligueAction($id,Request $request)
      {
-        /* Récupère la lgieu */
+        /* Récupère la ligue */
 
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();

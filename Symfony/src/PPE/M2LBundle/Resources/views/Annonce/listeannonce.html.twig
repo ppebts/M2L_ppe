@@ -1,4 +1,4 @@
-{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
+
 {% block body %}
 
 Liste des annonces
@@ -21,8 +21,8 @@ Liste des annonces
 			<td>{{ annonce.image }}</td>
 			<td>{{ annonce.prix }}</td>
 			
-			<td><a href="{{ path( 'ppe_m2l_back_annonceedit',{'id': annonce.id}   ) }}">Editer</a></td>
-			<td><a href="">Supprimer</a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_annonceedit',{'id': annonce.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_delete_annonces',{'id': annonce.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
 	</tr>
 {% endfor %}
 

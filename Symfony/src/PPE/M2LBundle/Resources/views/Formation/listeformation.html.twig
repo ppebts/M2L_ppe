@@ -27,9 +27,9 @@ Liste des formations
 			<td>{{ formation.image }}</td>
 			<td>{{ formation.nbparticipants }}</td>
 			
-			<td><a href="{{ path( 'ppe_m2l_back_formationedit',{'id': formation.id}   ) }}">Editer</a></td>
-			<td><a href="">Supprimer</a></td>
-	</tr>
+			<td><a href="{{ path( 'ppe_m2l_back_formationedit',{'id': formation.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_delete_formations',{'id': formation.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
+	
 {% endfor %}
 
 </table>
