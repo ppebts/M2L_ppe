@@ -160,7 +160,16 @@ ppe_m2l_account:
     defaults: { _controller: PPEM2LBundle:Default:account }
 # Fin Authentification
 
+# Panel
 ppe_m2l_admin_panel:
     path:     /admin/
     defaults: { _controller: PPEM2LBundle:Admin:adminPanel }
+# Fin Panel
 
+# Utilisateurs 
+
+ppe_m2l_back_list_utilisateurs:
+    path:    /admin/listusers
+    defaults: { _controller: PPEM2LBundle:Admin:getutilisateurs}
+
+# Fin Utilisateurs

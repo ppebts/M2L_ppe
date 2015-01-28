@@ -215,7 +215,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($annonce);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_edit_annonce', array('id'=> $annonce->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_annonce', array('id'=> $annonce->getId())));
 
         }        
          return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
@@ -418,4 +418,21 @@ class AdminController extends Controller
      
     }
                                                /* Fin ligues */  
+                                               /* Utilisateurs */
+
+    public function getutilisateursAction()
+     {
+        /* Récupère toutes les formations */
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEUserBundle:User");
+        $utilisateursList = $repo->findAll();
+
+
+         return $this->render('PPEM2LBundle:Users:listeutilisateurs.html.twig', array("utilisateursList"=>$utilisateursList));
+     }
+
+
+                                               /* Fin Utilisateurs */
 }

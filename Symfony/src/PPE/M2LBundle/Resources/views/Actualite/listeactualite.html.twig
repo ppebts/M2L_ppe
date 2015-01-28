@@ -1,19 +1,21 @@
-
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
-Liste des actualités
-
+<div class="list_actualites">
+	<span class="titre_back">Actualités</span>
 <a href="{{ path( 'ppe_m2l_back_actualites' ) }}">Ajouter</a>
 <table border="1" cellspacing="0">
-	<tr>
+	<thead>
 			<th>Id</th>
 			<th>Titre</th>
 			<th>Contenu</th>
 			<th>Image</th>
+			<th colspan="2">Edition</th>
 
-	</tr>
+	</thead>
+	<tbody>
 {% for actualite in actualiteList %}
-	<tr>
+	
 
 			<td>{{ actualite.id }}</td>
 			<td>{{ actualite.titre }}</td>
@@ -23,7 +25,7 @@ Liste des actualités
 			
 			<td><a href="{{ path( 'ppe_m2l_back_actu',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
 			<td><a href="{{ path( 'ppe_m2l_back_delete_actualites',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
-	</tr>
+	</tbody>
 {% endfor %}
 
 </table>

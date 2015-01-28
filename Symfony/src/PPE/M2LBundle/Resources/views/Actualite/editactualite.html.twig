@@ -1,6 +1,37 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
+<div class="edit_actualite">
+	<span class="titre_back">Modification de l'actualité</span>
+		{{ form_start(form) }}
 
-		{{ form(form)}}
+				<div class="input_form_register">
+					{{ form_label(form.titre, "Titre", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.titre) }}
+					{{ form_widget(form.titre, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(form.contenu, "Contenu", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.contenu) }}
+					{{ form_widget(form.contenu, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.image) }}
+					{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				{{ form_rest(form) }}
+
+		{{ form_end(form) }}
+</div>
+
 {% endblock %}
