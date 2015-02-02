@@ -5,5 +5,23 @@
 	#information_parent .information_block .information_titre{cursor:pointer;background: #1abc9c;color: #fff;height: 28px;}
 	#information_parent .information_block .information_titre h3{margin: 0; margin: 0;line-height: 28px}
 	#information_parent .information_block .information_content{background: #fff;max-height: 300px;overflow: auto}
-	#information_parent .information_block .information_content p{text-align:justify;margin: 0;padding: 10px 15px;}
+	#information_parent .information_block .information_content p{text-align:justify;margin: 0;padding: 10px 15px;}`
+
+	.list_info{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_info table{border: none; width: 100%}
+	.list_info thead{background: #1ABC9C;}
+	.list_info table thead th{border: none;color: #fff}
+	.list_info table tbody td{border: none;padding: 10px;text-align: center}
+
+	.add_info span{cursor: pointer}
+	.add_info textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.add_info{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 555px}
+	#add_info{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+	.edit_info span{cursor: pointer}
+	.edit_info input{width: 400px!important}
+	.edit_info input[type=submit]{width: 200px!important}
+	.edit_info textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.edit_info{width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+	
 }

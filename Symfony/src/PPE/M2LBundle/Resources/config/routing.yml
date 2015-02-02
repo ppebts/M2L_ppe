@@ -1,4 +1,5 @@
 # Accueil
+
 ppe_m2l_homepage:
     path:     /
     defaults: { _controller: PPEM2LBundle:Default:index }
@@ -26,6 +27,7 @@ ppe_m2l_back_delete_actualites:
 # Fin Accueil
 
 # Informations
+
 ppe_m2l_informations:
     path:     /informations
     defaults: { _controller: PPEM2LBundle:Default:information }
@@ -53,12 +55,15 @@ ppe_m2l_back_delete_informations:
 # Fin Informations
 
 # Reservations
+
 ppe_m2l_reservations:
     path:     /reservations
     defaults: { _controller: PPEM2LBundle:Default:reservations }
+
 # Fin Reservations
 
 # Annonces 
+
 ppe_m2l_annonces:
     path:     /annonces
     defaults: { _controller: PPEM2LBundle:Annonce:afficher }
@@ -82,9 +87,11 @@ ppe_m2l_back_delete_annonces:
     defaults: { _controller: PPEM2LBundle:Admin:deleteannonce}
     requirements:
         id: \d+
+
 # Fin Annonces
 
 # Formations
+
 ppe_m2l_formations:
     path:     /formations
     defaults: { _controller: PPEM2LBundle:Default:formation }
@@ -112,6 +119,7 @@ ppe_m2l_back_delete_formations:
 # Fin Formations
 
 # Ligues
+
 ppe_m2l_ligues:
     path:     /ligues
     defaults: { _controller: PPEM2LBundle:Default:ligue }
@@ -141,12 +149,15 @@ ppe_m2l_edit_maligue:
     defaults: { _controller: PPEM2LBundle:Admin:editMaLigue}
     requirements:
         id: \d+
+
 # Fin Ligues
 
 # Contact
+
 ppe_m2l_contact:
     path:     /contact
     defaults: { _controller: PPEM2LBundle:Contact:contact }
+
 # Fin Contact
 
 # Authentification
@@ -158,12 +169,15 @@ ppe_m2l_inscription:
 ppe_m2l_account:
     path:     /account
     defaults: { _controller: PPEM2LBundle:Default:account }
+
 # Fin Authentification
 
 # Panel
+
 ppe_m2l_admin_panel:
     path:     /admin/
     defaults: { _controller: PPEM2LBundle:Admin:adminPanel }
+
 # Fin Panel
 
 # Utilisateurs 
@@ -171,5 +185,12 @@ ppe_m2l_admin_panel:
 ppe_m2l_back_list_utilisateurs:
     path:    /admin/listusers
     defaults: { _controller: PPEM2LBundle:Admin:getutilisateurs}
+
+
+ppe_m2l_back_edit_users:
+    path:    /admin/editusers/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:edituser}
+    requirements:
+        id: \d+
 
 # Fin Utilisateurs

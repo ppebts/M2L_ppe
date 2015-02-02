@@ -17,7 +17,7 @@ class InformationType extends AbstractType
         $builder
             ->add('titre', 'text')
             ->add('contenu', 'textarea')
-            ->add('Enregistrer', 'submit')
+            ->add('publier', 'submit')
             ->getForm();
     }
 
@@ -36,6 +36,6 @@ class InformationType extends AbstractType
      */
     public function getName()
     {
-        return 'ppe_m2l_back_informations';
+        return 'ppe_m2l_back_information';
     }
 }

@@ -67,4 +67,8 @@ public function accountAction()
     {
         return $this->render('PPEM2LBundle:Default:account.html.twig', array());
     }  
+public function reservationsAction()
+    {
+        return $this->render('PPEM2LBundle:Reservations:reservation.html.php', array());
+    }  
 }

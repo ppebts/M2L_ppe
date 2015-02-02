@@ -1,27 +1,71 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
-Liste des informations
-
-<a href="{{ path( 'ppe_m2l_back_informations' ) }}">Ajouter</a>
-<table border="1" cellspacing="0">
-	<tr>
-			<th>Id</th>
+<div class="list_info">
+	<span class="titre_back">INFORMATIONS</span>
+	<table border="1" cellspacing="0">
+		<thead>
 			<th>Titre</th>
 			<th>Contenu</th>
-	</tr>
+			<th colspan="2">Edition</th>
+	</thead>
+	<tbody>
 {% for information in infoList %}
-	<tr>
 
-			<td>{{ information.id }}</td>
+<tr>
 			<td>{{ information.titre }}</td>
 			<td>{{ information.contenu }}</td>
 			
 			<td><a href="{{ path( 'ppe_m2l_back_info',{'id': information.id}  ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
 			<td><a href="{{ path( 'ppe_m2l_back_delete_informations',{'id': information.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
+</tr>
 
-	</tr>
 {% endfor %}
-
+	</tbody>
 </table>
+</div>
+
+
+<div id="add_info" title="AJOUTER UNE INFORMATION">+</div>
+<div class="add_info">
+	<span class="titre_back">AJOUTER UNE INFORMATION</span>
+		{{ form_start(formAddinfo) }}
+
+				<div class="input_form_register">
+					{{ form_label(formAddinfo.titre, "Titre", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddinfo.titre) }}
+					{{ form_widget(formAddinfo.titre, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddinfo.contenu, "Contenu", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddinfo.contenu) }}
+					{{ form_widget(formAddinfo.contenu, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+					{{ form_widget(formAddinfo.publier) }}
+
+		{{ form_end(formAddinfo) }}
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('#add_info').click(function(){
+		$('.add_info').animate({right: "0px"},300);
+		$('#add_info').animate({right: "-300px"},300);
+	});
+	$('.titre_back').click(function(){
+		$('.add_info').animate({right: "-300px"},300);
+		$('#add_info').animate({right: "0px"},300);
+	});
+
+});
+
+</script>
 {% endblock %}

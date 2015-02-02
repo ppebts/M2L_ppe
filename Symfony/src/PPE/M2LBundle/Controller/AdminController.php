@@ -16,6 +16,7 @@ use PPE\M2LBundle\Form\Type\LiguesType;
 use PPE\M2LBundle\Entity\Actualite;
 use PPE\M2LBundle\Form\Type\ActualiteType;
 use PPE\M2LBundle\Form\Type\ActualitesType;
+use PPE\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
@@ -93,7 +94,7 @@ class AdminController extends Controller
 
                                                     /* Fin Actualités */
                                                     /* Informations */
-    public function getinformationsAction()
+    public function getinformationsAction(Request $request)
      {
         /* Récupère toutes les informations */
 
@@ -103,11 +104,6 @@ class AdminController extends Controller
         $infoList = $repo->findAll();
 
 
-         return $this->render('PPEM2LBundle:Information:listeinfo.html.twig', array("infoList"=>$infoList));
-     }
-    
-    public function addinformationAction(Request $request)
-    {
         $information = new Information();
         
         $form = $this->get('form.factory')->create(new InformationType(),$information);
@@ -117,9 +113,13 @@ class AdminController extends Controller
             $em = $doctrine->getManager();
             $em->persist($information);
             $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_information'));
+
         }
-        return $this->render('PPEM2LBundle:Information:information.html.twig', array("form"=>$form->createView(),));
-    }
+
+         return $this->render('PPEM2LBundle:Information:listeinfo.html.twig', array("infoList"=>$infoList, "formAddinfo" => $form->createView(),));
+     }
 
     public function editinformationAction($id,Request $request)
      {
@@ -417,7 +417,7 @@ class AdminController extends Controller
 
     public function getutilisateursAction()
      {
-        /* Récupère toutes les formations */
+        /* Récupère tous les utilisateurs */
 
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
@@ -427,6 +427,31 @@ class AdminController extends Controller
 
          return $this->render('PPEM2LBundle:Users:listeutilisateurs.html.twig', array("utilisateursList"=>$utilisateursList));
      }
+
+    public function edituserAction($id,Request $request )
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEUserBundle:User");
+        $user = $repo->find($id);
+
+        /* $user renseigné donc formulaire renseigné */
+
+        $form = $this->get('form.factory')->create(new UsersType(),$user);
+        $form->handleRequest($request);  
+
+        /* Vérification du formulaire */
+
+        if ( $form->isValid()){
+                $doctrine = $this->getDoctrine();
+                $em = $doctrine->getManager();
+                $em->persist($user);
+                $em->flush();
+                return $this->redirect($this->generateUrl('ppe_m2l_back_list_utilisateurs', array('id'=> $user->getId())));
+        }        
+         return $this->render('PPEM2LBundle:Users:edituser.html.twig', array('form'=>$form->createView()));
+     
+    }
 
 
                                                /* Fin Utilisateurs */
