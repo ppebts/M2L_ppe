@@ -17,6 +17,7 @@ use PPE\M2LBundle\Entity\Actualite;
 use PPE\M2LBundle\Form\Type\ActualiteType;
 use PPE\M2LBundle\Form\Type\ActualitesType;
 use PPE\UserBundle\Entity\User;
+use PPE\M2LBundle\Form\Type\UsersType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
