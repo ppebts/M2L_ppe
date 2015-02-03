@@ -63,6 +63,11 @@ class User extends BaseUser
      private $ligue;
 
     /**
+    * @ORM\ManyToMany(targetEntity="PPE\M2LBundle\Entity\Formation", mappedBy="utilisateurs")
+    */
+    private $formations;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -200,6 +205,7 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
         $this->roles = array('ROLE_USER');
+        $this->formations = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -256,5 +262,38 @@ class User extends BaseUser
     public function getLigue()
     {
         return $this->ligue;
+    }
+
+    /**
+     * Add formations
+     *
+     * @param \PPE\M2LBundle\Entity\Formation $formations
+     * @return User
+     */
+    public function addFormation(\PPE\M2LBundle\Entity\Formation $formations)
+    {
+        $this->formations[] = $formations;
+
+        return $this;
+    }
+
+    /**
+     * Remove formations
+     *
+     * @param \PPE\M2LBundle\Entity\Formation $formations
+     */
+    public function removeFormation(\PPE\M2LBundle\Entity\Formation $formations)
+    {
+        $this->formations->removeElement($formations);
+    }
+
+    /**
+     * Get formations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFormations()
+    {
+        return $this->formations;
     }
 }

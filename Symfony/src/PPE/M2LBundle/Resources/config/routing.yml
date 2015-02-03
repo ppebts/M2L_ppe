@@ -200,3 +200,9 @@ ppe_m2l_back_edit_users:
         id: \d+
 
 # Fin Utilisateurs
+
+ppe_m2l_back_delete_users:
+    path: /admin/deleteuser/{id}
+    defaults: { _controller: PPEM2LBundle:Admin:deleteuser}
+    requirements:
+        id: \d+
