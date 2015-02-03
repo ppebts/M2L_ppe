@@ -71,6 +71,13 @@ class Formation
     private $nbparticipants;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbinscrits", type="integer")
+     */
+    private $nbinscrits;
+
+    /**
      * @ORM\ManyToMany(targetEntity="PPE\UserBundle\Entity\User", cascade={"persist"})
      */
     private $utilisateurs;
@@ -254,29 +261,6 @@ class Formation
     }
 
     /**
-     * Add utilisateurs
-     *
-     * @param \PPE\UserBundle\Entity\User $utilisateurs
-     * @return Formation
-     */
-    public function addUser(\PPE\UserBundle\Entity\User $user)
-    {
-        $this->utilisateurs[] = $user;
-    
-        return $this;
-    }
-
-    /**
-     * Remove utilisateurs
-     *
-     * @param \PPE\UserBundle\Entity\User $utilisateurs
-     */
-    public function removeUser(\PPE\UserBundle\Entity\User $user)
-    {
-        $this->utilisateurs->removeElement($user);
-    }
-
-    /**
      * Get utilisateurs
      *
      * @return \Doctrine\Common\Collections\Collection 
@@ -307,5 +291,28 @@ class Formation
     public function removeUtilisateur(\PPE\UserBundle\Entity\User $utilisateurs)
     {
         $this->utilisateurs->removeElement($utilisateurs);
+    }
+
+    /**
+     * Set nbinscrits
+     *
+     * @param integer $nbinscrits
+     * @return Formation
+     */
+    public function setNbinscrits($nbinscrits)
+    {
+        $this->nbinscrits = $nbinscrits;
+
+        return $this;
+    }
+
+    /**
+     * Get nbinscrits
+     *
+     * @return integer 
+     */
+    public function getNbinscrits()
+    {
+        return $this->nbinscrits;
     }
 }

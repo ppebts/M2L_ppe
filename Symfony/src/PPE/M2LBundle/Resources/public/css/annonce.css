@@ -2,8 +2,7 @@
 @media (min-width: 1200px) { 
 	#annonce_content{width: 100%;margin: 0 auto;padding: 10px 0px}	
 	#annonce_content .annonce{width:810px; height: 300px; margin: 10px auto}
-	#annonce_content .annonce .annonce_img{text-align: center;float: left; width: 350px;height:290px;overflow: hidden}
-	#annonce_content .annonce .annonce_img img{width:100%; height:100%;}
+	#annonce_content .annonce img{height:290px;}
 	#annonce_content .annonce .annonce_texte{background: #fff;width:400px;height : 290px;float: right; text-align: justify;padding: 5px 0px;overflow-y: auto;padding: 0 15px}
 	#annonce_content .annonce .annonce_texte .description{margin-bottom: 0}
 	#annonce_content .annonce .annonce_texte .prix{text-align: center;font-weight: 700;margin-top:10px;}

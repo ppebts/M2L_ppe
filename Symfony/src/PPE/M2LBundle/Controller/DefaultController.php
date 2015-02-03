@@ -9,6 +9,7 @@ use PPE\M2LBundle\Entity\Sport;
 use PPE\M2LBundle\Entity\TypeUtilisateur;
 use PPE\M2LBundle\Entity\Formation;
 use PPE\M2LBundle\Entity\Ligue;
+use PPE\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,6 +41,33 @@ public function formationAction()
         $repo = $em->getRepository("PPEM2LBundle:Formation");
         $formationList = $repo->findAll();
         return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList));
+    }
+
+public function inscriptionFormationAction($id)
+    {
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $userId = $user->getId();
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEUserBundle:User");
+        $user = $repo->find($userId);
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Formation");
+        $formation = $repo->find($id);
+
+        $nbOld = $formation->getNbinscrits();
+        $nb = $nbOld + 1;
+        $formation->setNbinscrits($nb);
+        $formation->addUtilisateur($user);
+
+        $em->persist($formation);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_formations', array()));
     }
 
 public function ligueAction()

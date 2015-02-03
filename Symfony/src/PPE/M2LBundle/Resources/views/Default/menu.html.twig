@@ -61,6 +61,8 @@ $(window).scroll(function(){
 			$('#logo').animate({width : "25px"},100);
 			$('#logo_link').animate({top : "0"},100);
 			$('#menu > ul > li > a').animate({lineHeight :"30px"},100);
+			$('#menu > #panel_link').animate({top: "5px"},100);
+
         }
     } else {
         if ($nav.data('size') == 'small') {
@@ -68,6 +70,8 @@ $(window).scroll(function(){
 			$('#logo').animate({width : "40px"},100);	
 			$('#logo_link').animate({top : "5px"},100);
 			$('#menu > ul > li > a').animate({lineHeight :"55px"},100);
+			$('#menu > #panel_link').animate({top: "17.5px"},100);
+
         }  
     }
 });

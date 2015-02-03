@@ -92,7 +92,7 @@
 	{% set i = 1 %}
 	{% for annonce in annonceList %}
 	    <div class="annonce" id="{{ i }}">
-			<div class="block_shadow annonce_img"><img src="{{ asset('bundles/ppem2l/img/' ~ annonce.image) }}" class="img-responsive img_annonce" /></div>
+			<img src="{{ asset('bundles/ppem2l/img/' ~ annonce.image) }}" class="img-responsive img_annonce block_shadow" />
 
 	    	<div class="annonce_texte block_shadow">
 	    		<div class="annonce_titre">

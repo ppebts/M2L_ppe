@@ -116,6 +116,12 @@ ppe_m2l_back_delete_formations:
     requirements:
         id: \d+
 
+ppe_m2l_inscription_formations:
+    path:     /formations/inscription/{id}
+    defaults: { _controller: PPEM2LBundle:Default:inscriptionFormation }
+    requirements:
+        id: \d+
+
 # Fin Formations
 
 # Ligues
