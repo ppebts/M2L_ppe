@@ -21,7 +21,7 @@ class User extends BaseUser
   protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="PPE\M2LBundle\Entity\Annonce", mappedBy="utilisateur_id", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="PPE\M2LBundle\Entity\Annonce", mappedBy="utilisateur", cascade={"remove"})
      */
     protected $annonces;
 
