@@ -40,12 +40,12 @@ public function formationAction()
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Formation");
         $formationList = $repo->findAll();
+
         return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList));
     }
 
 public function inscriptionFormationAction($id)
     {
-
         $user = $this->container->get('security.context')->getToken()->getUser();
         $userId = $user->getId();
 
