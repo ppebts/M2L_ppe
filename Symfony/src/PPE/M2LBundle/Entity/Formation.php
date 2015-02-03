@@ -258,6 +258,7 @@ class Formation
     public function __construct()
     {
         $this->utilisateurs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->nbinscrits = 0;
     }
 
     /**
