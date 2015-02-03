@@ -16,10 +16,10 @@ class UsersType extends AbstractType
     {
         $builder
             ->add('username', 'text')
-            ->add('email', 'textarea')
+            ->add('email', 'text')
             ->add('firstname', 'text')
             ->add('lastname', 'text')
-            ->add('publier', 'submit')
+            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))            
             ->getForm();
     }
 
