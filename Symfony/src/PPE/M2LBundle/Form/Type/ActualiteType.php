@@ -18,7 +18,7 @@ class ActualiteType extends AbstractType
             ->add('titre', 'text')
             ->add('contenu', 'textarea')
             ->add('image', 'text')
-            ->add('publier', 'submit')
+            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();
     }
 

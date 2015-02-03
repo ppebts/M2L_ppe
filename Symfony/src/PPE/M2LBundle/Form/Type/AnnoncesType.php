@@ -19,7 +19,7 @@ class AnnoncesType extends AbstractType
             ->add('description', 'textarea')
             ->add('image', 'text')
             ->add('prix', 'text')
-            ->add('publier', 'submit')
+            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();
     }
 

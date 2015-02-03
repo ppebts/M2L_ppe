@@ -13,7 +13,7 @@
 	.actualite_fancybox .texte_fancybox{text-align: justify;}
 	.actualite_fancybox .texte_fancybox h1{text-align: center}
 
-		.list_actualites{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_actualites{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 	.list_actualites table{border: none; width: 100%}
 	.list_actualites thead{background: #1ABC9C;}
 	.list_actualites table thead th{border: none;color: #fff}

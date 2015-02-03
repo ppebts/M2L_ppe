@@ -175,7 +175,7 @@ class AdminController extends Controller
 
         $annonce = new Annonce();
         
-        $form = $this->get('form.factory')->create(new AnnonceType(),$annonce);
+        $form = $this->get('form.factory')->create(new AnnoncesType(),$annonce);
         $form->handleRequest($request);
         if ( $form->isValid()){
             $doctrine = $this->getDoctrine();
