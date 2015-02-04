@@ -15,4 +15,23 @@
 	.formation_fancybox .texte_fancybox h1{text-align: center}
 
 	.inscription_formation{font-family: 'Lato';font-weight: 700;margin-top:100px;margin-right: auto;margin-left: auto;background-color: #1abc9c;width: 300px;display: block;text-align: center;color: #fff;}
+
+
+	.list_formations{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_formations table{border: none; width: 100%}
+	.list_formations thead{background: #1ABC9C;}
+	.list_formations table thead th{border: none;color: #fff}
+	.list_formations table tbody td{border: none;padding: 10px;text-align: center}
+
+	.add_formation span{cursor: pointer}
+	.add_formation textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.add_formation{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 690px}
+	#add_formation{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+
+	.edit_formation span{cursor: pointer}
+	.edit_formation input{width: 350px!important}
+	.edit_formation input[type=submit]{width: 200px!important}
+	.edit_formation textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.edit_formation {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 690px}
 }

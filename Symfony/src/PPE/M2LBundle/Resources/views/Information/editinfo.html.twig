@@ -1,8 +1,29 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
-{{ form_start(form) }}
-			
 
+<div class="edit_info">
+	<span class="titre_back">MODIFIER L'INFORMATION</span>
+		{{ form_start(form) }}
 
-		{{ form_end(form)}}
+				<div class="input_form_register">
+					{{ form_label(form.titre, "Titre", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.titre) }}
+					{{ form_widget(form.titre, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(form.contenu, "Contenu", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.contenu) }}
+					{{ form_widget(form.contenu, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				{{ form_rest(form) }}
+
+		{{ form_end(form) }}
+</div>
+
 {% endblock %}

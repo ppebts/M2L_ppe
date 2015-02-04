@@ -11,15 +11,13 @@
 	</thead>
 	<tbody>
 {% for information in infoList %}
-
-<tr>
+		<tr>
 			<td>{{ information.titre }}</td>
 			<td>{{ information.contenu }}</td>
 			
 			<td><a href="{{ path( 'ppe_m2l_back_info',{'id': information.id}  ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
 			<td><a href="{{ path( 'ppe_m2l_back_delete_informations',{'id': information.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
-</tr>
-
+		</tr>
 {% endfor %}
 	</tbody>
 </table>

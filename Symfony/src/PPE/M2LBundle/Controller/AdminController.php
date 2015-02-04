@@ -143,7 +143,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($information);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_info', array('id'=> $information->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_information'));
 
         }        
          return $this->render('PPEM2LBundle:Information:editinfo.html.twig', array('form'=>$form->createView()));
@@ -232,7 +232,7 @@ class AdminController extends Controller
                                                 /* Fin Annonces */
                                                 /* Formations */
 
-    public function getformationsAction()
+    public function getformationsAction(Request $request)
      {
         /* Récupère toutes les formations */
 
@@ -241,8 +241,19 @@ class AdminController extends Controller
         $repo = $em->getRepository("PPEM2LBundle:Formation");
         $formationList = $repo->findAll();
 
+        $formation = new Formation();
+        
+        $form = $this->get('form.factory')->create(new FormationType(),$formation);
+        $form->handleRequest($request);
+        if ( $form->isValid()){
+            $doctrine = $this->getDoctrine();
+            $em = $doctrine->getManager();
+            $em->persist($formation);
+            $em->flush();
+        return $this->redirect($this->generateUrl('ppe_m2l_back_formation')); 
+        }
 
-         return $this->render('PPEM2LBundle:Formation:listeformation.html.twig', array("formationList"=>$formationList));
+         return $this->render('PPEM2LBundle:Formation:listeformation.html.twig', array("formationList"=>$formationList, "formAddformation" => $form->createView(),));
      }
 
     public function addformationAction(Request $request)
@@ -280,7 +291,7 @@ class AdminController extends Controller
                 $em = $doctrine->getManager();
                 $em->persist($formation);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_formationedit', array('id'=> $formation->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
 
         }        
          return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView()));

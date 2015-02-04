@@ -1,12 +1,10 @@
-
+{% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
-Liste des formations
-
-<a href="{{ path( 'ppe_m2l_back_formations' ) }}">Ajouter</a>
+<div class="list_formations">
+	<span class="titre_back">Liste des formations</span>
 <table border="1" cellspacing="0">
-	<tr>
-			<th>Id</th>
+	<thead>
 			<th>Nom</th>
 			<th>Description</th>
 			<th>Durée</th>
@@ -14,11 +12,12 @@ Liste des formations
 			<th>Lieu</th>
 			<th>Image</th>
 			<th>Nombre de participants</th>
-	</tr>
+			<th colspan="2">Edition</th>
+	</thead>
+	<tbody>
 {% for formation in formationList %}
-	<tr>
+	
 
-			<td>{{ formation.id }}</td>
 			<td>{{ formation.nom }}</td>
 			<td>{{ formation.description }}</td>
 			<td>{{ formation.duree }}</td>
@@ -29,8 +28,105 @@ Liste des formations
 			
 			<td><a href="{{ path( 'ppe_m2l_back_formationedit',{'id': formation.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
 			<td><a href="{{ path( 'ppe_m2l_back_delete_formations',{'id': formation.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
-	
+	</tbody>
 {% endfor %}
 
 </table>
+</div>
+
+
+<div id="add_formation" title="AJOUTER UNE FORMATION">+</div>
+<div class="add_formation">
+	<span class="titre_back">AJOUTER UNE FORMATION</span>
+		{{ form_start(formAddformation) }}
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.nom, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.nom) }}
+					{{ form_widget(formAddformation.nom, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.description, "Description", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.description) }}
+					{{ form_widget(formAddformation.description, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.duree, "Durée", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.duree) }}
+					{{ form_widget(formAddformation.duree, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.debut, "Date de début", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.debut) }}
+					{{ form_widget(formAddformation.debut, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+					<div class="input_form_register">
+					{{ form_label(formAddformation.lieu, "Lieu", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.lieu) }}
+					{{ form_widget(formAddformation.lieu, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.image) }}
+					{{ form_widget(formAddformation.image, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.nbparticipants, "Nombre de participants", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.nbparticipants) }}
+					{{ form_widget(formAddformation.nbparticipants, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+
+					{{ form_widget(formAddformation.publier) }}
+
+		{{ form_end(formAddformation) }}
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('#add_formation').click(function(){
+		$('.add_formation').animate({right: "0px"},300);
+		$('#add_formation').animate({right: "-300px"},300);
+	});
+	$('.titre_back').click(function(){
+		$('.add_formation').animate({right: "-300px"},300);
+		$('#add_formation').animate({right: "0px"},300);
+	});
+		$('.date').prop('type', 'text').datepicker({
+		beforeShow: function(input, inst)
+		{
+			inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 110 + 'px'});	
+			$('#ui-datepicker-div').addClass('ll-skin-melon');
+		},
+		changeMonth: true,
+    	changeYear: true,
+    	yearRange: "1935:2015",
+    	dateFormat: 'yy-mm-dd',
+    	regional: 'fr'
+    });
+});
+
+</script>
 {% endblock %}
