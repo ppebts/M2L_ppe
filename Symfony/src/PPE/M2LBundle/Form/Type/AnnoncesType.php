@@ -2,6 +2,7 @@
 
 namespace PPE\M2LBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -19,6 +20,14 @@ class AnnoncesType extends AbstractType
             ->add('description', 'textarea')
             ->add('image', 'text')
             ->add('prix', 'text')
+            ->add('utilisateur', 'entity', array(
+                                                'class' => 'PPEUserBundle:User',
+                                                'property' => 'id',
+                                                 'query_builder' => function(EntityRepository $er) {
+                                                    return $er->createQueryBuilder('u')
+                                                        ->orderBy('u.first_name', 'ASC');
+                                                        },
+                                                ))
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();
     }

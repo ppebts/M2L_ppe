@@ -37,6 +37,14 @@
 					<br/>
 				</div>
 
+				<div class="input_form_register">
+					{{ form_label(form.utilisateur, "Utilisateur", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.utilisateur) }}
+					{{ form_widget(form.utilisateur, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
 				{{ form_rest(form) }}
 
 		{{ form_end(form) }}
