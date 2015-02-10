@@ -10,4 +10,6 @@
 	.input_form label{font-family: lato}
 	.input_form{margin: 10px 0 10px 0}
 	#inscription_login{margin-top: 20px}
+
+	#error{color: red;font-weight: bold;}
 }
