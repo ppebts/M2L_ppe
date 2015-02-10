@@ -28,6 +28,10 @@
 	#annonceAdd{background: #fff;font-family: lato;width: 500px}
 	#annonceAdd #titre{height: 45px;line-height: 45px;background: #1ABC9C; color: #fff}
 
+	#annonceAdd ul {margin : 0; padding-left: 0;}
+	#annonceAdd ul li {list-style: none; color : red; padding-top: 7px;}
+
+
 		.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 	.list_annonces table{border: none; width: 100%}
 	.list_annonces thead{background: #1ABC9C;}

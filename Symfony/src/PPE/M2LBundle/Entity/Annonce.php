@@ -3,12 +3,15 @@
 namespace PPE\M2LBundle\Entity;
 use PPE\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;  // Verif de l'unicité de l'entité (ligne 13)
 
 /**
  * Annonce
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\AnnonceRepository")
+ * @UniqueEntity(fields="titre",message="Une annonce existe déja avec le même titre")
  */
 class Annonce
 {
@@ -31,6 +34,8 @@ class Annonce
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
+     * @Assert\Length(min=5)
+     * @Assert\Length(max=25)
      */
     private $titre;
 
@@ -38,6 +43,7 @@ class Annonce
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
+     * @Assert\Length(max=255)
      */
     private $description;
 
@@ -52,6 +58,7 @@ class Annonce
      * @var integer
      *
      * @ORM\Column(name="prix", type="integer")
+     * @Assert\Type(type="integer", message="Veuillez saisir un prix valide")
      */
     private $prix;
 
