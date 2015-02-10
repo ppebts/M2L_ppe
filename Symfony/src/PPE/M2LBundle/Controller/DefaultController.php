@@ -54,6 +54,8 @@ public function inscriptionFormationAction($id)
         $repo = $em->getRepository("PPEUserBundle:User");
         $user = $repo->find($userId);
 
+
+
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Formation");
@@ -63,6 +65,32 @@ public function inscriptionFormationAction($id)
         $nb = $nbOld + 1;
         $formation->setNbinscrits($nb);
         $formation->addUtilisateur($user);
+
+        $em->persist($formation);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_formations', array()));
+    }
+
+public function desinscriptionFormationAction($id)
+    {
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $userId = $user->getId();
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEUserBundle:User");
+        $user = $repo->find($userId);
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEM2LBundle:Formation");
+        $formation = $repo->find($id);
+
+        $nbOld = $formation->getNbinscrits();
+        $nb = $nbOld - 1;
+        $formation->setNbinscrits($nb);
+        $formation->removeUtilisateur($user);
 
         $em->persist($formation);
         $em->flush();

@@ -5,35 +5,52 @@
 
 	{% for formation in formationList %}
 
-<div class="formation block_shadow">
-	<img src="{{ asset('bundles/ppem2l/img/' ~ formation.image) }}"class="img-responsive img-formation">
-	<div class="formation_texte">
-
-				<div class="formation_nom">	    		
-	    
-	    		<h1>{{ formation.nom|capitalize }}</h1>
-	    
-	    		<div class="trait"></div>
-	    		</div>
-	    		<p>{{ formation.description }}</p>
-	    		<p>{{ formation.nbinscrits }}/{{ formation.nbparticipants }}</p>
-				<br/>
-				<p>
-		    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
-		    		Durée : {{ formation.duree }} Min <br/>
-		    		Date de début : {{ formation.debut|date('d-m-Y')}} <br/>
-	    		</p>
+	<div class="formation block_shadow" id="{{ formation.id }}">
+		<a class="submit"  href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}) }}" >
+			<div class="inscription_formation">
+				<div class='infos_nb'>
+		    		<p>{{ formation.nbinscrits }}/{{ formation.nbparticipants }}</p>
+		    		<p>inscrits</p>
+		       	</div>
+	    		S'INSCRIRE
+			</div>
+		</a>
+		<div class="formation_container">
+			<img src="{{ asset('bundles/ppem2l/img/' ~ formation.image) }}"class="img-responsive img-formation">
+				<div class="formation_texte">
+						<div class="formation_nom">
+			    			<h1>{{ formation.nom|capitalize }}</h1>
+				    		<div class="trait"></div>
+			    		</div>
+			    		<div class="content">
+							<br/>			    		
+							<p>{{ formation.description }}</p>
+							<p>
+					    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
+					    		Durée : {{ formation.duree }} Min <br/>
+					    		Date de début : {{ formation.debut|date('d-m-Y')}} <br/>
+				    		</p>
+				    	</div>
 				</div>
-	    {% for user in formation.utilisateurs %}    
-			{% if is_granted("ROLE_USER") and (user.formations !=  formation.id) %}
-				<div class="inscription_formation">
-					<a href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}   ) }}">INSCRIPTION</a>
-				</div>
-			{% endif %}
-		{% endfor %}
-</div>
+				{% if is_granted("ROLE_USER") %}
+					{% for form in app.user.formations %}
+						{% if form.id == formation.id %}
+				    		<script type="text/javascript">
+				    		$(document).ready(function(){
+				    			var formationId = '#'+{{ formation.id }};
+				    			$(formationId).children('a').css('display', 'none');
+				    			$(formationId).append("<a class='desinscription' href='{{ path( 'ppe_m2l_desinscription_formations',{'id': formation.id}   ) }}''><div class='desinscription_formation' id='{{ formation.id }}''>SE DESINSCRIRE</div></a>");		    			
+				    		});
+				    		</script>
+				    	{% endif %}
+				    {% endfor %}
+				{% endif %}
+		</div>
+	</div>
 
 
 	{% endfor %}
-	</div>
+</div>
 {% endblock %}
+
+

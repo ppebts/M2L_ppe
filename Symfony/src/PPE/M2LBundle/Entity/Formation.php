@@ -78,7 +78,7 @@ class Formation
     private $nbinscrits;
 
     /**
-     * @ORM\ManyToMany(targetEntity="PPE\UserBundle\Entity\User", inversedBy="formations", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="PPE\UserBundle\Entity\User", inversedBy="formations", cascade={"remove"})
      */
     private $utilisateurs;
 

@@ -122,6 +122,12 @@ ppe_m2l_inscription_formations:
     requirements:
         id: \d+
 
+ppe_m2l_desinscription_formations:
+    path:     /formations/desinscription/{id}
+    defaults: { _controller: PPEM2LBundle:Default:desinscriptionFormation }
+    requirements:
+        id: \d+
+
 # Fin Formations
 
 # Ligues

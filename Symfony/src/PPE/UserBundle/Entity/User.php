@@ -63,7 +63,7 @@ class User extends BaseUser
      private $ligue;
 
     /**
-    * @ORM\ManyToMany(targetEntity="PPE\M2LBundle\Entity\Formation", mappedBy="utilisateurs")
+    * @ORM\ManyToMany(targetEntity="PPE\M2LBundle\Entity\Formation", mappedBy="utilisateurs", cascade={"remove"})
     */
     private $formations;
 
