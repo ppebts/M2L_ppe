@@ -1,8 +1,12 @@
 /*VERSION DESKTOP*/
 @media (min-width: 1200px) { 
 	body{margin: 0;background: #e1e1e1}
-	#inscription{height: 560px;margin-top: calc(25% - 300px);margin-top: -webkit-calc(25% - 300px);margin-top: -moz-calc(25% - 300px)margin-top: -ms-calc(25% - 300px);margin-left: auto;margin-right: auto;width: 400px;text-align: center; background: #fff}
+	#inscription{margin-top: calc(25% - 300px);margin-top: -webkit-calc(25% - 300px);margin-top: -moz-calc(25% - 300px)margin-top: -ms-calc(25% - 300px);margin-left: auto;margin-right: auto;width: 400px;text-align: center; background: #fff}
 	#inscription form{padding: 10px 0 10px 0}
 
 	#inscription select{margin:0 1px;}
+
+
+	#inscription ul {margin : 0; padding-left: 0;}
+	#inscription ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 }

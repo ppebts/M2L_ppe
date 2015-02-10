@@ -20,17 +20,15 @@
 		<div class="input_form_register">
 			{{ form_label(form.last_name, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
-			{{ form_errors(form.last_name) }}
 			{{ form_widget(form.last_name, {'label_attr': {'class': 'from-control'}}) }}
-			<br/>
+			{{ form_errors(form.last_name) }}
 		</div>
 
 		<div class="input_form_register">
 			{{ form_label(form.first_name, "Prénom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
-			{{ form_errors(form.first_name) }}
 			{{ form_widget(form.first_name, {'label_attr': {'class': 'from-control'}}) }}
-			<br/>
+			{{ form_errors(form.first_name) }}
 		</div>
 
 
@@ -44,9 +42,9 @@
 		<div class="input_form_register">
 			{{ form_label(form.email, "Email", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
-			{{ form_errors(form.email) }}
 			{{ form_widget(form.email, {'label_attr': {'class': 'from-control'}}) }}
-			<br/>
+			{{ form_errors(form.email) }}
+			
 		</div>
 
 		<div class="input_form_register">
@@ -60,7 +58,6 @@
 		<div class="input_form_register">
 			{{ form_label(form.plainPassword.first, "Mot de passe", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
-			{{ form_errors(form.plainPassword.first) }}
 			{{ form_widget(form.plainPassword.first, {'label_attr': {'class': 'from-control'}}) }}
 			<br/>
 		</div>
@@ -68,10 +65,10 @@
 		<div class="input_form_register">
 			{{ form_label(form.plainPassword.second, "Vérificaton", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 			<br/>
-			{{ form_errors(form.plainPassword.second) }}
 			{{ form_widget(form.plainPassword.second, {'label_attr': {'class': 'from-control'}}) }}
-			<br/>
-		</div>
+			{{ form_errors(form.plainPassword.first) }}
+			{{ form_errors(form.plainPassword.second) }}
+		
 
 				{{ form_rest(form) }}
 

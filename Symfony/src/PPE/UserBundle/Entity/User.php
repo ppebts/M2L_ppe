@@ -27,12 +27,14 @@ class User extends BaseUser
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max=30)
      *
      */
     protected $first_name;
  
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max=30)
      *
      */
     protected $last_name;

@@ -29,7 +29,7 @@
 	#annonceAdd #titre{height: 45px;line-height: 45px;background: #1ABC9C; color: #fff}
 
 	#annonceAdd ul {margin : 0; padding-left: 0;}
-	#annonceAdd ul li {list-style: none; color : red; padding-top: 7px;}
+	#annonceAdd ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 
 
 		.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
