@@ -3,12 +3,15 @@
 namespace PPE\M2LBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;  // Verif de l'unicité de l'entité (ligne 14)
 
 /**
  * Ligue
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\LigueRepository")
+ * @UniqueEntity(fields="nom",message="Une ligue existe déja avec le même nom")
  */
 class Ligue
 {
@@ -25,6 +28,7 @@ class Ligue
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\Length(max=55)
      */
     private $nom;
 
@@ -32,6 +36,7 @@ class Ligue
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\Length(max=650)
      */
     private $description;
 
@@ -39,6 +44,7 @@ class Ligue
      * @var string
      *
      * @ORM\Column(name="url", type="text")
+     * @Assert\Url()
      */
     private $url;
 

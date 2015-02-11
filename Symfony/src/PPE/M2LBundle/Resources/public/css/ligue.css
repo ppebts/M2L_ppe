@@ -1,10 +1,13 @@
 /*VERSION DESKTOP*/
 @media (min-width: 1200px) { 
 #ligue_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}
-#ligue_content #ligue_index{width :210px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 120px 120px 0px / 0px 120px 120px 0px;}
+
+
+/* #ligue_content #ligue_index{width :210px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 120px 120px 0px / 0px 120px 120px 0px;}
 #ligue_content #ligue_index ul  { padding-left: 10px;}
 #ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
-#ligue_content #ligue_index a:hover {font-weight: bold;}
+#ligue_content #ligue_index a:hover {font-weight: bold;} */
+
 #ligue_content #ligue{width: 1250px; height: 200px; margin : 10px auto; background-color: #fff;}
 #ligue_content #ligue img {float:left;width: 200px;height:200px;margin: 0 30px 0 30px ;}
 #ligue_content #ligue #ligue_text {padding-right: 20px;}
@@ -18,8 +21,12 @@
 
 .add_ligue span{cursor: pointer}
 .add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
-.add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 555px}
+.add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
 #add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+.add_ligue ul {margin : 0; padding-left: 0;}
+.add_ligue ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
 
 #ma_ligue{width: 500px;margin: 75px auto 0px auto;background: #fff;text-align: center;}
 
