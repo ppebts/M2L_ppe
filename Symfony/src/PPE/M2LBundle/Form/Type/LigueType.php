@@ -19,7 +19,7 @@ class LigueType extends AbstractType
           $builder
             ->add('nom', 'text')
             ->add('description', 'textarea')
-            ->add('url', 'text')
+            ->add('url', 'text', array('attr' => array( "value" => "http://")))
             ->add('image', 'text')
             ->add('sportLigue', 'entity', array(
                                                 'class' => 'PPEM2LBundle:Sport',
