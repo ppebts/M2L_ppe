@@ -5,5 +5,5 @@
 	#panel_admin_menu ul li{margin: 5px 0px}
 	#panel_admin_menu ul li a{color: #000}
 	#panel_admin_arrow{margin-left: 110px;width: 20px;}
-	#panel_container{position: absolute;top: 60px;left: 100px;display:none;opacity: 0}
+	#panel_container{border: 1px solid;border-top: 0px;border-color: #e5e6e9 #dfe0e4 #d0d1d5;-webkit-border-radius: 3px;z-index: 5;position: absolute;top: 60px;left: 100px;display:none;opacity: 0}
 }

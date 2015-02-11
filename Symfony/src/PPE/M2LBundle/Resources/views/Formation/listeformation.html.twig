@@ -8,7 +8,8 @@
 			<th>Nom</th>
 			<th>Description</th>
 			<th>Durée</th>
-			<th>Début</th>
+			<th>Date</th>
+			<th>Heure</th>
 			<th>Lieu</th>
 			<th>Image</th>
 			<th>Participants</th>
@@ -22,7 +23,8 @@
 			<td>{{ formation.nom }}</td>
 			<td>{{ formation.description }}</td>
 			<td>{{ formation.duree }}</td>
-			<td>{{ formation.debut|date('d-m-Y') }}</td>
+			<td>{{ formation.date|date('d-m-Y') }}</td>
+			<td>{{ formation.time|date('h:m') }}</td>
 			<td>{{ formation.lieu }}</td>
 			<td>{{ formation.image }}</td>
 			<td>
@@ -73,10 +75,18 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAddformation.debut, "Date de début", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					{{ form_label(formAddformation.date, "Date", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAddformation.debut) }}
-					{{ form_widget(formAddformation.debut, {'label_attr': {'class': 'from-control'}}) }}
+					{{ form_errors(formAddformation.date) }}
+					{{ form_widget(formAddformation.date, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
+				<div class="input_form_register">
+					{{ form_label(formAddformation.time, "Heure", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(formAddformation.time) }}
+					{{ form_widget(formAddformation.time, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
 
@@ -125,13 +135,13 @@ $(document).ready(function(){
 		$('.date').prop('type', 'text').datepicker({
 		beforeShow: function(input, inst)
 		{
-			inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 110 + 'px'});	
+			inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth - 510 + 'px'});	
 			$('#ui-datepicker-div').addClass('ll-skin-melon');
 		},
 		changeMonth: true,
     	changeYear: true,
     	yearRange: "1935:2015",
-    	dateFormat: 'yy-mm-dd',
+    	dateFormat: "yy-mm-dd",
     	regional: 'fr'
     });
 });

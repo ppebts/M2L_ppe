@@ -18,13 +18,24 @@ class FormationsType extends AbstractType
             ->add('nom', 'text')
             ->add('description', 'textarea')
             ->add('duree', 'text')
-            ->add('debut', 'date',array(
+            ->add('date', 'date',array(
                                                 'widget' => 'single_text',
                                                 'format' => 'yyyy-MM-dd',
                                                 'input' => 'datetime',
                                                 'attr' => array('class' => 'date')                                            
                                                 ))
-            ->add('lieu', 'text')
+            ->add('time', 'time', array(
+                                            'input'  => 'datetime',
+                                            'widget' => 'choice',
+                                             ))
+            ->add('lieu', 'choice', array(
+                'choices'   => array(
+                    'A1'   => 'A1',
+                    'B2'   => 'B2',
+                    'B3'   => 'B3',
+                    'B4'   => 'B4',
+                    'B5'   => 'B5',
+                ),)
             ->add('image', 'text')
             ->add('nbparticipants', 'text')
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))

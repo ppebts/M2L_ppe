@@ -36,18 +36,25 @@ class Formation
     private $description;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
      * @ORM\Column(name="duree", type="integer")
      */
     private $duree;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="debut", type="datetime")
+     * @ORM\Column(name="date", type="date")
      */
-    private $debut;
+    private $date;
+
+    /**
+     * @var \Time
+     *
+     * @ORM\Column(name="time", type="time")
+     */
+    private $time;
 
     /**
      * @var string
@@ -159,29 +166,6 @@ class Formation
     public function getDuree()
     {
         return $this->duree;
-    }
-
-    /**
-     * Set debut
-     *
-     * @param \DateTime $debut
-     * @return Formation
-     */
-    public function setDebut($debut)
-    {
-        $this->debut = $debut;
-    
-        return $this;
-    }
-
-    /**
-     * Get debut
-     *
-     * @return \DateTime 
-     */
-    public function getDebut()
-    {
-        return $this->debut;
     }
 
     /**
@@ -315,5 +299,51 @@ class Formation
     public function getNbinscrits()
     {
         return $this->nbinscrits;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Formation
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set time
+     *
+     * @param \DateTime $time
+     * @return Formation
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * Get time
+     *
+     * @return \DateTime 
+     */
+    public function getTime()
+    {
+        return $this->time;
     }
 }

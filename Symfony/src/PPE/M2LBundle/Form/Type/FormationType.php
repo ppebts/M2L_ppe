@@ -18,12 +18,16 @@ class FormationType extends AbstractType
             ->add('nom', 'text')
             ->add('description', 'textarea')
             ->add('duree', 'text')
-            ->add('debut','date',array(
+            ->add('date', 'date',array(
                                                 'widget' => 'single_text',
                                                 'format' => 'yyyy-MM-dd',
                                                 'input' => 'datetime',
                                                 'attr' => array('class' => 'date')                                            
                                                 ))
+            ->add('time', 'time', array(
+                                            'input'  => 'datetime',
+                                            'widget' => 'choice',
+                                        ))
             ->add('lieu', 'text')
             ->add('image', 'text')
             ->add('nbparticipants', 'text')
