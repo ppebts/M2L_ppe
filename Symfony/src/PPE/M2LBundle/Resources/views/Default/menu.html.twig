@@ -56,6 +56,16 @@ $(function(){
     $('#menu').data('size','big');
 });
 
+
+var left = $('#panel').offset().left - 70;
+$(window).load(function(){
+	$('#panel_container').css('left', left);
+});
+
+$(window).resize(function(){
+	$('#panel_container').css('left', left);
+});
+
 $('#panel').on('click',function(event){
 	if ($('#panel_container').hasClass('hidden')) {
 		$('#panel_container').css('display', 'block').animate({opacity: 1},100).removeClass('hidden').addClass('visible');
