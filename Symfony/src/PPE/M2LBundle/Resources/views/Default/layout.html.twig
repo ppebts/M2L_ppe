@@ -18,15 +18,14 @@
 	{% endblock %}
 
 	{% block javascripts %}
-		<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/jquery-ui.min.js') }}"></script>
-      	<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/datepicker-fr.js') }}"></script>
 		{% javascripts '@PPEM2LBundle/Resources/public/js/*' %}
    		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/jquery.js') }}"></script>
       	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/information.js') }}"></script>
       	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/global.js') }}"></script>
    		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.js') }}"></script>
-   		
 		{% endjavascripts %}
+		<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/jquery-ui.min.js') }}"></script>
+      	<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/datepicker-fr.js') }}"></script>
 	{% endblock %}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
