@@ -43,6 +43,9 @@
 	.add_annonce{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 555px}
 	#add_annonce{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
 
+	.add_annonce ul {margin : 0; padding-left: 0;}
+	.add_annonce ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
 
 	.edit_annonce span{cursor: pointer}
 	.edit_annonce input{width: 400px!important}
