@@ -1,5 +1,5 @@
 @media (min-width: 1050px){
-	#panel{cursor: pointer;line-height: 55px;font-family: 'Lato';font-weight: 700;display: block;text-align: center;color: #fff;float: left;position: absolute;left: 10%;}
+	#panel{cursor: pointer;line-height: 55px;font-family: 'Lato';font-weight: 300;display: block;text-align: center;color: #fff;float: left;position: absolute;left: 10%;}
 	#panel_admin_menu{width: 220px;background: #FFF;padding: 10px;}
 	#panel_admin_menu ul{list-style-type: none;padding: 0px;text-align: center;}
 	#panel_admin_menu ul li{margin: 5px 0px}
