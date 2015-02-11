@@ -5,11 +5,6 @@
 <div id="menu">
 	
 <a href="{{ path( 'ppe_m2l_homepage' ) }}" id="logo_link"><img id="logo" src="{{ asset('bundles/ppem2l/img/logo.png') }}" alt=""></a>
-
-{% if is_granted("ROLE_ADMIN") %}
-	<a id="panel_link" href="{{ path( 'ppe_m2l_admin_panel' ) }}" id="logo_link">Panel</a>	
-{% endif %}	
-
 	<ul id="center">
 		<li><a href="{{ path( 'ppe_m2l_informations' ) }}">Informations</a></li>
 		<li><a href="{{ path( 'ppe_m2l_reservations' ) }}">Réservations</a></li>
@@ -35,20 +30,6 @@
 			$(this).css('background', '#18568C');
 		});
 
-	// 	$(document).scroll(function() { // réduit le menu quand on scroll a plus de 10px
-	//     if( $(this).scrollTop() > 10 ) {
-	// 		$('#menu').animate({height : "30px"});
-	// 		$('#logo').animate({width : "25px"});
-	// 		$('#logo_link').animate({top : "0"});
-	// 		$('#menu > ul > li > a').animate({lineHeight :"30px"});
-	// 		$.finish();
-	// 	}else{
-	// 		$('#menu').animate({height : "55px"});
-	// 		$('#logo').animate({width : "40px"});	
-	// 		$('#logo_link').animate({top : "5px"});
-	// 		$('#menu > ul > li > a').animate({lineHeight :"55px"});
-	// 	}
-	// });
 $(function(){
     $('#menu').data('size','big');
 });
@@ -78,3 +59,18 @@ $(window).scroll(function(){
 });
 </script>
 </div>
+
+{% if is_granted("ROLE_ADMIN") %}
+	<a id="panel_link" href="{{ path( 'ppe_m2l_admin_panel' ) }}" id="logo_link">Panel</a>
+			<div id="admin_panel">
+			<div class="titre_back">ADMIN PANEL</div>
+			<ul>
+				<li><a href="{{ path('ppe_m2l_back_actualite') }}">Actualités</a></li>
+				<li><a href="{{ path('ppe_m2l_back_information') }}">Informations</a></li>
+				<li><a href="{{ path('ppe_m2l_back_annonce') }}">Annonces</a></li>
+				<li><a href="{{ path('ppe_m2l_back_formation') }}">Formations</a></li>
+				<li><a href="{{ path('ppe_m2l_back_list_ligues') }}">Ligues</a></li>
+				<li><a href="{{ path('ppe_m2l_back_list_utilisateurs') }}">Utilisateurs</a></li>
+			</ul>
+		</div>
+{% endif %}	

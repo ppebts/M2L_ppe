@@ -25,7 +25,7 @@
 				<td>{{ ligue.description }}</td>
 				<td>{{ ligue.url }}</td>
 				<td>{{ ligue.image }}</td>
-				<td>{{ ligue.sport }}</td>
+				<td>{{ ligue.sportLigue.nom }}</td>
 
 				
 				<td><a href="{{ path( 'ppe_m2l_back_edit_ligues',{'id': ligue.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
@@ -85,10 +85,10 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAdd.sport, "Sport", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					{{ form_label(formAdd.sportLigue, "Sport", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAdd.sport) }}
-					{{ form_widget(formAdd.sport, {'label_attr': {'class': 'from-control'}}) }}
+					{{ form_errors(formAdd.sportLigue) }}
+					{{ form_widget(formAdd.sportLigue, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
 

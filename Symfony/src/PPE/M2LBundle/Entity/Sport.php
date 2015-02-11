@@ -28,6 +28,10 @@ class Sport
      */
     private $nom;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PPE\M2LBundle\Entity\Ligue", mappedBy="userLigue")
+     */
+    private $ligues;
 
     /**
      * Get id
@@ -60,5 +64,45 @@ class Sport
     public function getNom()
     {
         return $this->nom;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ligues = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ligues
+     *
+     * @param \PPE\M2LBundle\Entity\Ligue $ligues
+     * @return Sport
+     */
+    public function addLigue(\PPE\M2LBundle\Entity\Ligue $ligues)
+    {
+        $this->ligues[] = $ligues;
+
+        return $this;
+    }
+
+    /**
+     * Remove ligues
+     *
+     * @param \PPE\M2LBundle\Entity\Ligue $ligues
+     */
+    public function removeLigue(\PPE\M2LBundle\Entity\Ligue $ligues)
+    {
+        $this->ligues->removeElement($ligues);
+    }
+
+    /**
+     * Get ligues
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLigues()
+    {
+        return $this->ligues;
     }
 }

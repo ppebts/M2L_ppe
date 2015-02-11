@@ -50,11 +50,10 @@ class Ligue
     private $image;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="sport", type="integer")
+     * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\Sport", inversedBy="ligues")
+     * @ORM\JoinColumn(name="sport_id", referencedColumnName="id", nullable=false)
      */
-    private $sport;
+    private $sportLigue;
 
     /**
      * @ORM\OneToOne(targetEntity="PPE\UserBundle\Entity\User")
@@ -166,29 +165,6 @@ class Ligue
     }
 
     /**
-     * Set sport
-     *
-     * @param integer $sport
-     * @return Ligue
-     */
-    public function setSport($sport)
-    {
-        $this->sport = $sport;
-    
-        return $this;
-    }
-
-    /**
-     * Get sport
-     *
-     * @return integer 
-     */
-    public function getSport()
-    {
-        return $this->sport;
-    }
-
-    /**
      * Set userLigue
      *
      * @param \PPE\UserBundle\Entity\User $userLigue
@@ -209,5 +185,28 @@ class Ligue
     public function getUserLigue()
     {
         return $this->userLigue;
+    }
+
+    /**
+     * Set sportLigue
+     *
+     * @param \PPE\M2LBundle\Entity\Sport $sportLigue
+     * @return Ligue
+     */
+    public function setSportLigue(\PPE\M2LBundle\Entity\Sport $sportLigue)
+    {
+        $this->sportLigue = $sportLigue;
+
+        return $this;
+    }
+
+    /**
+     * Get sportLigue
+     *
+     * @return \PPE\M2LBundle\Entity\Sport 
+     */
+    public function getSportLigue()
+    {
+        return $this->sportLigue;
     }
 }

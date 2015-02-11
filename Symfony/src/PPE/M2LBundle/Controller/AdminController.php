@@ -11,6 +11,7 @@ use PPE\M2LBundle\Entity\Formation;
 use PPE\M2LBundle\Form\Type\FormationType;
 use PPE\M2LBundle\Form\Type\FormationsType;
 use PPE\M2LBundle\Entity\Ligue;
+use PPE\M2LBundle\Entity\Sport;
 use PPE\M2LBundle\Form\Type\LigueType;
 use PPE\M2LBundle\Form\Type\LiguesType;
 use PPE\M2LBundle\Entity\Actualite;
