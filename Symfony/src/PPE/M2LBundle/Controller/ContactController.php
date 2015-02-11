@@ -31,8 +31,10 @@ public function contactAction(Request $request)
         ->setBody($data["message"])
     ;
     $this->get('mailer')->send($message);
+    return $this->redirect($this->generateUrl('ppe_m2l_contact'));
 
             }
 return $this->render('PPEM2LBundle:Contact:contact.html.twig', array('form'=>$form->createView()));
     }
+
 }
