@@ -11,10 +11,21 @@ class ContactController extends Controller
 
 public function contactAction(Request $request)
 {
+
+    $user = $this->container->get('security.context')->getToken()->getUser();
+    $userMail = $user->getUsername();
+    $fname = $user->getFirstName();
+    $lname = $user->getLastName();
+    $userName = $fname.' '.$lname;
+
     $defaultData = array('message' => '');
     $form = $this->createFormBuilder($defaultData)
-        ->add('name', 'text')
-        ->add('email', 'email')
+        ->add('name', 'text', array(
+                                        'attr' => array(
+                                        'value' => $userName,)))
+        ->add('email', 'email', array(
+                                        'attr' => array(
+                                        'value' => $userMail,)))
         ->add('message', 'textarea')
         ->add('sujet', 'text')
         ->add('envoyer', 'submit', array('attr' => array('class' => 'ppe_submit')))
