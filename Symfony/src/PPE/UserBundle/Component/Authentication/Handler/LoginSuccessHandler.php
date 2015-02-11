@@ -24,11 +24,11 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
     {
         if ($this->security->isGranted('ROLE_SUPER_ADMIN'))
         {
-            $response = new RedirectResponse($this->router->generate('ppe_m2l_admin_panel'));            
+            $response = new RedirectResponse($this->router->generate('ppe_m2l_homepage'));            
         }
         elseif ($this->security->isGranted('ROLE_ADMIN'))
         {
-            $response = new RedirectResponse($this->router->generate('ppe_m2l_admin_panel'));
+            $response = new RedirectResponse($this->router->generate('ppe_m2l_homepage'));
         } 
         elseif ($this->security->isGranted('ROLE_USER'))
         {

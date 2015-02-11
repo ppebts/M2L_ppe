@@ -172,26 +172,6 @@ ppe_m2l_contact:
 
 # Fin Contact
 
-# Authentification
-
-ppe_m2l_inscription:
-    path:     /inscription
-    defaults: { _controller: PPEM2LBundle:Auth:inscription }
-
-ppe_m2l_account:
-    path:     /account
-    defaults: { _controller: PPEM2LBundle:Default:account }
-
-# Fin Authentification
-
-# Panel
-
-ppe_m2l_admin_panel:
-    path:     /admin/
-    defaults: { _controller: PPEM2LBundle:Admin:adminPanel }
-
-# Fin Panel
-
 # Utilisateurs 
 
 ppe_m2l_back_list_utilisateurs:

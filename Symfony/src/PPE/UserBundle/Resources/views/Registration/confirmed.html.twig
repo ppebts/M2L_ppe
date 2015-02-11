@@ -8,10 +8,10 @@
 	<div class="confirmed">
     	<p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     	<p><a href="{{ path( 'fos_user_profile_show' ) }}">Accéder à mon compte</a></p>
-    </div>
 
     {% if app.session is not empty %}
         {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
         {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
     {% endif %}
+     </div>
 {% endblock fos_user_content %}
