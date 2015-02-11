@@ -23,6 +23,14 @@
 </div>
 
 <div class="input_form_register">
+	{{ form_label(form.sujet, "Votre sujet", {'label_attr': {'class': 'col-sm-3 control-label text_contact'  }}) }}
+	<br/>
+	{{ form_errors(form.sujet) }}
+	{{ form_widget(form.sujet, {'label_attr': {'class': 'from-control'}}) }}
+	<br/>
+</div>
+
+<div class="input_form_register">
 	{{ form_label(form.message, "Votre message", {'label_attr': {'class': 'col-sm-3 control-label text_contact'  }}) }}
 	<br/>
 	{{ form_errors(form.message) }}
