@@ -465,6 +465,18 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Users:edituser.html.twig', array('form'=>$form->createView()));
      
     }
+    public function deleteuserAction($id)
+    {
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repo = $em->getRepository("PPEUserBundle:User");
+        $user = $repo->find($id);
+
+        $em->remove($user);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('ppe_m2l_back_list_utilisateurs', array()));
+    }
 
 
                                                /* Fin Utilisateurs */
