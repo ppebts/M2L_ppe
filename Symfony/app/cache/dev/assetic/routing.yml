@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:/wamp/www/M2L_ppe/Symfony/app/config/routing_dev.yml'
