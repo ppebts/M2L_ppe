@@ -27,9 +27,31 @@ public function contactAction(Request $request)
     $message = \Swift_Message::newInstance()
         ->setSubject($data["sujet"])
         ->setFrom('m2lorraine.ppe@gmail.com')
-        ->setTo($data["email"])
-        ->setBody($data["message"])
-    ;
+        ->setTo('m2lorraine.contact@gmail.com')
+        ->setBody
+        (
+'<html>' .
+' <head></head>' .
+' <body>' .
+' Bonjour ' .
+$data["name"].
+','.
+'<br /><br />'.
+' Suite à votre demande de contact auprès de la maison des ligues de Lorraine qui était la suivante : '. 
+'<br /><br />'.
+$data["message"].
+'<br /><br />'.
+'Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais à l adresse suivante : '.
+$data["email"].
+'<br /><br />'.
+' Cordialement,'. 
+'<br />'.
+' L équipe M2L'.
+' </body>' .
+'</html>',
+  'text/html'
+);
+    
     $this->get('mailer')->send($message);
     return $this->redirect($this->generateUrl('ppe_m2l_contact'));
 
