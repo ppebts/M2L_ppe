@@ -27,7 +27,7 @@ public function contactAction(Request $request)
     $message = \Swift_Message::newInstance()
         ->setSubject($data["sujet"])
         ->setFrom('m2lorraine.ppe@gmail.com')
-        ->setTo('m2lorraine.contact@gmail.com')
+        ->setTo($data["email"])
         ->setBody
         (
 '<html>' .
@@ -53,6 +53,35 @@ $data["email"].
 );
     
     $this->get('mailer')->send($message);
+
+$data = $form->getData();
+    $message = \Swift_Message::newInstance()
+        ->setSubject($data["sujet"])
+        ->setFrom('m2lorraine.ppe@gmail.com')
+        ->setTo('m2lorraine.contact@gmail.com')
+        ->setBody
+        (
+'<html>' .
+' <head></head>' .
+' <body>' .
+' L utilisateur ' .
+$data["name"].
+' a soumis une demande dans le formulaire de contact. Sa demande est la suivante : '. 
+'<br /><br />'.
+$data["message"].
+'<br /><br />'.
+'Lui répondre à l adresse mail suivante : '.
+$data["email"].
+
+' </body>' .
+'</html>',
+  'text/html'
+);
+    
+    $this->get('mailer')->send($message);
+
+
+
     return $this->redirect($this->generateUrl('ppe_m2l_contact'));
 
             }
