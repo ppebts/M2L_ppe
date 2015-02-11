@@ -21,7 +21,7 @@
 
 	.add_actualite span{cursor: pointer}
 	.add_actualite textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
-	.add_actualite{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;height: 555px}
+	.add_actualite{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
 	#add_actualite{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
 
 	.add_actualite ul {margin : 0; padding-left: 0;}

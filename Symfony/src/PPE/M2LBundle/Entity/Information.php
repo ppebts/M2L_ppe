@@ -3,12 +3,15 @@
 namespace PPE\M2LBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;  // Verif de l'unicité de l'entité (ligne 14)
 
 /**
  * Information
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\InformationRepository")
+ * @UniqueEntity(fields="titre",message="Une info existe déja avec le même titre")
  */
 class Information
 {
@@ -25,6 +28,7 @@ class Information
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
+     * @Assert\Length(max=50)
      */
     private $titre;
 
