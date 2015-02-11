@@ -198,17 +198,16 @@ ppe_m2l_back_list_utilisateurs:
     path:    /admin/listusers
     defaults: { _controller: PPEM2LBundle:Admin:getutilisateurs}
 
-
 ppe_m2l_back_edit_users:
     path:    /admin/editusers/{id}
     defaults: { _controller: PPEM2LBundle:Admin:edituser}
     requirements:
         id: \d+
 
-# Fin Utilisateurs
-
 ppe_m2l_back_delete_users:
     path: /admin/deleteuser/{id}
     defaults: { _controller: PPEM2LBundle:Admin:deleteuser}
     requirements:
         id: \d+
+
+# Fin Utilisateurs

@@ -20,7 +20,7 @@
 			<td>{{ user.lastname }}</td>
 
 			<td><a href="{{ path( 'ppe_m2l_back_edit_users',{'id': user.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
-			<td><a href=""><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
+			<td><a href="{{ path( 'ppe_m2l_back_delete_users',{'id': user.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>
 	</tr>
 
 {% endfor %}
