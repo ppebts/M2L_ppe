@@ -36,6 +36,9 @@
 	#add_formation{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
 	.input_form_register select{width: 100px}
 
+	.add_formation ul {margin : 0; padding-left: 0;}
+	.add_formation ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
 	.edit_formation span{cursor: pointer}
 	.edit_formation input{width: 350px!important}
 	.edit_formation input[type=submit]{width: 200px!important}

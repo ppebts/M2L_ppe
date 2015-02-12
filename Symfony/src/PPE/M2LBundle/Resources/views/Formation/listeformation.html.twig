@@ -53,25 +53,22 @@
 				<div class="input_form_register">
 					{{ form_label(formAddformation.nom, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAddformation.nom) }}
 					{{ form_widget(formAddformation.nom, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
+					{{ form_errors(formAddformation.nom) }}
 				</div>
 
 				<div class="input_form_register">
 					{{ form_label(formAddformation.description, "Description", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAddformation.description) }}
 					{{ form_widget(formAddformation.description, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
+					{{ form_errors(formAddformation.description) }}
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAddformation.duree, "Durée", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					{{ form_label(formAddformation.duree, "Durée (en minutes)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAddformation.duree) }}
 					{{ form_widget(formAddformation.duree, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
+					{{ form_errors(formAddformation.duree) }}
 				</div>
 
 				<div class="input_form_register">
@@ -85,9 +82,8 @@
 				<div class="input_form_register">
 					{{ form_label(formAddformation.time, "Heure", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAddformation.time) }}
 					{{ form_widget(formAddformation.time, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
+					{{ form_errors(formAddformation.time) }}
 				</div>
 
 					<div class="input_form_register">
@@ -109,8 +105,8 @@
 				<div class="input_form_register">
 					{{ form_label(formAddformation.nbparticipants, "Nombre de participants", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(formAddformation.nbparticipants) }}
 					{{ form_widget(formAddformation.nbparticipants, {'label_attr': {'class': 'from-control'}}) }}
+					{{ form_errors(formAddformation.nbparticipants) }}
 					<br/>
 				</div>
 

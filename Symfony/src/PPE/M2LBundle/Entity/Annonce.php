@@ -58,6 +58,7 @@ class Annonce
      * @var integer
      *
      * @ORM\Column(name="prix", type="integer")
+     * @Assert\Type(type="numeric", message="Veuillez saisir des chiffres")
      */
     private $prix;
 

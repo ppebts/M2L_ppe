@@ -3,12 +3,15 @@
 namespace PPE\M2LBundle\Entity;
 use PPE\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;  // Verif de l'unicité de l'entité 
 
 /**
  * Formation
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="PPE\M2LBundle\Entity\FormationRepository")
+ * @UniqueEntity(fields="nom",message="Une formation similaire existe déja")
  */
 class Formation
 {
@@ -25,6 +28,7 @@ class Formation
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\Length(max=35)
      */
     private $nom;
 
@@ -32,6 +36,7 @@ class Formation
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\Length(max=550)
      */
     private $description;
 
@@ -39,6 +44,7 @@ class Formation
      * @var integer
      *
      * @ORM\Column(name="duree", type="integer")
+     * @Assert\Type(type="numeric", message="Veuillez saisir des chiffres")
      */
     private $duree;
 
@@ -74,6 +80,7 @@ class Formation
      * @var integer
      *
      * @ORM\Column(name="nbparticipants", type="integer")
+     * @Assert\Type(type="numeric", message="Veuillez saisir des chiffres")
      */
     private $nbparticipants;
 
