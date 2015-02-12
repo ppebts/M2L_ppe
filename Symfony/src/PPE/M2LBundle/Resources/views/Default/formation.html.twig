@@ -27,8 +27,8 @@
 							<p>{{ formation.description }}</p>
 							<p>
 					    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
-					    		Durée : {{ formation.duree }} Min <br/>
-					    		Date de début : {{ formation.debut|date('d-m-Y')}} <br/>
+					    		Durée : {{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60 }}  <br/>
+					    		Date de début : {{ formation.date|date('d-m-Y')}} <br/> 
 				    		</p>
 				    	</div>
 				</div>

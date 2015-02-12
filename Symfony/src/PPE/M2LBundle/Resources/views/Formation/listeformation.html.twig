@@ -22,7 +22,7 @@
 
 			<td>{{ formation.nom }}</td>
 			<td>{{ formation.description }}</td>
-			<td>{{ formation.duree }}</td>
+			<td>{{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60 }}</td>
 			<td>{{ formation.date|date('d-m-Y') }}</td>
 			<td>{{ formation.time|date('h:m') }}</td>
 			<td>{{ formation.lieu }}</td>
