@@ -263,6 +263,7 @@ class AdminController extends Controller
         
         $form = $this->get('form.factory')->create(new FormationType(),$formation);
         $form->handleRequest($request);
+        
         if ( $form->isValid()){
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
