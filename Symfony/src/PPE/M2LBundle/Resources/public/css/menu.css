@@ -56,7 +56,7 @@
 	#panel_admin_menu ul li{margin: 5px 0px}
 	#panel_admin_menu ul li a{color: #000}
 	#panel_admin_arrow{position: absolute;width: 20px;top: -8px;left: 38px;}
-	#panel_container{display: block;z-index: 5;position: absolute;top: 60px;left: 10px;display: none;opacity: 0;}
+	#panel_container{display: block;z-index: 5;position: fixed;top: 60px;left: 10px;display: none;opacity: 0;}
 
 	#center_mobile{display: block;cursor: pointer;line-height: 55px;font-family: 'Lato';font-weight: 300;display: block;text-align: center;color: #fff;float: left;position: absolute;left: calc(50% - 24px);left: -webkit-calc(50% - 24px);left: -moz-calc(50% - 24px);left: -ms-calc(50% - 24px);}
 	#panel_center_menu{display: block;width: 220px;background: #FFF;padding: 10px;}
@@ -64,21 +64,21 @@
 	#panel_center_menu ul li{margin: 5px 0px}
 	#panel_center_menu ul li a{color: #000}
 	#panel_center_arrow{position: absolute;width: 20px;top: -8px;left: calc(50% - 10px);left: -webkit-calc(50% - 10px);left: -moz-calc(50% - 10px);left: -ms-calc(50% - 10px);}
-	#menu_container{display:block;z-index: 5;position: absolute;top: 60px;left: calc(50% - 120px);left: -webkit-calc(50% - 120px);left: -moz-calc(50% - 120px);left: -ms-calc(50% - 120px);display:none;opacity: 0}
+	#menu_container{display:block;z-index: 5;position: fixed;top: 60px;left: calc(50% - 120px);left: -webkit-calc(50% - 120px);left: -moz-calc(50% - 120px);left: -ms-calc(50% - 120px);display:none;opacity: 0}
 
-	#account{display: block;float: right;cursor: pointer;width: 30px;margin-top: 12px;margin-right: 30px;}
+	#account{display: block;float: right;cursor: pointer;width: 25px;margin-top: 15px;margin-right: 33px;}
 	#panel_account{width: 220px;background: #FFF;padding: 10px;}
 	#panel_account ul{list-style-type: none;padding: 0px;text-align: center;}
 	#panel_account ul li{margin: 5px 0px}
 	#panel_account ul li a{color: #000}
 	#panel_account_arrow{position: absolute;width: 20px;top: -8px;right: 25px;}
-	#account_container{display: block;z-index: 5;position: absolute;top: 60px;right: 10px;display:none;opacity: 0}
+	#account_container{display: block;z-index: 5;position: fixed;top: 60px;right: 10px;display:none;opacity: 0}
 
 }
 
 @media (max-width: 375px) { 
 
-	#menu_phone{cursor: pointer;display: block;width: 30px;margin: 12px 0 0 30px;float: left}
+	#menu_phone{cursor: pointer;display: block;width: 25px;margin: 15px 0 0 30px;float: left}
 	#menu_phone_container{display: none;top:55px;height: calc(100% - 55px);height: -webkit-calc(100% - 55px);height: -moz-calc(100% - 55px);height: -ms-calc(100% - 55px);left: -170;width: 170px;background: #18568C;position: absolute;}
 	#menu_phone_container ul{padding: 0px;margin: 0px;height: 100%}
 	#menu_phone_container ul li{width: 100%;display: table;list-style-type: none;text-decoration: none;height: 14.5%;border-top: 1px solid rgb(21, 72, 116);}
@@ -100,7 +100,7 @@
 	#menu a#logo_link{position: absolute;left: 43px;top:5px;}
 	#panel_link{color: #fff;position: absolute;left: 110px;top: 17.5px;}
 
-	#account{display: block;float: right;cursor: pointer;width: 30px;margin-top: 12px;margin-right: 30px;}
+	#account{display: block;float: right;cursor: pointer;width: 25px;margin-top: 15px;margin-right: 33px;}
 	#panel_account{width: 100px;background: #FFF;padding: 10px;}
 	#panel_account ul{list-style-type: none;padding: 0px;text-align: center;}
 	#panel_account ul li{margin: 5px 0px}

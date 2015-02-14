@@ -20,7 +20,7 @@
 	    		<a href="#article_fancybox_{{ i }}" class="fancybox">Lire la suite</a>
 				{% endif %}
 	    	</div>
-		</div><br/>
+		</div>
 		{% if actualite.contenu|length > 300 %}
 	    	<div id="article_fancybox_{{ i }}" class="actualite_fancybox" style="display:none">
 				<div class="img_container">
@@ -38,19 +38,5 @@
 	  	{% set i = i + 1 %}
 	{% endfor %}
 </div>
-<script type="text/javascript">
-    $( document ).ready(function() {
-		$('.fancybox').fancybox({
-			helpers : {
-			        overlay : {
-			            css : {
-			                'background' : 'rgba(58, 42, 45, 0.95)'
-			            }
-			        }
-			    },
-			'autoSize' : false,
-			'width' : '70%'
-		});
-	});
-</script>
+
 {% endblock %}

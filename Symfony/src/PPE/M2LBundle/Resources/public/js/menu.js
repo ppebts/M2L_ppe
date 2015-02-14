@@ -9,7 +9,7 @@ $( document ).ready(function() {
 	$(function(){
 	    $('#menu').data('size','big');
 	});
-	if ($(window).width() > 1150) { //desktop
+	if ($(window).width() > 1149) { //desktop
 
 		if ($('#panel').length != 0) {
 
@@ -31,6 +31,24 @@ $( document ).ready(function() {
 	}
 
 	if ($(window).width() < 1150 && $(window).width() > 375) { //ipad
+
+		if ($('#panel').length != 0) {
+
+			$('#panel').on('click',function(event){
+				$('.open').animate({left: '-170px'},300).removeClass('open').addClass('hidden');
+				$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
+				if ($('#panel_container').hasClass('hidden')) {
+					$('#panel_container').css('display', 'block').animate({opacity: 1},100).removeClass('hidden').addClass('visible');
+				}else if ($('#panel_container').hasClass('visible')){
+					$('#panel_container').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');		
+				}
+				event.stopPropagation();
+			});
+
+			$('html').click(function(){
+				$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
+			});
+		};
 
 		$('#center_mobile').on('click',function(event){
 			$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
@@ -117,6 +135,10 @@ $( document ).ready(function() {
 					$('#menu > ul > li > a').animate({lineHeight :"30px"},100);
 					$('#menu > #panel').animate({lineHeight: "30px"},100);
 					$('#menu > #center_mobile').animate({lineHeight: "30px"},100);
+					$('#menu > #account').animate({width: "20px", marginTop: "5px", marginRight: "35px"},100);
+					$('#account_container').animate({top: "40px"},100);
+					$('#panel_container').animate({top: "40px"},100);
+					$('#menu_container').animate({top: "40px"},100);
 
 		        }
 		    } else {
@@ -127,7 +149,10 @@ $( document ).ready(function() {
 					$('#menu > ul > li > a').animate({lineHeight :"55px"},100);
 					$('#menu > #panel').animate({lineHeight: "55px"},100);
 					$('#menu > #center_mobile').animate({lineHeight: "55px"},100);
-
+					$('#menu > #account').animate({width: "25px", marginTop: "15px", marginRight: "33px"},100);
+					$('#account_container').animate({top: "60px"},100);
+					$('#panel_container').animate({top: "60px"},100);
+					$('#menu_container').animate({top: "60px"},100);
 		        }  
 		    }
 		});

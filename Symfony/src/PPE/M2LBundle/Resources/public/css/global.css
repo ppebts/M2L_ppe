@@ -1,4 +1,4 @@
-body{margin: 0;background: #e1e1e1;overflow-x: hidden}
+body{margin: 0;background: #e1e1e1;overflow-x: hidden;width: 100%}
 h1, h2, h3, th{font-family: 'Lato'; font-weight: 700}
 p, a, td{font-family: 'Lato'; font-weight: 300}
 a:active{text-decoration: none}
