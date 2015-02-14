@@ -1,5 +1,5 @@
 /*VERSION DESKTOP*/
-@media (min-width: 1200px) { 
+@media (min-width: 1150px) { 
 
 .list_utilisateurs{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 .list_utilisateurs table{border: none; width: 100%}

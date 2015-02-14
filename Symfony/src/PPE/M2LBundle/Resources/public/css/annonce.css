@@ -1,5 +1,5 @@
 /*VERSION DESKTOP*/
-@media (min-width: 1200px) { 
+@media (min-width: 1150px) { 
 	#annonce_content{width: 100%;margin: 0 auto;padding: 10px 0px}	
 	#annonce_content .annonce{width:810px; height: 300px; margin: 10px auto}
 	#annonce_content .annonce img{height:290px;}

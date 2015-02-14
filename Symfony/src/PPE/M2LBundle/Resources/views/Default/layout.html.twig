@@ -1,40 +1,40 @@
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>{% block title %} M2L {% endblock %}</title>
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %} M2L {% endblock %}</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />		
 
-	{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/actualite.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/annonce.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/global.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/information.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/formation.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/ligue.css') }}"/>
-   	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.css') }}">
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/contact.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/adminPanel.css') }}"/>
-	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/utilisateurs.css') }}"/>
-	{% endblock %}
+		{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/actualite.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/annonce.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/global.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/information.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/formation.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/ligue.css') }}"/>
+	   	<link rel="stylesheet" href="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.css') }}">
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/contact.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/adminPanel.css') }}"/>
+		<link rel="stylesheet" href="{{ asset('bundles/ppem2l/css/utilisateurs.css') }}"/>
+		{% endblock %}
 
-	{% block javascripts %}
-		{% javascripts '@PPEM2LBundle/Resources/public/js/*' %}
-   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/jquery.js') }}"></script>
-      	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/information.js') }}"></script>
-      	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/global.js') }}"></script>
-   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.js') }}"></script>
-		{% endjavascripts %}
-		<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/jquery-ui.min.js') }}"></script>
-      	<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/datepicker-fr.js') }}"></script>
-	{% endblock %}
+		{% block javascripts %}
+	   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/jquery.js') }}"></script>
+	      	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/information.js') }}"></script>
+	      	<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/global.js') }}"></script>
+	   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/fancybox/jquery.fancybox.js') }}"></script>
+	   		<script type="text/javascript" src="{{ asset('bundles/ppem2l/js/menu.js') }}"></script>
+			<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/jquery-ui.min.js') }}"></script>
+	      	<script type="text/javascript" src="{{ asset('bundles/ppeuser/js/datepicker-fr.js') }}"></script>
+		{% endblock %}
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>
-<body>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	</head>
+	<body>
 
-{{ include('PPEM2LBundle:Default:menu.html.twig') }}
+	{{ include('PPEM2LBundle:Default:menu.html.twig') }}
 
-	{% block body %}{% endblock %}
+		{% block body %}{% endblock %}
 
-</body>
+	</body>
 </html>

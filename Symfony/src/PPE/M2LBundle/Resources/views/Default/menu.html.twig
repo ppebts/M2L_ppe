@@ -3,12 +3,16 @@
 {% endblock %}
 
 <div id="menu">
-	
+
+	<img id="menu_phone" src="{{ asset('bundles/ppem2l/img/menu.png') }}"/>
+
 	<a href="{{ path( 'ppe_m2l_homepage' ) }}" id="logo_link"><img id="logo" src="{{ asset('bundles/ppem2l/img/logo.png') }}" alt=""></a>
 	
 	{% if is_granted("ROLE_ADMIN") %}
-			<div id="panel">ADMIN PANEL</div>
+			<div id="panel">ADMIN</div>
 	{% endif %}
+
+	<div id="center_mobile">MENU</div>
 
 	<ul id="center">
 		<li><a href="{{ path( 'ppe_m2l_informations' ) }}">Informations</a></li>
@@ -18,6 +22,12 @@
 		<li><a href="{{ path( 'ppe_m2l_ligues' ) }}">Ligues</a></li>
 		<li><a href="{{ path( 'ppe_m2l_contact' ) }}">Contact</a></li>
 	</ul>
+
+	{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+		<img id="account" src="{{ asset('bundles/ppem2l/img/account.png') }}"/>
+	{% else %}
+		<img id="account" src="{{ asset('bundles/ppem2l/img/on.png') }}"/>
+	{% endif %}
 	<ul id="right">
 		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 			<li><a href="{{ path( 'fos_user_profile_show' ) }}">Mon compte</a></li>
@@ -30,78 +40,58 @@
 
 </div>
 	
-	<div id="panel_container" class="hidden">
-		<img id="panel_admin_arrow" src="{{ asset('bundles/ppem2l/img/arrow.png') }}"/>
-		<div id="panel_admin_menu">
-			<ul>
-				<li><a href="{{ path('ppe_m2l_back_actualite') }}">Actualités</a></li>
-				<li><a href="{{ path('ppe_m2l_back_information') }}">Informations</a></li>
-				<li><a href="{{ path('ppe_m2l_back_annonce') }}">Annonces</a></li>
-				<li><a href="{{ path('ppe_m2l_back_formation') }}">Formations</a></li>
-				<li><a href="{{ path('ppe_m2l_back_list_ligues') }}">Ligues</a></li>
-				<li><a href="{{ path('ppe_m2l_back_list_utilisateurs') }}">Utilisateurs</a></li>
-			</ul>
-		</div>
+<div id="panel_container" class="hidden">
+	<img id="panel_admin_arrow" src="{{ asset('bundles/ppem2l/img/arrow.png') }}"/>
+	<div id="panel_admin_menu">
+		<ul>
+			<li><a href="{{ path('ppe_m2l_back_actualite') }}">Actualités</a></li>
+			<li><a href="{{ path('ppe_m2l_back_information') }}">Informations</a></li>
+			<li><a href="{{ path('ppe_m2l_back_annonce') }}">Annonces</a></li>
+			<li><a href="{{ path('ppe_m2l_back_formation') }}">Formations</a></li>
+			<li><a href="{{ path('ppe_m2l_back_list_ligues') }}">Ligues</a></li>
+			<li><a href="{{ path('ppe_m2l_back_list_utilisateurs') }}">Utilisateurs</a></li>
+		</ul>
 	</div>
+</div>
 
-<script>
-	$( document ).ready(function() {
-		$('#menu li').hover(function(){ // change le bckgrnd des li au hover
-			$(this).css('background', '#154b77');
-		},function(){
-			$(this).css('background', '#18568C');
-		});
+<div id="menu_container" class="hidden">
+	<img id="panel_center_arrow" src="{{ asset('bundles/ppem2l/img/arrow.png') }}"/>
+	<div id="panel_center_menu">
+		<ul>
+			<li><a href="{{ path( 'ppe_m2l_homepage' ) }}">Actualités</a></li>
+			<li><a href="{{ path( 'ppe_m2l_informations' ) }}">Informations</a></li>
+			<li><a href="{{ path( 'ppe_m2l_reservations' ) }}">Réservations</a></li>
+			<li><a href="{{ path( 'ppe_m2l_annonces' ) }}">Annonces</a></li>
+			<li><a href="{{ path( 'ppe_m2l_formations' ) }}">Formations</a></li>
+			<li><a href="{{ path( 'ppe_m2l_ligues' ) }}">Ligues</a></li>
+			<li><a href="{{ path( 'ppe_m2l_contact' ) }}">Contact</a></li>
+		</ul>
+	</div>
+</div>
 
-$(function(){
-    $('#menu').data('size','big');
-});
+<div id="menu_phone_container" class="hidden">
+		<ul>
+			<li><a href="{{ path( 'ppe_m2l_homepage' ) }}">Actualités</a></li>
+			<li><a href="{{ path( 'ppe_m2l_informations' ) }}">Informations</a></li>
+			<li><a href="{{ path( 'ppe_m2l_reservations' ) }}">Réservations</a></li>
+			<li><a href="{{ path( 'ppe_m2l_annonces' ) }}">Annonces</a></li>
+			<li><a href="{{ path( 'ppe_m2l_formations' ) }}">Formations</a></li>
+			<li><a href="{{ path( 'ppe_m2l_ligues' ) }}">Ligues</a></li>
+			<li style="border-bottom: 1px solid rgb(21, 72, 116);"><a href="{{ path( 'ppe_m2l_contact' ) }}">Contact</a></li>
+		</ul>
+</div>
 
-if ($('#panel').length != 0) {
-
-	var left = $('#panel').offset().left - 70;
-	$(window).load(function(){
-		$('#panel_container').css('left', left);
-	});
-
-	$(window).resize(function(){
-		$('#panel_container').css('left', left);
-	});
-
-	$('#panel').on('click',function(event){
-		if ($('#panel_container').hasClass('hidden')) {
-			$('#panel_container').css('display', 'block').animate({opacity: 1},100).removeClass('hidden').addClass('visible');
-		}else if ($('#panel_container').hasClass('visible')){
-			$('#panel_container').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');		
-		}
-		event.stopPropagation();
-	});
-
-	$('html').click(function(){
-		$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
-	});
-};
-
-$(window).scroll(function(){
-    var $nav = $('#menu');
-    if ($('body').scrollTop() > 0) {
-        if ($nav.data('size') == 'big') {
-            $nav.data('size','small').stop().animate({height:'30px'},100);
-			$('#logo').animate({width : "25px"},100);
-			$('#logo_link').animate({top : "0"},100);
-			$('#menu > ul > li > a').animate({lineHeight :"30px"},100);
-			$('#menu > #panel_link').animate({top: "5px"},100);
-
-        }
-    } else {
-        if ($nav.data('size') == 'small') {
-            $nav.data('size','big').stop().animate({height:'55px'},100);
-			$('#logo').animate({width : "40px"},100);	
-			$('#logo_link').animate({top : "5px"},100);
-			$('#menu > ul > li > a').animate({lineHeight :"55px"},100);
-			$('#menu > #panel_link').animate({top: "17.5px"},100);
-
-        }  
-    }
-});
-});
-</script>
+<div id="account_container" class="hidden">
+	<img id="panel_account_arrow" src="{{ asset('bundles/ppem2l/img/arrow.png') }}"/>
+	<div id="panel_account">
+		<ul>
+			{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+				<li><a href="{{ path( 'fos_user_profile_show' ) }}">Mon compte</a></li>
+				<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+			{% else %}
+				<li><a href="{{ path( 'fos_user_registration_register' ) }}">Inscription</a></li>
+				<li><a href="{{ path( 'fos_user_security_login' ) }}">Connexion</a></li>
+			{% endif %}
+		</ul>
+	</div>
+</div>

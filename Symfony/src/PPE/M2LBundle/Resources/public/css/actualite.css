@@ -1,5 +1,7 @@
 /*VERSION DESKTOP*/
-@media (min-width: 1200px) { 
+@media (min-width: 1150px) { 
+
+	/*page actualité*/
 	#actualite_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}	
 	#actualite_content .article{background: #fff;width:1000px; height: 300px; margin: 10px auto}
 	#actualite_content .article .img-actualite{float: left;width: 600px;height:300px;}
@@ -9,10 +11,11 @@
 	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
 	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
 	.actualite_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
-	.actualite_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
+	.actualite_fancybox .img_fancybox{width: 100%;margin-top: -25%}
 	.actualite_fancybox .texte_fancybox{text-align: justify;}
 	.actualite_fancybox .texte_fancybox h1{text-align: center}
 
+	/*backoffice*/
 	.list_actualites{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 	.list_actualites table{border: none; width: 100%}
 	.list_actualites thead{background: #1ABC9C;}
@@ -27,10 +30,14 @@
 	.add_actualite ul {margin : 0; padding-left: 0;}
 	.add_actualite ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 
-
 	.edit_actualite span{cursor: pointer}
 	.edit_actualite input{width: 350px!important}
 	.edit_actualite input[type=submit]{width: 200px!important}
 	.edit_actualite textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 	.edit_actualite {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+}
+
+/*VERSION TABLETTES*/
+@media (min-width: 361px) and (max-width: 1149) { 
+
 }
