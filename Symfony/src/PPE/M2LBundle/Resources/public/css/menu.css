@@ -34,7 +34,7 @@
 @media (min-width: 376px) and (max-width: 1149px) { 
 
 	#menu_phone{cursor: pointer;display: block;width: 25px;margin: 15px 0 0 30px;float: left}
-	#menu_phone_container{display: none;top:55px;height: calc(100% - 55px);height: -webkit-calc(100% - 55px);height: -moz-calc(100% - 55px);height: -ms-calc(100% - 55px);left: -170;width: 170px;background: #1F4061;position: absolute;}
+	#menu_phone_container{display: none;top:55px;height: calc(100% - 55px);height: -webkit-calc(100% - 55px);height: -moz-calc(100% - 55px);height: -ms-calc(100% - 55px);left: -170;width: 170px;background: #1F4061;position: fixed;}
 	#menu_phone_container ul{padding: 0px;margin: 0px;height: 100%}
 	#menu_phone_container ul li{width: 100%;display: table;list-style-type: none;text-decoration: none;height: 14.5%;border-top: 1px solid #193551;}
 	#menu_phone_container a{padding: 0px 0px 0px 35px;color: #fff;height: 100%;display: table-cell;vertical-align: middle}
@@ -76,7 +76,7 @@
 @media (max-width: 375px) { 
 
 	#menu_phone{cursor: pointer;display: block;width: 25px;margin: 15px 0 0 30px;float: left}
-	#menu_phone_container{display: none;top:55px;height: calc(100% - 55px);height: -webkit-calc(100% - 55px);height: -moz-calc(100% - 55px);height: -ms-calc(100% - 55px);left: -170;width: 170px;background: #1F4061;position: absolute;}
+	#menu_phone_container{display: none;top:55px;height: calc(100% - 55px);height: -webkit-calc(100% - 55px);height: -moz-calc(100% - 55px);height: -ms-calc(100% - 55px);left: -170;width: 170px;background: #1F4061;position: fixed;}
 	#menu_phone_container ul{padding: 0px;margin: 0px;height: 100%}
 	#menu_phone_container ul li{width: 100%;display: table;list-style-type: none;text-decoration: none;height: 14.5%;border-top: 1px solid #193551;;}
 	#menu_phone_container a{padding: 0px 0px 0px 35px;color: #fff;height: 100%;display: table-cell;vertical-align: middle}
