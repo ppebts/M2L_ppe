@@ -121,32 +121,5 @@
 	  	{% set i = i + 1 %}
 	{% endfor %}
 </div>
-<script type="text/javascript">
-    $( document ).ready(function() {
-		$('.ajoutAnnonce').fancybox({
-		helpers : {
-		        overlay : {
-		            css : {
-		                'background' : 'rgba(58, 42, 45, 0.95)'
-		            }
-		        }
-		    },
-		padding: "0"
-		});
 
-		$('.fancybox').fancybox({
-		helpers : {
-		        overlay : {
-		            css : {
-		                'background' : 'rgba(58, 42, 45, 0.95)'
-		            }
-		        }
-		    },
-		autoSize: false,
-		width : "30%",
-		height : "20%"
-		});
-
-	});
-</script>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block body %}
 
 	<div id="annonce_recherche">
-		<a href="#annonceAdd" class="fancybox"><input type="button" value="Ajouter annonce" class="submit" /></a>
+		<a href="#annonceAdd" class="fancybox_add"><input type="button" value="Ajouter annonce" class="submit" /></a>
 	</div>
 
 	<div id="annonceAdd" style="display:none">
@@ -57,7 +57,7 @@
 	{% for annonce in annonceList %}
 	    <div class="annonce" id="{{ i }}">
 
-			<div class="block_shadow annonce_img"> <img src="{{ asset('bundles/ppem2l/img/annonce/' ~ annonce.image) }}"> class="img-responsive img_annonce" /></div>
+			<div class="block_shadow annonce_img"> <img src="{{ asset('bundles/ppem2l/img/annonce/' ~ annonce.image) }}" class="img-responsive img_annonce" /></div>
 
 	    	<div class="annonce_texte block_shadow">
 	    		<div class="annonce_titre">
@@ -84,17 +84,4 @@
 	  	{% set i = i + 1 %}
 	{% endfor %}
 </div>
-<script type="text/javascript">
-    $( document ).ready(function() {
-		$('.fancybox').fancybox({
-			helpers : {
-			        overlay : {
-			            css : {
-			                'background' : 'rgba(58, 42, 45, 0.95)'
-			            }
-			        }
-			    },
-		});
-	});
-</script>
 {% endblock %}

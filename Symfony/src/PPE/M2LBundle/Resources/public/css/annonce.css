@@ -54,3 +54,115 @@
 	.edit_annonce {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
 
 }
+
+@media (min-width: 376px) and (max-width: 1149px) { 
+	#annonce_content{width: 100%;margin: 0 auto;padding: 10px 0px}	
+	#annonce_content .annonce{width:810px; height: 300px; margin: 10px auto}
+	#annonce_content .annonce img{height:290px;}
+	#annonce_content .annonce .annonce_texte{background: #fff;width:400px;height : 290px;float: right; text-align: justify;padding: 5px 0px;overflow-y: auto;padding: 0 15px}
+	#annonce_content .annonce .annonce_texte .description{margin-bottom: 0}
+	#annonce_content .annonce .annonce_texte .prix{text-align: center;font-weight: 700;margin-top:10px;}
+	#annonce_content .annonce .annonce_texte .annonce_titre{text-align: center;margin-top: 10px}
+	#annonce_content .annonce .annonce_texte .annonce_titre h1{margin: 0}
+	#annonce_content .annonce .annonce_texte a{text-decoration: none;color: #18568C;}
+
+	.Annonce_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
+	.annonce_fancybox .texte_fancybox{text-align: center;width: 100%;}
+	.annonce_fancybox .texte_fancybox h2{margin-top: 5px}
+	.annonce_fancybox .text_fancybox a{color: #18568C;}
+	
+	#annonce_recherche{margin: 70px auto 0px auto; text-align: center;background: #ffffff;width: 810px;height: 30px;padding: 10px 0px}
+	#annonce_recherche input{height: 30px}
+	.search{background: #DFDFDF;border: none;width: 300px}
+	.select{background: #DFDFDF;border: none;width: 100px;height: 30px;}
+	.submit{background: #1ABC9C;border: none;color: #fff}
+	.form-group{margin: 10px 0}
+	.form-group input{;border:none;background:#E1E1E1;width:300px; height:30px;}
+	.form-group input[type=submit]{background: #1ABC9C;color: #fff}
+	.form-group textarea{border:none;background: #E1E1E1;width:300px; max-height:150px;min-height: 150px; max-width: 300px;}
+	.form-group button{border: none; background:#1ABC9C;color: #fff;height: 30px;width: 300px;}
+	#annonceAdd{background: #fff;font-family: lato;width: 500px}
+	#annonceAdd #titre{height: 45px;line-height: 45px;background: #1ABC9C; color: #fff}
+
+	#annonceAdd ul {margin : 0; padding-left: 0;}
+	#annonceAdd ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+
+		.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_annonces table{border: none; width: 100%}
+	.list_annonces thead{background: #1ABC9C;}
+	.list_annonces table thead th{border: none;color: #fff}
+	.list_annonces table tbody td{border: none;padding: 10px;text-align: center}
+
+	.add_annonce span{cursor: pointer}
+	.add_annonce textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.add_annonce{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
+	#add_annonce{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+	.add_annonce ul {margin : 0; padding-left: 0;}
+	.add_annonce ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+
+	.edit_annonce span{cursor: pointer}
+	.edit_annonce input{width: 400px!important}
+	.edit_annonce input[type=submit]{width: 200px!important}
+	.edit_annonce textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.edit_annonce {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+
+}
+
+@media (max-width: 375px) {
+	#annonce_content{width: 100%;margin: 0 auto;padding: 10px 0px}	
+	#annonce_content .annonce{width: 95%;margin: 10px auto;border: 1px solid;border-color: #e5e6e9 #dfe0e4 #d0d1d5;-webkit-border-radius: 3px;}
+	#annonce_content .annonce img{width: 100%}
+	#annonce_content .annonce .annonce_texte{background: #fff;text-align: justify;padding: 5px 0px;overflow-y: auto;padding: 15px}
+	#annonce_content .annonce .annonce_texte .description{margin-bottom: 0}
+	#annonce_content .annonce .annonce_texte .prix{text-align: center;font-weight: 700;margin-top:10px;}
+	#annonce_content .annonce .annonce_texte .annonce_titre{text-align: center;margin-top: 10px}
+	#annonce_content .annonce .annonce_texte .annonce_titre h1{margin: 0}
+	#annonce_content .annonce .annonce_texte a{text-decoration: none;color: #18568C;}
+
+	.Annonce_fancybox .img_fancybox{width: 1000px;margin-top: -25%}
+	.annonce_fancybox .texte_fancybox{text-align: center;width: 100%;}
+	.annonce_fancybox .texte_fancybox h2{margin-top: 5px}
+	.annonce_fancybox .text_fancybox a{color: #18568C;}
+	
+	#annonce_recherche{margin: 70px auto 0px auto; text-align: center;width: 100%;height: 50px}
+	#annonce_recherche input{height: 100%;width: 90%;}
+	.search{background: #DFDFDF;border: none;width: 300px}
+	.select{background: #DFDFDF;border: none;width: 100px;height: 30px;}
+	.submit{background: #1ABC9C;border: none;color: #fff}
+	.form-group{margin: 10px 0}
+	.form-group input{;border:none;background:#E1E1E1;width:300px; height:30px;}
+	.form-group input[type=submit]{background: #1ABC9C;color: #fff}
+	.form-group textarea{border:none;background: #E1E1E1;width:300px; max-height:150px;min-height: 150px; max-width: 300px;}
+	.form-group button{border: none; background:#1ABC9C;color: #fff;height: 30px;width: 300px;}
+	#annonceAdd{background: #fff;font-family: lato;width: 100%;}
+	#annonceAdd #titre{height: 45px;line-height: 45px;background: #1ABC9C; color: #fff}
+
+	#annonceAdd ul {margin : 0; padding-left: 0;}
+	#annonceAdd ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+
+	.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_annonces table{border: none; width: 100%}
+	.list_annonces thead{background: #1ABC9C;}
+	.list_annonces table thead th{border: none;color: #fff}
+	.list_annonces table tbody td{border: none;padding: 10px;text-align: center}
+
+	.add_annonce span{cursor: pointer}
+	.add_annonce textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.add_annonce{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
+	#add_annonce{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+	.add_annonce ul {margin : 0; padding-left: 0;}
+	.add_annonce ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+
+	.edit_annonce span{cursor: pointer}
+	.edit_annonce input{width: 400px!important}
+	.edit_annonce input[type=submit]{width: 200px!important}
+	.edit_annonce textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.edit_annonce {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+
+}
