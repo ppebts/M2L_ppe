@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-	if ($(window).width() > 375) {
+	if ($(window).width() > 500) {
 		$('.fancybox').fancybox({
 			helpers : {
 			        overlay : {
@@ -21,7 +21,7 @@ $( document ).ready(function() {
 				padding: "0"
 				});
 	}
-	if ($(window).width() < 376) {
+	if ($(window).width() < 501) {
 		$('.ajoutAnnonce').fancybox({
 		helpers : {
 		        overlay : {

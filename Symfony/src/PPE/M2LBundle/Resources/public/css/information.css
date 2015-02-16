@@ -29,7 +29,7 @@
 	
 }
 
-@media (min-width: 376px) and (max-width: 1149px) { 
+@media (min-width: 501px) and (max-width: 1149px) { 
 	#information_parent{width: 600px;margin: 155px auto 0px auto}	
 	#information_parent .information_block{width: 600px;text-align:center; margin:0 auto;border-top: 1px solid #18B293;border-bottom: 1px solid #18B293}
 	#information_parent .information_block .information_titre{cursor:pointer;background: #1abc9c;color: #fff;height: 60px;}
@@ -58,7 +58,7 @@
 	.edit_info{width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
 	#information_parent{width: 100%;margin-top: 130px;}
 	#information_parent .information_block{width: 100%;text-align:center; margin:0 auto;border-top: 1px solid #18B293;border-bottom: 1px solid #18B293}
 	#information_parent .information_block .information_titre{cursor:pointer;background: #1abc9c;color: #fff;height: 60px;}
