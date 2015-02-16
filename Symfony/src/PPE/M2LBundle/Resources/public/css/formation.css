@@ -10,7 +10,7 @@
 	#formation_content .formation .formation_texte a{text-decoration: none;color: #18568C;}
 	#formation_content .formation .img-formation{float: right;width: 320px;height:300px;margin-right: 40px;}
 	#formation_content .content{text-align: center}
-	#formation_content .formation_container{position: relative;}
+	#formation_content .formation_container{position: relative;height: 100%}
 	#formation_content .inscription_formation{height: 110px;font-family: 'Lato';font-weight: 700;background-color: #1abc9c;text-align: center;position: absolute;left: -150px;top: calc(50% - 55px);top: -webkit-calc(50% - 55px);top: -moz-calc(50% - 55px);width: 150px;color: #fff;text-decoration: none;}
 	#formation_content .inscription_formation a:active{text-decoration: none;color: #fff}
 	#formation_content .inscription_formation .link{transform: rotate(-90deg);position: absolute;left: -35px;top: 45px;}
@@ -44,4 +44,10 @@
 	.edit_formation input[type=submit]{width: 200px!important}
 	.edit_formation textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 	.edit_formation {width: 550px;background: #fff;text-align: center;margin: -webkit-calc(25% - 295px) auto 0 auto;margin: -moz-calc(25% - 295px) auto 0 auto;margin: -ms-calc(25% - 295px) auto 0 auto;height: 690px}
+
+	#formation_content .complet_formation{line-height: 110px;height: 110px;font-family: 'Lato';font-weight: 700;text-align: center;position: absolute;left: calc(50% - 55px);left: -webkit-calc(50% - 55px);left: -moz-calc(50% - 55px);left: -ms-calc(50% - 55px);top: calc(50% - 55px);top: -webkit-calc(50% - 55px);top: -moz-calc(50% - 55px);width: 110px;color: #fff;text-decoration: none;background: #e74c3c;border-radius: 110px}
+	#formation_content .complet_formation a:active{text-decoration: none;color: #e74c3c}
+	#formation_content .complet_formation .link{transform: rotate(-90deg);position: absolute;left: -35px;top: 45px;}
+	#formation_content .complet_formation p{margin: 0px;}	
+	.blur{filter: blur(5px);	-webkit-filter: blur(5px);	-moz-filter: blur(5px);	-o-filter: blur(5px);	-ms-filter: blur(5px);}
 }

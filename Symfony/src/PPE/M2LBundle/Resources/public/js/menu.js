@@ -30,51 +30,6 @@ $( document ).ready(function() {
 		};
 	}
 
-	// if ($(window).width() < 1150 && $(window).width() > 375) { //ipad
-
-	// 	if ($('#panel').length != 0) {
-
-	// 		$('#panel').on('click',function(event){
-	// 			$('.open').animate({left: '-170px'},300).removeClass('open').addClass('hidden');
-	// 			$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
-	// 			if ($('#panel_container').hasClass('hidden')) {
-	// 				$('#panel_container').css('display', 'block').animate({opacity: 1},100).removeClass('hidden').addClass('visible');
-	// 			}else if ($('#panel_container').hasClass('visible')){
-	// 				$('#panel_container').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');		
-	// 			}
-	// 			event.stopPropagation();
-	// 		});
-
-	// 		$('html').click(function(){
-	// 			$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
-	// 		});
-	// 	};
-
-	// 	$('#center_mobile').on('click',function(event){
-	// 		$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
-	// 		if ($('#menu_container').hasClass('hidden')) {
-	// 			$('#menu_container').css('display', 'block').animate({opacity: 1},100).removeClass('hidden').addClass('visible');
-	// 		}else if ($('#menu_container').hasClass('visible')){
-	// 			$('#menu_container').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');		
-	// 		}
-	// 		event.stopPropagation();
-	// 	});
-
-	// 	$('#account').on('click',function(event){
-	// 		$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
-	// 		if ($('#account_container').hasClass('hidden')) {
-	// 			$('#account_container').css('display', 'block').animate({opacity: 1},100).removeClass('hidden').addClass('visible');
-	// 		}else if ($('#account_container').hasClass('visible')){
-	// 			$('#account_container').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');		
-	// 		}
-	// 		event.stopPropagation();
-	// 	});
-
-	// 	$('html').click(function(){
-	// 		$('.visible').animate({opacity: 0},100).css('display', 'none').removeClass('visible').addClass('hidden');
-	// 	});
-	// };
-
 	if ($(window).width() < 1150) { //iphone
 
 		if ($('#panel').length != 0) {

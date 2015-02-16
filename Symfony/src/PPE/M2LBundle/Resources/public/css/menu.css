@@ -17,7 +17,7 @@
 	#panel_admin_menu ul li{margin: 5px 0px}
 	#panel_admin_menu ul li a{color: #000}
 	#panel_admin_arrow{position: absolute;width: 20px;top: -8px;left: calc(50% - 10px);left: -webkit-calc(50% - 10px);left: -moz-calc(50% - 10px);left: -ms-calc(50% - 10px);}
-	#panel_container{z-index: 5;position: absolute;top: 60px;left: calc(10% - 95px);left: -webkit-calc(10% - 95px);left: -moz-calc(10% - 95px);left: -ms-calc(10% - 95px);display:none;opacity: 0}
+	#panel_container{z-index: 5;position: absolute;top: 60px;left: calc(10% - 95px);left: -webkit-calc(10% - 95px);left: -moz-calc(10% - 95px);left: -ms-calc(10% - 95px);display:none;opacity: 0;border: 1px solid;border-color: #e5e6e9 #dfe0e4 #d0d1d5;-webkit-border-radius: 3px;}
 
 	#center_mobile{display: none}
 	#panel_center_menu{display: none}

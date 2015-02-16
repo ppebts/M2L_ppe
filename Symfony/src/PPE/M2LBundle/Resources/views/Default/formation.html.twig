@@ -27,14 +27,9 @@
 							<p>{{ formation.description }}</p>
 							<p>
 					    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
-<<<<<<< Updated upstream
-					    		Durée : {{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60 }}  <br/>
-					    		Date de début : {{ formation.date|date('d-m-Y')}} <br/> 
-=======
-					    		Durée : {{ formation.duree }} Min <br/>
+					    		Durée : {{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60}}  <br/>
 					    		Date dela formation : {{ formation.date|date('d-m-Y')}} <br/>
 					    		Heure : {{ formation.time|date('h:m')}}
->>>>>>> Stashed changes
 				    		</p>
 				    	</div>
 				</div>
@@ -54,8 +49,9 @@
 				    		<script type="text/javascript">
 				    		$(document).ready(function(){
 				    			var formationId = '#'+{{ formation.id }};
-				    			$(formationId).children('a').css('display', 'none');
-				    			$(formationId).append("<div class='complet'><div class='complet_formation' id='{{ formation.id }}''>COMPLET</div></a>");		    			
+				    			$(formationId).children('.submit').remove();
+				    			$(formationId).children('.formation_container').addClass('blur');
+				    			$(formationId).append("<div class='complet_formation' id='{{ formation.id }}''>COMPLET</div>");		    			
 				    		});
 				    		</script>
 				    	{% endif %}

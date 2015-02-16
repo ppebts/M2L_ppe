@@ -35,7 +35,9 @@ class FormationsType extends AbstractType
                     'B3'   => 'B3',
                     'B4'   => 'B4',
                     'B5'   => 'B5',
-                ),)
+                ),
+                'required'  => false,
+                'multiple' => false))
             ->add('image', 'text')
             ->add('nbparticipants', 'text')
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
