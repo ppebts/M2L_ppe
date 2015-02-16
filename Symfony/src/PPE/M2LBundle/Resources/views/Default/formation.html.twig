@@ -27,14 +27,20 @@
 							<p>{{ formation.description }}</p>
 							<p>
 					    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
+<<<<<<< Updated upstream
 					    		Durée : {{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60 }}  <br/>
 					    		Date de début : {{ formation.date|date('d-m-Y')}} <br/> 
+=======
+					    		Durée : {{ formation.duree }} Min <br/>
+					    		Date dela formation : {{ formation.date|date('d-m-Y')}} <br/>
+					    		Heure : {{ formation.time|date('h:m')}}
+>>>>>>> Stashed changes
 				    		</p>
 				    	</div>
 				</div>
 				{% if is_granted("ROLE_USER") %}
-					{% for form in app.user.formations %}
-						{% if form.id == formation.id %}
+					{% for user in app.user.formations %}
+						{% if user.id == formation.id %}
 				    		<script type="text/javascript">
 				    		$(document).ready(function(){
 				    			var formationId = '#'+{{ formation.id }};
@@ -44,6 +50,15 @@
 				    		</script>
 				    	{% endif %}
 				    {% endfor %}
+				    	{% if formation.nbinscrits >= formation.nbparticipants %}
+				    		<script type="text/javascript">
+				    		$(document).ready(function(){
+				    			var formationId = '#'+{{ formation.id }};
+				    			$(formationId).children('a').css('display', 'none');
+				    			$(formationId).append("<div class='complet'><div class='complet_formation' id='{{ formation.id }}''>COMPLET</div></a>");		    			
+				    		});
+				    		</script>
+				    	{% endif %}
 				{% endif %}
 		</div>
 	</div>
