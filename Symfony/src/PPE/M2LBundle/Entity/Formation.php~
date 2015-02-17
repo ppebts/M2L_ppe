@@ -5,8 +5,6 @@ use PPE\UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;  // Verif de l'unicité de l'entité 
-use PPE\M2LBundle\Entity\Image;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Formation
@@ -72,7 +70,7 @@ class Formation
     private $lieu;
 
     /**
-     * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\Image", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="PPE/M2L/Entity/Image")
      */
     private $image;
 
@@ -365,9 +363,9 @@ class Formation
      * Set image
      *
      * @param \PPE\M2LBundle\Entity\Image $image
-     * @return Formation
+     * @return Encodejob
      */
-    public function setImage(Image $image = null)
+    public function setImage(\PPE\M2LBundle\Entity\Image $image = null)
     {
         $this->image = $image;
     
@@ -377,7 +375,7 @@ class Formation
     /**
      * Get image
      *
-     * @return \PPE\M2LBundle\Entity\Image
+     * @return \PPE\M2LBundle\Entity\Image 
      */
     public function getImage()
     {

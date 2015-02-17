@@ -26,7 +26,9 @@
 			<td>{{ formation.date|date('d-m-Y') }}</td>
 			<td>{{ formation.time|date('h:m') }}</td>
 			<td>{{ formation.lieu }}</td>
-			<td>{{ formation.image }}</td>
+			{% for image in formation.image %}
+				<td><img src="{{ image.path }}{{ image.filename }}"/></td>
+			{% endfor %}
 			<td>
 				<select>
 					{% for inscrits in formation.utilisateurs %}
@@ -48,7 +50,8 @@
 <div id="add_formation" title="AJOUTER UNE FORMATION">+</div>
 <div class="add_formation">
 	<span class="titre_back">AJOUTER UNE FORMATION</span>
-		{{ form_start(formAddformation) }}
+
+	<form action="{{ path('ppe_m2l_back_formations') }}" method="post" {{ form_enctype(formAddformation) }}>
 
 				<div class="input_form_register">
 					{{ form_label(formAddformation.nom, "Nom", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
@@ -112,8 +115,8 @@
 
 
 					{{ form_widget(formAddformation.publier) }}
-
-		{{ form_end(formAddformation) }}
+					{{ form_rest(formAddformation) }}
+	</form>
 </div>
 
 

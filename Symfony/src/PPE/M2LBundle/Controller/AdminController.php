@@ -4,24 +4,34 @@ namespace PPE\M2LBundle\Controller;
 use PPE\M2LBundle\Entity\Information;
 use PPE\M2LBundle\Form\Type\InformationType;
 use PPE\M2LBundle\Form\Type\InformationsType;
+
 use PPE\M2LBundle\Entity\Annonce;
 use PPE\M2LBundle\Form\Type\AnnonceType;
 use PPE\M2LBundle\Form\Type\AnnoncesType;
+
 use PPE\M2LBundle\Entity\Formation;
 use PPE\M2LBundle\Form\Type\FormationType;
 use PPE\M2LBundle\Form\Type\FormationsType;
-use PPE\M2LBundle\Entity\Ligue;
+
 use PPE\M2LBundle\Entity\Sport;
+
+use PPE\M2LBundle\Entity\Image;
+
+use PPE\M2LBundle\Entity\Ligue;
 use PPE\M2LBundle\Form\Type\LigueType;
 use PPE\M2LBundle\Form\Type\LiguesType;
+
 use PPE\M2LBundle\Entity\Actualite;
 use PPE\M2LBundle\Form\Type\ActualiteType;
 use PPE\M2LBundle\Form\Type\ActualitesType;
+
 use PPE\UserBundle\Entity\User;
 use PPE\M2LBundle\Form\Type\UsersType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
+
 
 
 class AdminController extends Controller
@@ -257,18 +267,38 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Formation:listeformation.html.twig', array("formationList"=>$formationList, "formAddformation" => $form->createView(),));
      }
 
+
     public function addformationAction(Request $request)
     {
         $formation = new Formation();
         
-        $form = $this->get('form.factory')->create(new FormationType(),$formation);
+        $form = $this->get('form.factory')->create(new FormationsType(),$formation);
         $form->handleRequest($request);
+
         if ( $form->isValid()){
-            $doctrine = $this->getDoctrine();
-            $em = $doctrine->getManager();
+
+            $em = $this->getDoctrine()->getManager();
+            $image = $formation->getImage();
+
+            $uploaded_image = $image->getFilename();
+
+            $name = $uploaded_image->getClientOriginalName();
+            $path = $image->getUploadRootDir();
+            $uploaded_image->move($image->getUploadRootDir(), $name);
+
+            $image->setPath($path);
+
+            $image->setFilename($name);
+
+            // $date = new \DateTime();
+            // $image->setPath($date->format('d/m/Y'));
+ 
+
             $em->persist($formation);
+
             $em->flush();
         }
+
         return $this->render('PPEM2LBundle:Formation:addformation.html.twig', array("form"=>$form->createView(),));
     }
         public function editformationAction($id,Request $request)

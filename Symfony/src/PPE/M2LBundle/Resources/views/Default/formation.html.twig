@@ -16,7 +16,9 @@
 			</div>
 		</a>
 		<div class="formation_container">
-			<img src="{{ asset('bundles/ppem2l/img/' ~ formation.image) }}"class="img-responsive img-formation">
+			{% for image in formation.image %}
+			    {{ image.path }}
+			{% endfor %}
 				<div class="formation_texte">
 						<div class="formation_nom">
 			    			<h1>{{ formation.nom|capitalize }}</h1>

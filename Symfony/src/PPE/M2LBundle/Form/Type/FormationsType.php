@@ -5,6 +5,7 @@ namespace PPE\M2LBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PPE\M2LBundle\Form\Type\ImageType;
 
 class FormationsType extends AbstractType
 {
@@ -38,7 +39,7 @@ class FormationsType extends AbstractType
                 ),
                 'required'  => false,
                 'multiple' => false))
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('nbparticipants', 'text')
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();

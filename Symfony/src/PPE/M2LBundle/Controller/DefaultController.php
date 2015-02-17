@@ -9,6 +9,7 @@ use PPE\M2LBundle\Entity\Sport;
 use PPE\M2LBundle\Entity\TypeUtilisateur;
 use PPE\M2LBundle\Entity\Formation;
 use PPE\M2LBundle\Entity\Ligue;
+use PPE\M2LBundle\Entity\Image;
 use PPE\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -40,8 +41,10 @@ public function formationAction()
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Formation");
         $formationList = $repo->findAll();
+        $img = $em->getRepository("PPEM2LBundle:Image")->findAll();
 
-        return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList));
+
+        return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList, "image"=>$img));
     }
 
 public function inscriptionFormationAction($id)
