@@ -8,7 +8,7 @@
 	#formation_content .formation .formation_texte .formation_nom{text-align: center;margin-top: 30px}
 	#formation_content .formation .formation_texte .formation_nom h1{text-align:center;margin: 0}
 	#formation_content .formation .formation_texte a{text-decoration: none;color: #18568C;}
-	#formation_content .formation .img-formation{float: right;width: 320px;height:300px;margin-right: 40px;}
+	#formation_content .formation .img-formation{float: right;width: 380;margin-right: 40px;}
 	#formation_content .content{text-align: center}
 	#formation_content .formation_container{position: relative;height: 100%}
 	#formation_content .inscription_formation{height: 110px;font-family: 'Lato';font-weight: 700;background-color: #1abc9c;text-align: center;position: absolute;left: -150px;top: calc(50% - 55px);top: -webkit-calc(50% - 55px);top: -moz-calc(50% - 55px);width: 150px;color: #fff;text-decoration: none;}
@@ -29,6 +29,7 @@
 	.list_formations thead{background: #1ABC9C;}
 	.list_formations table thead th{border: none;color: #fff}
 	.list_formations table tbody td{border: none;padding: 10px;text-align: center}
+	.list_formations .img-formation{width: 300px}
 
 	.add_formation span{cursor: pointer}
 	.add_formation textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}

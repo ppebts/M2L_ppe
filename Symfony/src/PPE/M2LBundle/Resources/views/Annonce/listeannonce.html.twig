@@ -20,7 +20,7 @@
 			<td>{{ annonce.id }}</td>
 			<td>{{ annonce.titre }}</td>
 			<td>{{ annonce.description }}</td>
-			<td>{{ annonce.image }}</td>
+			<td><img src="{{ asset('media/image/' ~ annonce.image.filename) }}" class="img-responsive img_annonce" /></td>
 			<td>{{ annonce.prix }}</td>
 			<td>{{ annonce.utilisateur }}</td>
 			

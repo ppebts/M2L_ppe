@@ -26,9 +26,7 @@
 			<td>{{ formation.date|date('d-m-Y') }}</td>
 			<td>{{ formation.time|date('h:m') }}</td>
 			<td>{{ formation.lieu }}</td>
-			{% for image in formation.image %}
-				<td><img src="{{ image.path }}{{ image.filename }}"/></td>
-			{% endfor %}
+			<td><img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" /></td>
 			<td>
 				<select>
 					{% for inscrits in formation.utilisateurs %}

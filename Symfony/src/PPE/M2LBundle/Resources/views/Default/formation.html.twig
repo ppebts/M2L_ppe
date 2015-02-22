@@ -15,10 +15,8 @@
 	    		S'INSCRIRE
 			</div>
 		</a>
+		<img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" />
 		<div class="formation_container">
-			{% for image in formation.image %}
-			    {{ image.path }}
-			{% endfor %}
 				<div class="formation_texte">
 						<div class="formation_nom">
 			    			<h1>{{ formation.nom|capitalize }}</h1>

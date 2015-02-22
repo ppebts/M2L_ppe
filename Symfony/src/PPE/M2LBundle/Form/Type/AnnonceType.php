@@ -2,10 +2,11 @@
 
 namespace PPE\M2LBundle\Form\Type;
 
-use PPE\UserBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PPE\M2LBundle\Form\Type\ImageType;
+
 
 class AnnonceType extends AbstractType
 {
@@ -19,8 +20,9 @@ class AnnonceType extends AbstractType
           $builder
             ->add('titre', 'text')
             ->add('description', 'textarea')
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('prix', 'text')
+            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();
     }
 
@@ -34,7 +36,7 @@ class AnnonceType extends AbstractType
         ));
     }
 
-    /**
+    /** 
      * @return string
      */
     public function getName()

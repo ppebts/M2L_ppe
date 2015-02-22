@@ -55,9 +55,13 @@
 <div id="annonce_content">
 	{% set i = 1 %}
 	{% for annonce in annonceList %}
+
+		    	{{ annonce.titre }}
+
 	    <div class="annonce" id="{{ i }}">
 
-			<div class="block_shadow annonce_img"> <img src="{{ asset('bundles/ppem2l/img/annonce/' ~ annonce.image) }}" class="img-responsive img_annonce" /></div>
+
+			<div class="block_shadow annonce_img"><img src="{{ asset('media/image/' ~ annonce.image) }}" class="img-responsive img_annonce" /></div>
 
 	    	<div class="annonce_texte block_shadow">
 	    		<div class="annonce_titre">

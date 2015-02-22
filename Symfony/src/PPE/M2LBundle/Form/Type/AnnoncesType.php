@@ -5,6 +5,7 @@ namespace PPE\M2LBundle\Form\Type;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use PPE\UserBundle\Entity\User;
+use PPE\M2LBundle\Form\Type\ImageType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
@@ -19,7 +20,7 @@ class AnnoncesType extends AbstractType
         $builder
             ->add('titre', 'text')
             ->add('description', 'textarea')
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('prix', 'text')
             ->add('utilisateur', 'entity', array(
                                                 'class' => 'PPEUserBundle:User',

@@ -27,6 +27,7 @@ class Image
      */
     private $path;
 
+
     public function getAbsolutePath()
     {
         return null === $this->path ? null : $this->getUploadRootDir() . '/' . $this->path;

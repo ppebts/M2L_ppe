@@ -59,6 +59,7 @@ class Annonce
     private $prix;
 
     /**
+     * @Assert\File( maxSize = "1024k", mimeTypesMessage = "Please upload a valid Image")
      * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\Image", cascade={"persist"})
      */
     private $image;
@@ -200,7 +201,7 @@ class Annonce
      * Set image
      *
      * @param \PPE\M2LBundle\Entity\Image $image
-     * @return Annonce
+     * @return Formation
      */
     public function setImage(Image $image = null)
     {

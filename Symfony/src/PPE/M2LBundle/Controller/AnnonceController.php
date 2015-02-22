@@ -25,11 +25,24 @@ public function afficherAction(Request $request)
 
         $form->handleRequest($request);
         if ( $form->isValid()){
+
+            $em = $this->getDoctrine()->getManager();
+            $image = $annonce->getImage();
+
+            $uploaded_image = $image->getFilename();
+
+            $name = $uploaded_image->getClientOriginalName();
+            $path = $image->getUploadRootDir();
+            $uploaded_image->move($image->getUploadRootDir(), $name);
+
+            $image->setPath($path);
+            $image->setFilename($name); 
+
             $annonce->setUtilisateur($this->get('security.context')->getToken()->getUser());
-            $doctrine = $this->getDoctrine();
-            $em = $doctrine->getManager();
+
             $em->persist($annonce);
             $em->flush();
+
             return $this->redirect($this->generateUrl('ppe_m2l_annonces'));
           }
         

@@ -188,12 +188,27 @@ class AdminController extends Controller
         
         $form = $this->get('form.factory')->create(new AnnoncesType(),$annonce);
         $form->handleRequest($request);
+
         if ( $form->isValid()){
-            $doctrine = $this->getDoctrine();
-            $em = $doctrine->getManager();
+
+            $em = $this->getDoctrine()->getManager();
+            $image = $annonce->getImage();
+
+            $uploaded_image = $image->getFilename();
+
+            $name = $uploaded_image->getClientOriginalName();
+            $path = $image->getUploadRootDir();
+            $uploaded_image->move($image->getUploadRootDir(), $name);
+
+            $image->setPath($path);
+
+            $image->setFilename($name); 
+
             $em->persist($annonce);
+
             $em->flush();
-        return $this->redirect($this->generateUrl('ppe_m2l_back_annonce'));    
+            
+            return $this->redirect($this->generateUrl('ppe_m2l_back_annonce'));    
         }
 
 
@@ -297,6 +312,7 @@ class AdminController extends Controller
             $em->persist($formation);
 
             $em->flush();
+            return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));    
         }
 
         return $this->render('PPEM2LBundle:Formation:addformation.html.twig', array("form"=>$form->createView(),));

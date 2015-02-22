@@ -99,7 +99,7 @@ class Formation
     private $nbinscrits;
 
     /**
-     * @ORM\ManyToMany(targetEntity="PPE\UserBundle\Entity\User", inversedBy="formations", cascade={"remove"})
+     * @ORM\ManyToMany(targetEntity="PPE\UserBundle\Entity\User", inversedBy="formations")
      */
     private $utilisateurs;
 
