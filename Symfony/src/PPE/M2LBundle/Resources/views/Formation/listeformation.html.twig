@@ -13,7 +13,7 @@
 			<th>Lieu</th>
 			<th>Image</th>
 			<th>Participants</th>
-			<th>Total de participants</th>
+			<th>Total participants</th>
 			<th colspan="2">Edition</th>
 	</thead>
 	<tbody>
@@ -22,7 +22,7 @@
 
 			<td>{{ formation.nom }}</td>
 			<td>{{ formation.description }}</td>
-			<td>{{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60 }}</td>
+			<td>{{ formation.duree }}H</td>
 			<td>{{ formation.date|date('d-m-Y') }}</td>
 			<td>{{ formation.time|date('h:m') }}</td>
 			<td>{{ formation.lieu }}</td>
@@ -66,7 +66,7 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAddformation.duree, "Durée (en minutes)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					{{ form_label(formAddformation.duree, "Durée", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
 					{{ form_widget(formAddformation.duree, {'label_attr': {'class': 'from-control'}}) }}
 					{{ form_errors(formAddformation.duree) }}
@@ -96,8 +96,6 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAddformation.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-					<br/>
 					{{ form_errors(formAddformation.image) }}
 					{{ form_widget(formAddformation.image, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>

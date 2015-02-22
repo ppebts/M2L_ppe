@@ -17,7 +17,12 @@ class FormationType extends AbstractType
           $builder
             ->add('nom', 'text')
             ->add('description', 'textarea')
-            ->add('duree', 'text')
+            ->add('duree', 'choices', array(
+    'choices'   => array(
+        1   => '1 heure',
+        2 => '2 heures',
+        3   => '3 heures',
+    )))
             ->add('date', 'date',array(
                                                 'widget' => 'single_text',
                                                 'format' => 'yyyy-MM-dd',

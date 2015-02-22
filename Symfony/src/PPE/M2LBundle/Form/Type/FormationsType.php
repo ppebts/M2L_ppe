@@ -15,20 +15,44 @@ class FormationsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+        $time = array(
+            "08:00" => "08:00",
+            "09:00" => "09:00",
+            "10:00" => "10:00",
+            "11:00" => "11:00",
+            "12:00" => "12:00",
+            "13:00" => "13:00",
+            "14:00" => "14:00",
+            "15:00" => "15:00",
+            "16:00" => "16:00",
+            "17:00" => "17:00",
+            "18:00" => "18:00",
+            "19:00" => "19:00",
+            "20:00" => "20:00",
+            "21:00" => "21:00"
+            );
+
         $builder
             ->add('nom', 'text')
             ->add('description', 'textarea')
-            ->add('duree', 'text')
+            ->add('duree', 'choice', array(
+    'choices'   => array(
+        1   => '1 heure',
+        2 => '2 heures',
+        3   => '3 heures',
+    )))
             ->add('date', 'date',array(
                                                 'widget' => 'single_text',
                                                 'format' => 'yyyy-MM-dd',
                                                 'input' => 'datetime',
                                                 'attr' => array('class' => 'date')                                            
                                                 ))
-            ->add('time', 'time', array(
-                                            'input'  => 'datetime',
-                                            'widget' => 'choice',
-                                             ))
+            ->add('time', 'choice', array(
+                                        'choices' => $time,
+                                        'multiple' => false,
+                                        'label' => 'Horaire',
+                                    ))
             ->add('lieu', 'choice', array(
                 'choices'   => array(
                     'A1'   => 'A1',

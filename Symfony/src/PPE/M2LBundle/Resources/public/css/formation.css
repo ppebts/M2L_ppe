@@ -28,14 +28,14 @@
 	.list_formations table{border: none; width: 100%}
 	.list_formations thead{background: #1ABC9C;}
 	.list_formations table thead th{border: none;color: #fff}
-	.list_formations table tbody td{border: none;padding: 10px;text-align: center}
-	.list_formations .img-formation{width: 300px}
+	.list_formations table tbody td{border: none;padding: 10px;text-align: center;max-width: 150px}
+	.list_formations .img-formation{width: 150px}
 
 	.add_formation span{cursor: pointer}
 	.add_formation textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 	.add_formation{position: absolute;width: 250px;background: #fff;text-align: center;top: calc(50% - 368px);top: -webkit-calc(50% - 368px);top: -moz-calc(50% - 368px);top: -ms-calc(50% - 368px);right: -300;}
 	#add_formation{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
-	.input_form_register select{width: 100px}
+	.input_form_register select{width: 200px;border: none}
 
 	.add_formation ul {margin : 0; padding-left: 0;}
 	.add_formation ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}

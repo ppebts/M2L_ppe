@@ -3,7 +3,7 @@
 
 	#menu{position: fixed;top: 0;left: 0;height:55px;width: 100%;background: #18568c;z-index: 1;}
 	#menu ul{list-style: none;margin: 0px;text-align:center;height: 100%}
-	#menu #center{display: block;float: left;margin-left: calc(50% - 288.5px);padding: 0; }
+	#menu #center{display: block;float: left;margin-left: calc(50% - 209px);margin-left: -webkit-calc(50% - 209px);margin-left: -ms-calc(50% - 209px);padding: 0; }
 	#menu #right{float: right; }
 	#menu ul li{display: inline-block;line-height: 45px;height: 100%;padding: 0px 7px;}
 	#menu ul li a{line-height: 55px;text-decoration: none; color: #fff;font-family: 'Lato';font-weight: 300;display: block;height: 55px;}
