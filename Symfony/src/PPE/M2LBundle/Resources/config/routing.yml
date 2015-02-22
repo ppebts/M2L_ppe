@@ -53,15 +53,6 @@ ppe_m2l_back_delete_informations:
         id: \d+
 
 # Fin Informations
-
-# Reservations
-
-ppe_m2l_reservations:
-    path:     /reservations
-    defaults: { _controller: PPEM2LBundle:Default:reservations }
-
-# Fin Reservations
-
 # Annonces 
 
 ppe_m2l_annonces:
