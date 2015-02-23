@@ -24,7 +24,7 @@
 				<td>{{ ligue.nom }}</td>
 				<td>{{ ligue.description }}</td>
 				<td>{{ ligue.url }}</td>
-				<td>{{ ligue.image }}</td>
+				<td><img src="{{ asset('media/image/' ~ ligue.image.filename) }}" class="img-responsive img-back-ligue" /></td>
 				<td>{{ ligue.sportLigue.nom }}</td>
 
 				
@@ -74,7 +74,6 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAdd.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
 					{{ form_errors(formAdd.image) }}
 					{{ form_widget(formAdd.image, {'label_attr': {'class': 'from-control'}}) }}

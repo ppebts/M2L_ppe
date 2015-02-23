@@ -21,6 +21,8 @@
 	.list_actualites thead{background: #1ABC9C;}
 	.list_actualites table thead th{border: none;color: #fff}
 	.list_actualites table tbody td{border: none;padding: 10px;text-align: center}
+	.list_actualites .img-back-actualite{width: 300px;}
+
 
 	.add_actualite span{cursor: pointer}
 	.add_actualite textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}

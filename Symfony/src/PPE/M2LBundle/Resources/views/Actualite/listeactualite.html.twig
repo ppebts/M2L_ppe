@@ -19,7 +19,7 @@
 			<td>{{ actualite.id }}</td>
 			<td>{{ actualite.titre }}</td>
 			<td>{{ actualite.contenu }}</td>
-			<td>{{ actualite.image }}</td>
+			<td><img src="{{ asset('media/image/' ~ actualite.image.filename) }}" class="img-responsive img-back-actualite" /></td>
 
 			
 			<td><a href="{{ path( 'ppe_m2l_back_actu',{'id': actualite.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
@@ -54,7 +54,6 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(formAddactu.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
 					{{ form_errors(formAddactu.image) }}
 					{{ form_widget(formAddactu.image, {'label_attr': {'class': 'from-control'}}) }}

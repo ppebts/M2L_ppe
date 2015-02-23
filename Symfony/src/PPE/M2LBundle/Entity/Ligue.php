@@ -49,11 +49,16 @@ class Ligue
     private $url;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\Image", cascade={"persist"})
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $finished = false;
+ 
+    private $uploaded_image;
 
     /**
      * @ORM\ManyToOne(targetEntity="PPE\M2LBundle\Entity\Sport", inversedBy="ligues")
@@ -148,29 +153,6 @@ class Ligue
     }
 
     /**
-     * Set image
-     *
-     * @param string $image
-     * @return Ligue
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-    
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string 
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
      * Set userLigue
      *
      * @param \PPE\UserBundle\Entity\User $userLigue
@@ -214,5 +196,62 @@ class Ligue
     public function getSportLigue()
     {
         return $this->sportLigue;
+    }
+
+    /**
+     * Set finished
+     *
+     * @param boolean $finished
+     * @return Encodejob
+     */
+    public function setFinished($finished)
+    {
+        $this->finished = $finished;
+    
+        return $this;
+    }
+ 
+    /**
+     * Get finished
+     *
+     * @return boolean 
+     */
+    public function getFinished()
+    {
+        return $this->finished;
+    }
+ 
+    /**
+     * Set image
+     *
+     * @param \PPE\M2LBundle\Entity\Image $image
+     * @return Ligue
+     */
+    public function setImage(Image $image = null)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+ 
+    /**
+     * Get image
+     *
+     * @return \PPE\M2LBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+ public function setUploadedImage(UploadedFile $uploaded_image = null)
+    {
+        $this->uploaded_image = $uploaded_image;
+        return $this;
+    }
+ 
+    public function getUploadedImage()
+    {
+        return $this->uploaded_image;
     }
 }

@@ -51,11 +51,23 @@ class AdminController extends Controller
         $form = $this->get('form.factory')->create(new ActualiteType(),$actualite);
         $form->handleRequest($request);
         if ( $form->isValid()){
-            $doctrine = $this->getDoctrine();
-            $em = $doctrine->getManager();
-            $em->persist($actualite);
-            $em->flush();
 
+            $em = $this->getDoctrine()->getManager();
+            $image = $actualite->getImage();
+
+            $uploaded_image = $image->getFilename();
+
+            $name = $uploaded_image->getClientOriginalName();
+            $path = $image->getUploadRootDir();
+            $uploaded_image->move($image->getUploadRootDir(), $name);
+
+            $image->setPath($path);
+
+            $image->setFilename($name); 
+
+            $em->persist($actualite);
+
+            $em->flush();
         return $this->redirect($this->generateUrl('ppe_m2l_back_actualite'));
         }
          return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList, "formAddactu" => $form->createView(),));
@@ -375,9 +387,21 @@ class AdminController extends Controller
         $form->handleRequest($request);
 
         if ( $form->isValid()){
-            $doctrine = $this->getDoctrine();
-            $em = $doctrine->getManager();
+            $em = $this->getDoctrine()->getManager();
+            $image = $ligue->getImage();
+
+            $uploaded_image = $image->getFilename();
+
+            $name = $uploaded_image->getClientOriginalName();
+            $path = $image->getUploadRootDir();
+            $uploaded_image->move($image->getUploadRootDir(), $name);
+
+            $image->setPath($path);
+
+            $image->setFilename($name); 
+
             $em->persist($ligue);
+
             $em->flush();
             return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues'));
         }

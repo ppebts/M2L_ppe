@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PPE\M2LBundle\Form\Type\ImageType;
 
 class LigueType extends AbstractType
 {
@@ -20,7 +21,7 @@ class LigueType extends AbstractType
             ->add('nom', 'text')
             ->add('description', 'textarea')
             ->add('url', 'text', array('attr' => array( "value" => "http://")))
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('sportLigue', 'entity', array(
                                                 'class' => 'PPEM2LBundle:Sport',
                                                 'property' => 'nom',

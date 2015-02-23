@@ -5,6 +5,8 @@ namespace PPE\M2LBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PPE\M2LBundle\Form\Type\ImageType;
+
 
 class ActualiteType extends AbstractType
 {
@@ -17,7 +19,7 @@ class ActualiteType extends AbstractType
           $builder
             ->add('titre', 'text')
             ->add('contenu', 'textarea')
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();
     }

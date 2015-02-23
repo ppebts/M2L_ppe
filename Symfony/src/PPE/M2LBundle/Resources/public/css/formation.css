@@ -8,7 +8,8 @@
 	#formation_content .formation .formation_texte .formation_nom{text-align: center;margin-top: 30px}
 	#formation_content .formation .formation_texte .formation_nom h1{text-align:center;margin: 0}
 	#formation_content .formation .formation_texte a{text-decoration: none;color: #18568C;}
-	#formation_content .formation .img-formation{float: right;width: 380;margin-right: 40px;}
+	#formation_content .formation .img-formation-container{float: right;max-width: 380px;height: 100%;overflow: hidden;margin-right: 40px;}
+	#formation_content .formation .img-formation{height: 100%}
 	#formation_content .content{text-align: center}
 	#formation_content .formation_container{position: relative;height: 100%}
 	#formation_content .inscription_formation{height: 110px;font-family: 'Lato';font-weight: 700;background-color: #1abc9c;text-align: center;position: absolute;left: -150px;top: calc(50% - 55px);top: -webkit-calc(50% - 55px);top: -moz-calc(50% - 55px);width: 150px;color: #fff;text-decoration: none;}

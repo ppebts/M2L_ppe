@@ -40,11 +40,16 @@ class Actualite
     private $contenu;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\OneToOne(targetEntity="PPE\M2LBundle\Entity\Image", cascade={"persist"})
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $finished = false;
+ 
+    private $uploaded_image;
 
 
     /**
@@ -102,27 +107,60 @@ class Actualite
     {
         return $this->contenu;
     }
-
+    /**
+     * Set finished
+     *
+     * @param boolean $finished
+     * @return Encodejob
+     */
+    public function setFinished($finished)
+    {
+        $this->finished = $finished;
+    
+        return $this;
+    }
+ 
+    /**
+     * Get finished
+     *
+     * @return boolean 
+     */
+    public function getFinished()
+    {
+        return $this->finished;
+    }
+ 
     /**
      * Set image
      *
-     * @param string $image
+     * @param \PPE\M2LBundle\Entity\Image $image
      * @return Actualite
      */
-    public function setImage($image)
+    public function setImage(Image $image = null)
     {
         $this->image = $image;
     
         return $this;
     }
-
+ 
     /**
      * Get image
      *
-     * @return string 
+     * @return \PPE\M2LBundle\Entity\Image
      */
     public function getImage()
     {
         return $this->image;
+    }
+
+ public function setUploadedImage(UploadedFile $uploaded_image = null)
+    {
+        $this->uploaded_image = $uploaded_image;
+        return $this;
+    }
+ 
+    public function getUploadedImage()
+    {
+        return $this->uploaded_image;
     }
 }
