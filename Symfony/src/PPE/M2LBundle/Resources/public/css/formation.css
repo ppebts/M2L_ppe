@@ -182,6 +182,7 @@
 	#formation_content .inscription_formation .infos_nb{margin: 20px;}
 	#formation_content .inscription_formation p{margin: 0px;}
 	#formation_content .inscription_formation:hover{opacity: 0.7}
+	#formation_content .formation .img-formation-container{text-align: center}
 
 	#formation_content .desinscription_formation{line-height: 110px;height: 110px;font-family: 'Lato';font-weight: 700;background-color: #e74c3c;text-align: center;position: absolute;bottom: -110px;left: calc(50% - 75px);left: -webkit-calc(50% - 75px);left: -moz-calc(50% - 75px);width: 150px;color: #fff;text-decoration: none;}
 	#formation_content .desinscription_formation a:active{text-decoration: none;color: #fff}

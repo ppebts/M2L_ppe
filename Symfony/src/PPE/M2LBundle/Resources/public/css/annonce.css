@@ -33,7 +33,7 @@
 	#annonceAdd ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 
 
-		.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 	.list_annonces table{border: none; width: 100%}
 	.list_annonces thead{background: #1ABC9C;}
 	.list_annonces table thead th{border: none;color: #fff}

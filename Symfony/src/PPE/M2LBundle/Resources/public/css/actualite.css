@@ -58,7 +58,9 @@
 
 @media (max-width: 500px) {
 	#actualite_content{margin-top: 55px; background: #fff;margin-bottom: 10px} 
-	.article{display: none}
+	.article{width: 100%;}
+	.article_texte{padding: 10px}
+	.article img{width: 100%}
 	.actualite_fancybox{display: block!important;width: 100%}
 	.actualite_fancybox .img_container{width: 100%}
 	.actualite_fancybox .img_container img{width: 100%}
