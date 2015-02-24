@@ -8,7 +8,7 @@
 #ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
 #ligue_content #ligue_index a:hover {font-weight: bold;} */
 
-#ligue_content #ligue{width: 1250px; height: 300px; margin : 20px auto; }
+#ligue_content #ligue{width: 1150px; height: 300px; margin : 20px auto; }
 #ligue_content #ligue_image  {float:left; width:300px; text-align :center;  }
 #ligue_content #ligue_image img {max-width : 300px; max-height: 300px;}
 #ligue_content #ligue #ligue_text {float :left; width : 800px; margin-left : 15px; height : 300px; background-color: #fff; padding : 0px 15px; }
