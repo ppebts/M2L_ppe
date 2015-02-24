@@ -361,7 +361,7 @@ class AdminController extends Controller
         $formation = $repo->find($id);
         /* $formation renseigné donc formulaire renseigné */
         $image = $formation->getImage();
-        $form = $this->get('form.factory')->create(new FormationType(),$formation);
+        $form = $this->get('form.factory')->create(new FormationsType(),$formation);
         $form->handleRequest($request);  
 
         /* Vérification du formulaire */
@@ -370,14 +370,16 @@ class AdminController extends Controller
 
             $em = $this->getDoctrine()->getManager();
 
-            $uploaded_image = $image->getFilename();
+                
+                $uploaded_image = $image->getFilename();
 
-            $name = $uploaded_image->getClientOriginalName();
-            $path = $image->getUploadRootDir();
-            $uploaded_image->move($image->getUploadRootDir(), $name);
+                $name = $uploaded_image->getClientOriginalName();
+                $path = $image->getUploadRootDir();
+                $uploaded_image->move($image->getUploadRootDir(), $name);
 
-            $image->setPath($path);
-            $image->setFilename($name);
+                $image->setPath($path);
+                $image->setFilename($name);
+            
 
             $em->persist($formation);
             $em->flush();

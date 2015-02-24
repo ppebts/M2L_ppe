@@ -2,7 +2,7 @@
 
 {% block body %}
        
-       	<div class="edit_formation">
+       	<div class="edit_back">
 		<span class="titre_back">MODIFIER LES INFOS</span>
 			{{ form_start(form) }}
 
@@ -11,6 +11,18 @@
 						<br/>
 						{{ form_errors(form.nom) }}
 						{{ form_widget(form.nom, {'label_attr': {'class': 'from-control'}}) }}
+						<br/>
+					</div>
+
+					<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-formation" />
+					<br/>
+					<div class="input_form_register">
+						{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+						<br/>
+						{{ form_errors(form.image) }}
+						<div class="upload">
+							{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
+						</div>
 						<br/>
 					</div>
 
@@ -54,7 +66,6 @@
 						<br/>
 					</div>
 
-					<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-formation" />
 
 					<div class="input_form_register">
 						{{ form_label(form.nbparticipants, "Nombre de participants", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}

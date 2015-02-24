@@ -42,9 +42,8 @@ public function formationAction()
         $repo = $em->getRepository("PPEM2LBundle:Formation");
         $formationList = $repo->findAll();
         $img = $em->getRepository("PPEM2LBundle:Image")->findAll();
-
-
-        return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList, "image"=>$img));
+        $date = new \Datetime();
+        return $this->render('PPEM2LBundle:Default:formation.html.twig', array("formationList"=>$formationList, "image"=>$img, 'date'=>$date));
     }
 
 public function inscriptionFormationAction($id)
