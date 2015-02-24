@@ -3,8 +3,12 @@
 {% block body %}
 <div id="formation_content">
 
+
+
 	{% for formation in formationList %}
 
+	
+		{% if (formation.date|date('d-m-Y') >= date|date('d-m-Y')) and (formation.time|date('h:i') >= date|date('h:i'))  %}
 	<div class="formation block_shadow" id="{{ formation.id }}">
 		<a class="submit"  href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}) }}" >
 			<div class="inscription_formation">
@@ -16,11 +20,12 @@
 			</div>
 		</a>
 
-		<div class="img-formation-container">
-			<img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" />
-		</div>
-
 		<div class="formation_container">
+			
+				<div class="img-formation-container">
+					<img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" />
+				</div>
+
 				<div class="formation_texte">
 						<div class="formation_nom">
 			    			<h1>{{ formation.nom|capitalize }}</h1>
@@ -31,9 +36,9 @@
 							<p>{{ formation.description }}</p>
 							<p>
 					    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
-					    		Durée : {{ (formation.duree / 60)|round(0, 'floor') }}h{{ formation.duree % 60}}  <br/>
+					    		Durée : {{ formation.duree }}H  <br/>
 					    		Date dela formation : {{ formation.date|date('d-m-Y')}} <br/>
-					    		Heure : {{ formation.time|date('h:m')}}
+					    		Heure : {{ formation.time|date('h:i')}}
 				    		</p>
 				    	</div>
 				</div>
@@ -62,7 +67,7 @@
 				{% endif %}
 		</div>
 	</div>
-
+{% endif %}
 
 	{% endfor %}
 </div>

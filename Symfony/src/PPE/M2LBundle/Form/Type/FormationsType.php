@@ -25,6 +25,7 @@ class FormationsType extends AbstractType
         1   => '1 heure',
         2 => '2 heures',
         3   => '3 heures',
+        4 => '4 heures'
     )))
             ->add('date', 'date',array(
                                                 'widget' => 'single_text',
@@ -36,6 +37,9 @@ class FormationsType extends AbstractType
                                                 'widget' => 'choice',
                                                 'input' => 'datetime',
                                                 'label' => 'Horaire',
+                                                'minutes' => range(0, 45, 15),
+                                                'hours' => range(9, 20),
+                                                'attr' => array('class' => 'heure')
                                     ))
             ->add('lieu', 'choice', array(
                 'choices'   => array(
@@ -49,7 +53,7 @@ class FormationsType extends AbstractType
                 'multiple' => false))
             ->add('image', new ImageType())
             ->add('nbparticipants', 'text')
-            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
+            ->add('publier', 'submit', array('attr' => array('class' => 'submit_back')))
             ->getForm();
     }
 

@@ -52,6 +52,8 @@
 
 			<div class="col-sm4">
 			{# Génératiob de l'input. #}
+				{{ form_label(form.description, "Image", {'label_attr':{'class': 'col-sm3 control-label'}}) }}
+				<br/>
 				{{ form_widget(form.image, {'attr': {'class': 'form-control'}}) }}
 			</div>
 		</div>

@@ -24,7 +24,7 @@
 			<td>{{ formation.description }}</td>
 			<td>{{ formation.duree }}H</td>
 			<td>{{ formation.date|date('d-m-Y') }}</td>
-			<td>{{ formation.time|date('h:m') }}</td>
+			<td>{{ formation.time|date('h:i') }}</td>
 			<td>{{ formation.lieu }}</td>
 			<td><img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" /></td>
 			<td>

@@ -1,7 +1,7 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
 
-<div class="edit_ligue">
+<div class="edit_back">
 	<span class="titre_back">MODIFIER LES INFOS</span>
 		{{ form_start(form) }}
 
@@ -10,6 +10,16 @@
 					<br/>
 					{{ form_errors(form.nom) }}
 					{{ form_widget(form.nom, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+				
+				<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-formation" />
+
+				<div class="input_form_register">
+					{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.image) }}
+					{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
 
@@ -26,15 +36,6 @@
 					<br/>
 					{{ form_errors(form.url) }}
 					{{ form_widget(form.url, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
-				</div>
-
-				<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-ligue" />
-
-				<div class="input_form_register">
-					<br/>
-					{{ form_errors(form.image) }}
-					{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
 

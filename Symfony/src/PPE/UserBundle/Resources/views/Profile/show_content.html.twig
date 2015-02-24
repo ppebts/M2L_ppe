@@ -41,6 +41,8 @@
 			<td class="left">Autorisations:</td>
 			{% if is_granted("ROLE_ADMIN") %}
 			<td class="right">Administrateur</td>
+			{% elseif is_granted("ROLE_LIGUE") %}
+			<td class="right">Ligue</td>
 			{% elseif is_granted("ROLE_USER") %}
 			<td class="right">Utilisateur</td>
 			{% endif %}
