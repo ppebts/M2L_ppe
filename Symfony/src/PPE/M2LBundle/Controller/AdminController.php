@@ -449,7 +449,7 @@ class AdminController extends Controller
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Ligue");
         $ligue = $repo->find($id);
-
+        $image = $ligue->getImage();
         /* $ligue renseigné donc formulaire renseigné */
 
         $form = $this->get('form.factory')->create(new LiguesType(),$ligue);
@@ -460,11 +460,20 @@ class AdminController extends Controller
         if ( $form->isValid()){
                 $doctrine = $this->getDoctrine();
                 $em = $doctrine->getManager();
+                $uploaded_image = $image->getFilename();
+
+                $name = $uploaded_image->getClientOriginalName();
+                $path = $image->getUploadRootDir();
+                $uploaded_image->move($image->getUploadRootDir(), $name);
+
+                $image->setPath($path);
+                $image->setFilename($name);
+                
                 $em->persist($ligue);
                 $em->flush();
                 return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array('id'=> $ligue->getId())));
         }        
-         return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView()));
+         return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView(), 'image'=> $image));
      
     }
 

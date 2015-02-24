@@ -18,7 +18,7 @@ class LiguesType extends AbstractType
             ->add('nom', 'text')
             ->add('description', 'textarea')
             ->add('url', 'text')
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('sportLigue', 'entity', array(
                                                 'class' => 'PPEM2LBundle:Sport',
                                                 'property' => 'nom',

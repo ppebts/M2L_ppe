@@ -29,8 +29,9 @@
 					<br/>
 				</div>
 
+				<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-ligue" />
+
 				<div class="input_form_register">
-					{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
 					{{ form_errors(form.image) }}
 					{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
