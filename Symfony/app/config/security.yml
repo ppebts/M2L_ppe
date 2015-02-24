@@ -41,3 +41,4 @@ security:
         - { path: ^/annonces$, roles: ROLE_USER }
         - { path: ^/maligue, roles: ROLE_LIGUE }
         - { path: ^/formations, roles: ROLE_USER }
+        - { path: ^/contact, roles: ROLE_USER }
