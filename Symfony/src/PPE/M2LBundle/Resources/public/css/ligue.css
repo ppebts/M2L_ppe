@@ -8,10 +8,13 @@
 #ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
 #ligue_content #ligue_index a:hover {font-weight: bold;} */
 
-#ligue_content #ligue{width: 1250px; height: 200px; margin : 10px auto; background-color: #fff;}
-#ligue_content #ligue img {float:left;height:200px;margin: 0 30px 0 30px ;}
-#ligue_content #ligue #ligue_text {padding-right: 20px;}
-#ligue_content #ligue #ligue_text p{text-align: justify;}
+#ligue_content #ligue{width: 1250px; height: 300px; margin : 20px auto; }
+#ligue_content #ligue_image  {float:left; width:300px; text-align :center;  }
+#ligue_content #ligue_image img {max-width : 300px; max-height: 300px;}
+#ligue_content #ligue #ligue_text {float :left; width : 800px; margin-left : 15px; height : 300px; background-color: #fff; padding : 0px 15px; }
+#ligue_content #ligue #ligue_text p{text-align: justify; width : 700px; margin-left : 30px;}
+
+
 
 .list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 .list_ligues .img-back-ligue{width:300px}

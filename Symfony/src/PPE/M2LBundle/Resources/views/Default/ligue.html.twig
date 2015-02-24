@@ -7,7 +7,9 @@
 
 {% for ligue in ligueList %}
 <div id="ligue">
-	<img src="{{ asset('media/image/' ~ ligue.image.filename) }}">
+	<div id="ligue_image">	
+		<img src="{{ asset('media/image/' ~ ligue.image.filename) }}">
+	</div>
 	
 	<div id="ligue_text">
 		<div class="ligue_nom" id="{{ ligue.id }}">	    		
