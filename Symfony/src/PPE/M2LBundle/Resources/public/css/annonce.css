@@ -50,10 +50,11 @@
 
 
 	.edit_annonce span{cursor: pointer}
+	.edit_annonce .img-edit-annonce{width: 400px}
 	.edit_annonce input{width: 400px!important}
 	.edit_annonce input[type=submit]{width: 200px!important}
 	.edit_annonce textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
-	.edit_annonce {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+	.edit_annonce {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
 
 }
 

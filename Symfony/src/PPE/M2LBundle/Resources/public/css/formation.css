@@ -45,7 +45,8 @@
 	.edit_formation input{width: 350px!important}
 	.edit_formation input[type=submit]{width: 200px!important}
 	.edit_formation textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
-	.edit_formation {width: 550px;background: #fff;text-align: center;margin: -webkit-calc(25% - 295px) auto 0 auto;margin: -moz-calc(25% - 295px) auto 0 auto;margin: -ms-calc(25% - 295px) auto 0 auto;height: 690px}
+	.edit_formation {width: 550px;background: #fff;text-align: center;margin: -webkit-calc(25% - 295px) auto 0 auto;margin: -moz-calc(25% - 295px) auto 0 auto;margin: -ms-calc(25% - 295px) auto 0 auto;}
+	.edit_formation .img-edit-formation{width: 100px}
 
 	#formation_content .complet_formation{line-height: 110px;height: 110px;font-family: 'Lato';font-weight: 700;text-align: center;position: absolute;left: calc(50% - 55px);left: -webkit-calc(50% - 55px);left: -moz-calc(50% - 55px);left: -ms-calc(50% - 55px);top: calc(50% - 55px);top: -webkit-calc(50% - 55px);top: -moz-calc(50% - 55px);width: 110px;color: #fff;text-decoration: none;background: #e74c3c;border-radius: 110px}
 	#formation_content .complet_formation a:active{text-decoration: none;color: #e74c3c}

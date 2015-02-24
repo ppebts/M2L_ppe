@@ -82,10 +82,10 @@ class AdminController extends Controller
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Actualite");
         $actualite = $repo->find($id);
-
+        $image = $actualite->getImage();
         /* $information renseigné donc formulaire renseigné */
 
-        $form = $this->get('form.factory')->create(new ActualitesType(),$actualite);
+        $form = $this->get('form.factory')->create(new ActualiteType(),$actualite);
         $form->handleRequest($request);  
 
         /* Vérification du formulaire */
@@ -93,12 +93,22 @@ class AdminController extends Controller
         if ( $form->isValid()){
                 $doctrine = $this->getDoctrine();
                 $em = $doctrine->getManager();
+    
+                $uploaded_image = $image->getFilename();
+
+                $name = $uploaded_image->getClientOriginalName();
+                $path = $image->getUploadRootDir();
+                $uploaded_image->move($image->getUploadRootDir(), $name);
+
+                $image->setPath($path);
+                $image->setFilename($name);
+
                 $em->persist($actualite);
                 $em->flush();
                 return $this->redirect($this->generateUrl('ppe_m2l_back_actualite', array('id'=> $actualite->getId())));
 
         }        
-         return $this->render('PPEM2LBundle:Actualite:editactualite.html.twig', array('form'=>$form->createView()));
+         return $this->render('PPEM2LBundle:Actualite:editactualite.html.twig', array('form'=>$form->createView(), 'image'=>$image));
      
     }
             public function deleteactualiteAction($id)
@@ -236,6 +246,7 @@ class AdminController extends Controller
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Annonce");
         $annonce = $repo->find($id);
+        $image = $annonce->getImage();
 
         /* $annonce renseigné donc formulaire renseigné */
 
@@ -247,12 +258,22 @@ class AdminController extends Controller
         if ( $form->isValid()){
                 $doctrine = $this->getDoctrine();
                 $em = $doctrine->getManager();
+
+                $uploaded_image = $image->getFilename();
+
+                $name = $uploaded_image->getClientOriginalName();
+                $path = $image->getUploadRootDir();
+                $uploaded_image->move($image->getUploadRootDir(), $name);
+
+                $image->setPath($path);
+                $image->setFilename($name);
+
                 $em->persist($annonce);
                 $em->flush();
                 return $this->redirect($this->generateUrl('ppe_m2l_back_annonce', array('id'=> $annonce->getId())));
 
         }        
-         return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView()));
+         return $this->render('PPEM2LBundle:Annonce:editannonce.html.twig', array('form'=>$form->createView(), 'image'=>$image));
      
     } 
         public function deleteannonceAction($id)
@@ -329,6 +350,7 @@ class AdminController extends Controller
 
         return $this->render('PPEM2LBundle:Formation:addformation.html.twig', array("form"=>$form->createView(),));
     }
+
         public function editformationAction($id,Request $request)
      {
         /* Récupère la formation */
@@ -337,23 +359,34 @@ class AdminController extends Controller
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Formation");
         $formation = $repo->find($id);
-
         /* $formation renseigné donc formulaire renseigné */
-
-        $form = $this->get('form.factory')->create(new FormationsType(),$formation);
+        $image = $formation->getImage();
+        $form = $this->get('form.factory')->create(new FormationType(),$formation);
         $form->handleRequest($request);  
 
         /* Vérification du formulaire */
 
         if ( $form->isValid()){
-                $doctrine = $this->getDoctrine();
-                $em = $doctrine->getManager();
-                $em->persist($formation);
-                $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
+
+            $em = $this->getDoctrine()->getManager();
+
+            $uploaded_image = $image->getFilename();
+
+            $name = $uploaded_image->getClientOriginalName();
+            $path = $image->getUploadRootDir();
+            $uploaded_image->move($image->getUploadRootDir(), $name);
+
+            $image->setPath($path);
+            $image->setFilename($name);
+
+            $em->persist($formation);
+            $em->flush();
+           
+
+            return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
 
         }        
-         return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView()));
+         return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView(), 'image'=> $image));
      
     } 
         public function deleteformationAction($id)

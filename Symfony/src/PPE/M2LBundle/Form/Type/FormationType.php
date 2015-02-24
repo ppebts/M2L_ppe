@@ -5,6 +5,8 @@ namespace PPE\M2LBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use PPE\M2LBundle\Form\Type\ImageType;
+
 
 class FormationType extends AbstractType
 {
@@ -17,24 +19,24 @@ class FormationType extends AbstractType
           $builder
             ->add('nom', 'text')
             ->add('description', 'textarea')
-            ->add('duree', 'choices', array(
-    'choices'   => array(
-        1   => '1 heure',
-        2 => '2 heures',
-        3   => '3 heures',
-    )))
+            ->add('duree', 'choice', array(
+                                            'choices'   => array(
+                                                1   => '1 heure',
+                                                2 => '2 heures',
+                                                3   => '3 heures',
+                                            )))
             ->add('date', 'date',array(
-                                                'widget' => 'single_text',
-                                                'format' => 'yyyy-MM-dd',
-                                                'input' => 'datetime',
-                                                'attr' => array('class' => 'date')                                            
-                                                ))
+                                        'widget' => 'single_text',
+                                        'format' => 'yyyy-MM-dd',
+                                        'input' => 'datetime',
+                                        'attr' => array('class' => 'date')                                            
+                                        ))
             ->add('time', 'time', array(
                                             'input'  => 'datetime',
                                             'widget' => 'choice',
                                         ))
             ->add('lieu', 'text')
-            ->add('image', 'text')
+            ->add('image', new ImageType())
             ->add('nbparticipants', 'text')
             ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
             ->getForm();

@@ -33,10 +33,11 @@
 	.add_actualite ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 
 	.edit_actualite span{cursor: pointer}
+	.edit_actualite .img-edit-actualite{width: 350px}
 	.edit_actualite input{width: 350px!important}
 	.edit_actualite input[type=submit]{width: 200px!important}
 	.edit_actualite textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
-	.edit_actualite {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+	.edit_actualite {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
 }
 
 /*VERSION TABLETTES*/
