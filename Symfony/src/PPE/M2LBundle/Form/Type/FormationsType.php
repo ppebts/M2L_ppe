@@ -51,7 +51,7 @@ class FormationsType extends AbstractType
                 ),
                 'required'  => false,
                 'multiple' => false))
-            ->add('image', new ImageType())
+            ->add('image', new ImageType(), array('required'=> false))
             ->add('nbparticipants', 'text')
             ->add('publier', 'submit', array('attr' => array('class' => 'submit_back')))
             ->getForm();

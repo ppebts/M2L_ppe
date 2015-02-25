@@ -353,37 +353,36 @@ class AdminController extends Controller
 
         public function editformationAction($id,Request $request)
      {
-        /* Récupère la formation */
+            /* Récupère la formation */
 
-        $doctrine = $this->getDoctrine();
-        $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:Formation");
-        $formation = $repo->find($id);
-        /* $formation renseigné donc formulaire renseigné */
-        $image = $formation->getImage();
-        $form = $this->get('form.factory')->create(new FormationsType(),$formation);
-        $form->handleRequest($request);  
+            $doctrine = $this->getDoctrine();
+            $em = $doctrine->getManager();
+            $repo = $em->getRepository("PPEM2LBundle:Formation");
+            $formation = $repo->find($id);
+            /* $formation renseigné donc formulaire renseigné */
+            $image = $formation->getImage();      
+            $imageOld = $image;
+            $form = $this->get('form.factory')->create(new FormationsType(),$formation);
 
-        /* Vérification du formulaire */
+            $form->handleRequest($request);  
 
-        if ( $form->isValid()){
+            if ( $form->isValid()){
 
-            $em = $this->getDoctrine()->getManager();
+                $em = $this->getDoctrine()->getManager();
 
-                
-                $uploaded_image = $image->getFilename();
+                    if ($image->getFilename() !== null) {
+                        $uploaded_image = $image->getFilename();
+                        $name = $uploaded_image->getClientOriginalName();
+                        $path = $image->getUploadRootDir();
+                        $uploaded_image->move($image->getUploadRootDir(), $name);
+                        $image->setPath($path);
+                        $image->setFilename($name);
+                        $image = $image;
+                    }
 
-                $name = $uploaded_image->getClientOriginalName();
-                $path = $image->getUploadRootDir();
-                $uploaded_image->move($image->getUploadRootDir(), $name);
-
-                $image->setPath($path);
-                $image->setFilename($name);
-            
-
+            $formation->setImage($imageOld);
             $em->persist($formation);
             $em->flush();
-           
 
             return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
 
