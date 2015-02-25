@@ -10,15 +10,18 @@
 	
 		{% if (formation.date|date('d-m-Y') >= date|date('d-m-Y')) and (formation.time|date('h:i') >= date|date('h:i'))  %}
 	<div class="formation block_shadow" id="{{ formation.id }}">
-		<a class="submit"  href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}) }}" >
-			<div class="inscription_formation">
-				<div class='infos_nb'>
-		    		<p>{{ formation.nbinscrits }}/{{ formation.nbparticipants }}</p>
-		    		<p>inscrits</p>
-		       	</div>
-	    		S'INSCRIRE
-			</div>
-		</a>
+
+		{% if formation.nbinscrits < formation.nbparticipants %}
+			<a class="submit"  href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}) }}" >
+				<div class="inscription_formation">
+					<div class='infos_nb'>
+			    		<p>{{ formation.nbinscrits }}/{{ formation.nbparticipants }}</p>
+			    		<p>inscrits</p>
+			       	</div>
+		    		S'INSCRIRE
+				</div>
+			</a>
+		{% endif %}
 
 		<div class="formation_container">
 			
