@@ -39,7 +39,7 @@ class LigueType extends AbstractType
                                                 ))
                                                         
                                                          
-            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
+            ->add('publier', 'submit', array('attr' => array('class' => 'submit_back' )))
             ->getForm();
     }
 

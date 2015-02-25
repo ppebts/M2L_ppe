@@ -33,6 +33,7 @@
 	.list_formations .img-formation{width: 150px}
 
 	.add_formation span{cursor: pointer}
+	.add_formation .upload {width : 200px!important;}
 	.add_formation input, .add_formation select {width : 200px!important;}
 	.add_formation .heure select {width : 98px!important;}
 	.add_formation .upload {width : 200px!important;}

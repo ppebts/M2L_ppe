@@ -42,11 +42,12 @@
 	.list_annonces .img_annonce{width: 300px}
 
 	.add_annonce span{cursor: pointer}
+	.add_annonce .upload {width : 200px!important;}
 	.add_annonce input {width : 200px!important;}
 	.add_annonce select {width : 200px!important;}
 	.add_annonce textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 	.add_annonce{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
-	#add_annonce{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+	#add_annonce{cursor:pointer;height: 45px;width: 45px;background: #C0392B;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
 
 	.add_annonce ul {margin : 0; padding-left: 0;}
 	.add_annonce ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}

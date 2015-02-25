@@ -512,7 +512,7 @@ class AdminController extends Controller
         $imageOld->setPath($image->getPath());
         $imageOld->setFilename($image->getFilename());
 
-        $form = $this->get('form.factory')->create(new LiguesType(),$ligue);
+        $form = $this->get('form.factory')->create(new LigueType(),$ligue);
         $form->handleRequest($request);  
 
         /* Vérification du formulaire */

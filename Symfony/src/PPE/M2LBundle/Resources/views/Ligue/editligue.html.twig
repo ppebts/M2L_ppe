@@ -13,6 +13,14 @@
 					<br/>
 				</div>
 				
+				<div class="input_form_register">
+					{{ form_label(form.userLigue, "Admin de la ligue", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					<br/>
+					{{ form_errors(form.userLigue) }}
+					{{ form_widget(form.userLigue, {'label_attr': {'class': 'from-control'}}) }}
+					<br/>
+				</div>
+
 					<div class="img-edit-container">
 						<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive image img-edit-formation" />
 						<br/>

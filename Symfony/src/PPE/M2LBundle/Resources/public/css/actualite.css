@@ -25,6 +25,7 @@
 
 
 	.add_actualite span{cursor: pointer}
+	.add_actualite .upload {width : 200px!important;}
 	.add_actualite textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 	.add_actualite input {width : 200px!important;}
 	.add_actualite input[type=file] {width : 200px!important;}
