@@ -36,7 +36,7 @@ class Ligue
      * @var string
      *
      * @ORM\Column(name="description", type="text")
-     * @Assert\Length(max=800)
+     * @Assert\Length(max=700)
      */
     private $description;
 

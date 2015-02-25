@@ -2,19 +2,17 @@
 @media (min-width: 1150px) { 
 #ligue_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}
 
-
 /* #ligue_content #ligue_index{width :210px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 120px 120px 0px / 0px 120px 120px 0px;}
 #ligue_content #ligue_index ul  { padding-left: 10px;}
 #ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
 #ligue_content #ligue_index a:hover {font-weight: bold;} */
 
-#ligue_content #ligue{width: 1150px; height: 300px; margin : 20px auto; }
-#ligue_content #ligue_image  {float:left; width:300px; text-align :center;  }
-#ligue_content #ligue_image img {max-width : 300px; max-height: 300px;}
-#ligue_content #ligue #ligue_text {float :left; width : 800px; margin-left : 15px; height : 300px; background-color: #fff; padding : 0px 15px; }
+#ligue_content #ligue{width: 1150px; height: 270px; margin : 20px auto; }
+#ligue_content #ligue_image  {float:left; width:270px; text-align :center;  }
+#ligue_content #ligue_image img {max-width : 270px; max-height: 270px;}
+#ligue_content #ligue #ligue_text {float :left; width : 800px; margin-left : 15px; height : 270px; background-color: #fff; padding : 0px 15px; }
 #ligue_content #ligue #ligue_text p{text-align: justify; width : 700px; margin-left : 30px;}
-
-
+#ligue_content #ligue #ligue_text h1 {margin-top : 10px;}
 
 .list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 .list_ligues .img-back-ligue{width:300px}
@@ -31,6 +29,47 @@
 .add_ligue ul {margin : 0; padding-left: 0;}
 .add_ligue ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 
+#ma_ligue{width: 500px;margin: 75px auto 0px auto;background: #fff;text-align: center;}
+
+.edit_ligue .img-edit-ligue{width: 200px;}
+.edit_ligue span{cursor: pointer}
+.edit_ligue input{width: 400px!important}
+.edit_ligue input[type=submit]{width: 200px!important}
+.edit_ligue textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.edit_ligue{width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
+}
+
+
+/*VERSION IPAD*/
+@media (max-width: 1149px) and (min-width: 800px)  { 
+#ligue_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}
+
+/* #ligue_content #ligue_index{width :210px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 120px 120px 0px / 0px 120px 120px 0px;}
+#ligue_content #ligue_index ul  { padding-left: 10px;}
+#ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
+#ligue_content #ligue_index a:hover {font-weight: bold;} */
+
+#ligue_content #ligue{width: 805px; height: 270px; margin : 7px auto; }
+#ligue_content #ligue_image  {float:left; width:270px; text-align :center;  }
+#ligue_content #ligue_image img {max-width : 270px; max-height: 270px;}
+#ligue_content #ligue #ligue_text {float :left; width : 500px; margin-left : 5px; height : 270px; background-color: #fff; padding : 0px 15px; }
+#ligue_content #ligue #ligue_text p{text-align: justify; width : 500px; }
+#ligue_content #ligue #ligue_text h1 {margin-top : 10px; margin-bottom: 5px;}
+
+.list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+.list_ligues .img-back-ligue{width:300px}
+.list_ligues table{border: none; width: 100%}
+.list_ligues thead{background: #1ABC9C;}
+.list_ligues table thead th{border: none;color: #fff}
+.list_ligues table tbody td{border: none;padding: 10px;text-align: center}
+
+.add_ligue span{cursor: pointer}
+.add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
+#add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+.add_ligue ul {margin : 0; padding-left: 0;}
+.add_ligue ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
 
 #ma_ligue{width: 500px;margin: 75px auto 0px auto;background: #fff;text-align: center;}
 
@@ -42,3 +81,89 @@
 .edit_ligue{width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
 
 }
+
+/*VERSION IPAD*/
+@media (max-width: 799px) and (min-width: 500px)  { 
+#ligue_content{width: 100%;margin: 45px auto 0px auto;padding: 10px 0px;}
+
+/* #ligue_content #ligue_index{width :210px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 120px 120px 0px / 0px 120px 120px 0px;}
+#ligue_content #ligue_index ul  { padding-left: 10px;}
+#ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
+#ligue_content #ligue_index a:hover {font-weight: bold;} */
+
+#ligue_content #ligue{width: 500px; height: 500px; margin : auto; }
+#ligue_content #ligue_image  {float:left; width:500px; text-align :center; margin-top: 15px;  }
+#ligue_content #ligue_image img {max-width : 500px; max-height: 500px;}
+#ligue_content #ligue #ligue_text {float :left; width : 470px;  height : auto; background-color: #fff;  padding : 0px 15px 10px 15px;}
+#ligue_content #ligue #ligue_text p{text-align: justify; width : 470px;  }
+#ligue_content #ligue #ligue_text h1 {margin-top : 10px; margin-bottom: 5px;}
+
+.list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+.list_ligues .img-back-ligue{width:300px}
+.list_ligues table{border: none; width: 100%}
+.list_ligues thead{background: #1ABC9C;}
+.list_ligues table thead th{border: none;color: #fff}
+.list_ligues table tbody td{border: none;padding: 10px;text-align: center}
+
+.add_ligue span{cursor: pointer}
+.add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
+#add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+.add_ligue ul {margin : 0; padding-left: 0;}
+.add_ligue ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+#ma_ligue{width: 500px;margin: 75px auto 0px auto;background: #fff;text-align: center;}
+
+.edit_ligue .img-edit-ligue{width: 200px;}
+.edit_ligue span{cursor: pointer}
+.edit_ligue input{width: 400px!important}
+.edit_ligue input[type=submit]{width: 200px!important}
+.edit_ligue textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.edit_ligue{width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
+
+}
+
+/*VERSION MOBILE*/
+@media (max-width: 499px)  { 
+#ligue_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}
+
+/* #ligue_content #ligue_index{width :210px; margin :0 auto; background-color: #fff; position:fixed; left:0; top :35%; border-radius: 0px 120px 120px 0px / 0px 120px 120px 0px;}
+#ligue_content #ligue_index ul  { padding-left: 10px;}
+#ligue_content #ligue_index ul li {list-style: none; font-size: 1.1em;}
+#ligue_content #ligue_index a:hover {font-weight: bold;} */
+
+#ligue_content #ligue{width: 300px; height: 500px; margin : auto; }
+#ligue_content #ligue_image  {float:left; width:300px; text-align :center; margin-top: 10px;  }
+#ligue_content #ligue_image img {max-width : 300px; max-height: 300px;}
+#ligue_content #ligue #ligue_text {float :left; width : 270px;  height : auto; background-color: #fff;  padding : 0px 15px 10px 15px;}
+#ligue_content #ligue #ligue_text p{text-align: justify; width : 270px;  }
+#ligue_content #ligue #ligue_text h1 {margin-top : 10px; margin-bottom: 5px;}
+
+.list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+.list_ligues .img-back-ligue{width:300px}
+.list_ligues table{border: none; width: 100%}
+.list_ligues thead{background: #1ABC9C;}
+.list_ligues table thead th{border: none;color: #fff}
+.list_ligues table tbody td{border: none;padding: 10px;text-align: center}
+
+.add_ligue span{cursor: pointer}
+.add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
+#add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+.add_ligue ul {margin : 0; padding-left: 0;}
+.add_ligue ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+#ma_ligue{width: 500px;margin: 75px auto 0px auto;background: #fff;text-align: center;}
+
+.edit_ligue .img-edit-ligue{width: 200px;}
+.edit_ligue span{cursor: pointer}
+.edit_ligue input{width: 400px!important}
+.edit_ligue input[type=submit]{width: 200px!important}
+.edit_ligue textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.edit_ligue{width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
+
+}
+
+
