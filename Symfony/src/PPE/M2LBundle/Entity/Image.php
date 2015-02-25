@@ -20,12 +20,12 @@ class Image
      * @ORM\Column
      * @Assert\NotBlank
      */
-    private $filename;
+    public $filename;
 
     /**
      * @ORM\Column(nullable=true)
      */
-    private $path;
+    public $path;
 
 
     public function getAbsolutePath()

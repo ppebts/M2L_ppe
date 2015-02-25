@@ -21,12 +21,12 @@ class FormationsType extends AbstractType
             ->add('nom', 'text')
             ->add('description', 'textarea')
             ->add('duree', 'choice', array(
-    'choices'   => array(
-        1   => '1 heure',
-        2 => '2 heures',
-        3   => '3 heures',
-        4 => '4 heures'
-    )))
+                                            'choices'   => array(
+                                                1   => '1 heure',
+                                                2 => '2 heures',
+                                                3   => '3 heures',
+                                                4 => '4 heures'
+                                            )))
             ->add('date', 'date',array(
                                                 'widget' => 'single_text',
                                                 'format' => 'yyyy-MM-dd',

@@ -360,36 +360,58 @@ class AdminController extends Controller
             $repo = $em->getRepository("PPEM2LBundle:Formation");
             $formation = $repo->find($id);
             /* $formation renseigné donc formulaire renseigné */
-            $image = $formation->getImage();      
-            $imageOld = $image;
+            $image = $formation->getImage();
+
+            $imageOld = new Image();
+            $imageOld->setPath($image->getPath());
+            $imageOld->setFilename($image->getFilename());
+
             $form = $this->get('form.factory')->create(new FormationsType(),$formation);
 
             $form->handleRequest($request);  
 
-            if ( $form->isValid()){
+            if ( $form->isValid() ){
 
-                $em = $this->getDoctrine()->getManager();
+                // echo "<pre>";
+                //     echo $imageOld->getId();
+                // echo "</pre>";
+                // die();
 
-                    if ($image->getFilename() !== null) {
-                        $uploaded_image = $image->getFilename();
-                        $name = $uploaded_image->getClientOriginalName();
-                        $path = $image->getUploadRootDir();
-                        $uploaded_image->move($image->getUploadRootDir(), $name);
-                        $image->setPath($path);
-                        $image->setFilename($name);
-                        $image = $image;
-                    }
+                if (!empty($image->filename)) {
 
-            $formation->setImage($imageOld);
-            $em->persist($formation);
-            $em->flush();
+                    $em = $this->getDoctrine()->getManager();
 
-            return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
+                    $uploaded_image = $image->getFilename();
+                    $name = $uploaded_image->getClientOriginalName();
+                    $path = $image->getUploadRootDir();
+                    $uploaded_image->move($image->getUploadRootDir(), $name);
+
+                    $image->setPath($path);
+                    $image->setFilename($name);
+                    $formation->setImage($image);
+
+                    $em->persist($formation);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
+
+                }else{
+
+                    $em = $this->getDoctrine()->getManager();
+
+                    $image->setPath($imageOld->getPath());
+                    $image->setFilename($imageOld->getFilename());
+
+                    $em->persist($formation);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('ppe_m2l_back_formation'));
+                }
+            }
+
+            return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView(), 'image'=> $image));
 
         }        
-         return $this->render('PPEM2LBundle:Formation:editformation.html.twig', array('form'=>$form->createView(), 'image'=> $image));
      
-    } 
+     
         public function deleteformationAction($id)
     {
         $doctrine = $this->getDoctrine();
