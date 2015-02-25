@@ -49,7 +49,6 @@ class FormationsType extends AbstractType
                     'B4'   => 'B4',
                     'B5'   => 'B5',
                 ),
-                'required'  => false,
                 'multiple' => false))
             ->add('image', new ImageType(), array('required'=> false))
             ->add('nbparticipants', 'text')

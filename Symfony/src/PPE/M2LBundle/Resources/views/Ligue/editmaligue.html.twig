@@ -1,7 +1,8 @@
 {% extends 'PPEM2LBundle:Default:layout.html.twig' %}
 {% block body %}
-<div class="edit_ligue">
+<div class="edit_back">
 	<span class="titre_back">MODIFIER LES INFOS</span>
+		
 		{{ form_start(form) }}
 
 				<div class="input_form_register">
@@ -11,6 +12,22 @@
 					{{ form_widget(form.nom, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
+
+					<div class="img-edit-container">
+						<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive image" />
+						<br/>
+						<img class="edit-logo" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}">
+					</div>
+					
+					<div class="input_form_register" style="display:none" id="upload-img">
+						{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+						<br/>
+						{{ form_errors(form.image) }}
+						<div class="upload">
+							{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
+						</div>
+						<br/>
+					</div>
 
 				<div class="input_form_register">
 					{{ form_label(form.description, "Description", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
@@ -29,18 +46,10 @@
 				</div>
 
 				<div class="input_form_register">
-					{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					{{ form_label(form.sportLigue, "Sport", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 					<br/>
-					{{ form_errors(form.image) }}
-					{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
-				</div>
-
-				<div class="input_form_register">
-					{{ form_label(form.sport, "Sport", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-					<br/>
-					{{ form_errors(form.sport) }}
-					{{ form_widget(form.sport, {'label_attr': {'class': 'from-control'}}) }}
+					{{ form_errors(form.sportLigue) }}
+					{{ form_widget(form.sportLigue, {'label_attr': {'class': 'from-control'}}) }}
 					<br/>
 				</div>
 

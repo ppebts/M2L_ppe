@@ -28,7 +28,7 @@ public function contactAction(Request $request)
                                         'value' => $userMail,)))
         ->add('message', 'textarea')
         ->add('sujet', 'text')
-        ->add('envoyer', 'submit', array('attr' => array('class' => 'ppe_submit contact_envoyer')))
+        ->add('envoyer', 'submit', array('attr' => array('class' => 'ppe_submit')))
         ->getForm();
 
     $form->handleRequest($request);

@@ -22,7 +22,7 @@ class AnnonceType extends AbstractType
             ->add('description', 'textarea')
             ->add('image', new ImageType())
             ->add('prix', 'text')
-            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit')))
+            ->add('publier', 'submit', array('attr' => array('class' => 'annonce_submit')))
             ->getForm();
     }
 

@@ -15,11 +15,19 @@ class UsersType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', 'text')
-            ->add('email', 'text')
-            ->add('firstname', 'text')
+            ->add('gender', 'choice', array('choices'=>(array('h'=>'homme','f'=>'femme'))))
             ->add('lastname', 'text')
-            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))            
+            ->add('firstname', 'text')
+            ->add('username', 'text')
+            ->add('born_date', 'date',array(
+                                                'widget' => 'single_text',
+                                                'format' => 'yyyy-MM-dd',
+                                                'input' => 'datetime',
+                                                'attr' => array('class' => 'date')                                            
+                                                ))
+            ->add('phone_number', 'text')
+            ->add('lastname', 'text')
+            ->add('publier', 'submit', array('attr' => array('class' => 'submit_back' )))            
             ->getForm();
     }
 

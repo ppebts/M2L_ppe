@@ -20,7 +20,7 @@ class AnnoncesType extends AbstractType
         $builder
             ->add('titre', 'text')
             ->add('description', 'textarea')
-            ->add('image', new ImageType())
+            ->add('image', new ImageType(), array('required'=>false))
             ->add('prix', 'text')
             ->add('utilisateur', 'entity', array(
                                                 'class' => 'PPEUserBundle:User',

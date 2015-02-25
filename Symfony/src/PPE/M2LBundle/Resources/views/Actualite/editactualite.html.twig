@@ -13,15 +13,21 @@
 					<br/>
 				</div>
 
-				<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-formation" />
-
-				<div class="input_form_register">
-					{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-					<br/>
-					{{ form_errors(form.image) }}
-					{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
-					<br/>
-				</div>
+					<div class="img-edit-container">
+						<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive image img-edit-formation" />
+						<br/>
+						<img class="edit-logo" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}">
+					</div>
+					
+					<div class="input_form_register" style="display:none" id="upload-img">
+						{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+						<br/>
+						{{ form_errors(form.image) }}
+						<div class="upload">
+							{{ form_widget(form.image, {'label_attr': {'class': 'from-control'}}) }}
+						</div>
+						<br/>
+					</div>
 
 				<div class="input_form_register">
 					{{ form_label(form.contenu, "Contenu", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}

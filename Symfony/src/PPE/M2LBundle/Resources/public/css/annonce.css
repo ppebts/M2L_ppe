@@ -31,7 +31,8 @@
 
 	#annonceAdd ul {margin : 0; padding-left: 0;}
 	#annonceAdd ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
-
+	#annonceAdd .annonce_submit{height: 30px;width: 200px; background: #1ABC9C; border: none;color: #FFF }
+	#annonceAdd form{margin: 0;padding: 10px;}
 
 	.list_annonces{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
 	.list_annonces table{border: none; width: 100%}

@@ -14,9 +14,13 @@
 						<br/>
 					</div>
 
-					<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive img-edit-formation" />
-					<br/>
-					<div class="input_form_register">
+					<div class="img-edit-container">
+						<img src="{{ asset('media/image/' ~ image.filename) }}" class="img-responsive image img-edit-formation" />
+						<br/>
+						<img class="edit-logo" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}">
+					</div>
+					
+					<div class="input_form_register" style="display:none" id="upload-img">
 						{{ form_label(form.image, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 						<br/>
 						{{ form_errors(form.image) }}

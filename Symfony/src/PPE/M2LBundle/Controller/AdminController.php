@@ -84,6 +84,9 @@ class AdminController extends Controller
         $actualite = $repo->find($id);
         $image = $actualite->getImage();
         /* $information renseigné donc formulaire renseigné */
+        $imageOld = new Image();
+        $imageOld->setPath($image->getPath());
+        $imageOld->setFilename($image->getFilename());
 
         $form = $this->get('form.factory')->create(new ActualiteType(),$actualite);
         $form->handleRequest($request);  
@@ -91,22 +94,34 @@ class AdminController extends Controller
         /* Vérification du formulaire */
 
         if ( $form->isValid()){
-                $doctrine = $this->getDoctrine();
-                $em = $doctrine->getManager();
-    
-                $uploaded_image = $image->getFilename();
+                if (!empty($image->filename)) {
 
-                $name = $uploaded_image->getClientOriginalName();
-                $path = $image->getUploadRootDir();
-                $uploaded_image->move($image->getUploadRootDir(), $name);
+                    $em = $this->getDoctrine()->getManager();
 
-                $image->setPath($path);
-                $image->setFilename($name);
+                    $uploaded_image = $image->getFilename();
+                    $name = $uploaded_image->getClientOriginalName();
+                    $path = $image->getUploadRootDir();
+                    $uploaded_image->move($image->getUploadRootDir(), $name);
 
-                $em->persist($actualite);
-                $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_actualite', array('id'=> $actualite->getId())));
+                    $image->setPath($path);
+                    $image->setFilename($name);
+                    $actualite->setImage($image);
 
+                    $em->persist($actualite);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('ppe_m2l_back_actualite'));
+
+                }else{
+
+                    $em = $this->getDoctrine()->getManager();
+
+                    $image->setPath($imageOld->getPath());
+                    $image->setFilename($imageOld->getFilename());
+
+                    $em->persist($actualite);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('ppe_m2l_back_actualite'));
+                }
         }        
          return $this->render('PPEM2LBundle:Actualite:editactualite.html.twig', array('form'=>$form->createView(), 'image'=>$image));
      
@@ -248,6 +263,9 @@ class AdminController extends Controller
         $annonce = $repo->find($id);
         $image = $annonce->getImage();
 
+        $imageOld = new Image();
+        $imageOld->setPath($image->getPath());
+        $imageOld->setFilename($image->getFilename());
         /* $annonce renseigné donc formulaire renseigné */
 
         $form = $this->get('form.factory')->create(new AnnoncesType(),$annonce);
@@ -256,20 +274,35 @@ class AdminController extends Controller
         /* Vérification du formulaire */
 
         if ( $form->isValid()){
-                $doctrine = $this->getDoctrine();
-                $em = $doctrine->getManager();
+                if (!empty($image->filename)) {
 
-                $uploaded_image = $image->getFilename();
+                    $em = $this->getDoctrine()->getManager();
 
-                $name = $uploaded_image->getClientOriginalName();
-                $path = $image->getUploadRootDir();
-                $uploaded_image->move($image->getUploadRootDir(), $name);
+                    $uploaded_image = $image->getFilename();
+                    $name = $uploaded_image->getClientOriginalName();
+                    $path = $image->getUploadRootDir();
+                    $uploaded_image->move($image->getUploadRootDir(), $name);
 
-                $image->setPath($path);
-                $image->setFilename($name);
+                    $image->setPath($path);
+                    $image->setFilename($name);
+                    $annonce->setImage($image);
 
-                $em->persist($annonce);
-                $em->flush();
+                    $em->persist($annonce);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('ppe_m2l_back_annonce'));
+
+                }else{
+
+                    $em = $this->getDoctrine()->getManager();
+
+                    $image->setPath($imageOld->getPath());
+                    $image->setFilename($imageOld->getFilename());
+
+                    $em->persist($annonce);
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('ppe_m2l_back_annonce'));
+                }
+
                 return $this->redirect($this->generateUrl('ppe_m2l_back_annonce', array('id'=> $annonce->getId())));
 
         }        
@@ -475,26 +508,44 @@ class AdminController extends Controller
         $image = $ligue->getImage();
         /* $ligue renseigné donc formulaire renseigné */
 
+        $imageOld = new Image();
+        $imageOld->setPath($image->getPath());
+        $imageOld->setFilename($image->getFilename());
+
         $form = $this->get('form.factory')->create(new LiguesType(),$ligue);
         $form->handleRequest($request);  
 
         /* Vérification du formulaire */
 
         if ( $form->isValid()){
-                $doctrine = $this->getDoctrine();
-                $em = $doctrine->getManager();
-                $uploaded_image = $image->getFilename();
+            if (!empty($image->filename)) {
 
+                $em = $this->getDoctrine()->getManager();
+
+                $uploaded_image = $image->getFilename();
                 $name = $uploaded_image->getClientOriginalName();
                 $path = $image->getUploadRootDir();
                 $uploaded_image->move($image->getUploadRootDir(), $name);
 
                 $image->setPath($path);
                 $image->setFilename($name);
-                
+                $ligue->setImage($image);
+
                 $em->persist($ligue);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array('id'=> $ligue->getId())));
+                return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues'));
+
+            }else{
+
+                $em = $this->getDoctrine()->getManager();
+
+                $image->setPath($imageOld->getPath());
+                $image->setFilename($imageOld->getFilename());
+
+                $em->persist($ligue);
+                $em->flush();
+                return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues'));
+            }
         }        
          return $this->render('PPEM2LBundle:Ligue:editligue.html.twig', array('form'=>$form->createView(), 'image'=> $image));
      
@@ -519,45 +570,59 @@ class AdminController extends Controller
         return $this->redirect($this->generateUrl('ppe_m2l_back_list_ligues', array()));
     }
 
-    public function maLigueAction()
-    {
-        $doctrine = $this->getDoctrine();
-        $em = $doctrine->getManager();
-        $repo = $em->getRepository("PPEM2LBundle:Ligue");
-
-        $user = $this->container->get('security.context')->getToken()->getUser();
-        $id = $user->getId();
-
-        $query = $repo->createQueryBuilder('l')
-            ->where('l.userLigue = '.$id.' ');
-        
-        $res = $query->getQuery()->getResult(); 
-
-        return $this->render('PPEM2LBundle:Ligue:maligue.html.twig', array('ligue' => $res));
-    }
-
     public function editMaLigueAction($id,Request $request )
     {
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Ligue");
         $ligue = $repo->find($id);
+        $image = $ligue->getImage();
 
-        /* $ligue renseigné donc formulaire renseigné */
+        $imageOld = new Image();
+        $imageOld->setPath($image->getPath());
+        $imageOld->setFilename($image->getFilename());
 
         $form = $this->get('form.factory')->create(new LiguesType(),$ligue);
+
         $form->handleRequest($request);  
 
-        /* Vérification du formulaire */
+        if ( $form->isValid() ){
 
-        if ( $form->isValid()){
-                $doctrine = $this->getDoctrine();
-                $em = $doctrine->getManager();
+            // echo "<pre>";
+            //     echo $imageOld->getId();
+            // echo "</pre>";
+            // die();
+
+            if (!empty($image->filename)) {
+
+                $em = $this->getDoctrine()->getManager();
+
+                $uploaded_image = $image->getFilename();
+                $name = $uploaded_image->getClientOriginalName();
+                $path = $image->getUploadRootDir();
+                $uploaded_image->move($image->getUploadRootDir(), $name);
+
+                $image->setPath($path);
+                $image->setFilename($name);
+                $ligue->setImage($image);
+
                 $em->persist($ligue);
                 $em->flush();
-                return $this->redirect($this->generateUrl('ppe_m2l_ligue_maligue', array('id'=> $ligue->getId())));
-        }        
-         return $this->render('PPEM2LBundle:Ligue:editmaligue.html.twig', array('form'=>$form->createView()));
+                return $this->redirect($this->generateUrl('fos_user_profile_show'));
+
+            }else{
+
+                $em = $this->getDoctrine()->getManager();
+
+                $image->setPath($imageOld->getPath());
+                $image->setFilename($imageOld->getFilename());
+
+                $em->persist($ligue);
+                $em->flush();
+                return $this->redirect($this->generateUrl('fos_user_profile_show'));
+            }
+        }
+         return $this->render('PPEM2LBundle:Ligue:editmaligue.html.twig', array('form'=>$form->createView(),'image'=>$image));
      
     }
                                                /* Fin ligues */  

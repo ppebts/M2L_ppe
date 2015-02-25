@@ -1,54 +1,79 @@
 {% trans_default_domain 'PPEUserBundle' %}
 
-<div class="fos_user_user_show">
-	<div class="titre">MES INFOS</div>
-	<table>
-		<tr>
-			<td class="left">Nom :</td>
-			<td class="right">{{ user.lastName }}</td>
-		</tr>
-	<tr class="spacer"></tr>
-		<tr>
-			<td class="left">Prénom :</td>
-			<td class="right">{{ user.firstName }}</td>
-		</tr>
-	<tr class="spacer"></tr>
-		<tr>
-			<td class="left">Sexe :</td>
-			{% if user.gender == "m" %}
-				<td class="right">Masculin</td>
-			{% else %}
-				<td class="right">Feminin</td>
-			{% endif %}
-		</tr>
-	<tr class="spacer"></tr>
-		<tr>
-			<td class="left">Email :</td>
-			<td class="right">{{ user.email }}</td>
-		</tr>
-	<tr class="spacer"></tr>
-		<tr>
-			<td class="left">Téléphone :</td>
-			<td class="right">{{ user.phoneNumber }}</td>
-		</tr>
-	<tr class="spacer"></tr>
-		<tr>
-			<td class="left">Anniversaire :</td>
-			<td class="right">{{ user.bornDate|date('d-M-Y') }}</td>
-		</tr>
-	<tr class="spacer"></tr>
-		<tr>
-			<td class="left">Autorisations:</td>
-			{% if is_granted("ROLE_ADMIN") %}
-			<td class="right">Administrateur</td>
-			{% elseif is_granted("ROLE_LIGUE") %}
-			<td class="right">Ligue</td>
-			{% elseif is_granted("ROLE_USER") %}
-			<td class="right">Utilisateur</td>
-			{% endif %}
+<div id="profil_content">
+	<div class="fos_user_user_show">
+		<div class="titre">MES INFOS</div>
+		<table>
+			<tr>
+				<td class="left">Nom :</td>
+				<td class="right">{{ user.lastName }}</td>
+			</tr>
+		<tr class="spacer"></tr>
+			<tr>
+				<td class="left">Prénom :</td>
+				<td class="right">{{ user.firstName }}</td>
+			</tr>
+		<tr class="spacer"></tr>
+			<tr>
+				<td class="left">Sexe :</td>
+				{% if user.gender == "m" %}
+					<td class="right">Masculin</td>
+				{% else %}
+					<td class="right">Feminin</td>
+				{% endif %}
+			</tr>
+		<tr class="spacer"></tr>
+			<tr>
+				<td class="left">Email :</td>
+				<td class="right">{{ user.email }}</td>
+			</tr>
+		<tr class="spacer"></tr>
+			<tr>
+				<td class="left">Téléphone :</td>
+				<td class="right">{{ user.phoneNumber }}</td>
+			</tr>
+		<tr class="spacer"></tr>
+			<tr>
+				<td class="left">Anniversaire :</td>
+				<td class="right">{{ user.bornDate|date('d-M-Y') }}</td>
+			</tr>
+		<tr class="spacer"></tr>
+			<tr>
+				<td class="left">Autorisations:</td>
+				{% if is_granted("ROLE_ADMIN") %}
+				<td class="right">Administrateur</td>
+				{% elseif is_granted("ROLE_LIGUE") %}
+				<td class="right">Ligue</td>
+				{% elseif is_granted("ROLE_USER") %}
+				<td class="right">Utilisateur</td>
+				{% endif %}
 
-		</tr>
-	</table>
+			</tr>
+		</table>
 
-		<a href="{{ path( 'fos_user_profile_edit' ) }}">Modifier mon compte</a>
+			<a href="{{ path( 'fos_user_profile_edit' ) }}">Modifier mon compte</a>
+	</div>
+
+	{% if (is_granted("ROLE_LIGUE")) and (user.ligue != null ) %}
+		<div class="fos_user_maligue_show">
+			<div class="titre">{{ user.ligue.nom }}</div>
+			<img src="{{ asset('media/image/' ~ user.ligue.image.filename) }}" class="maligue-img" />
+
+			<table>
+
+				<tr>
+					<td class="left">Description :</td>
+					<td class="right">{{ user.ligue.description }}</td>
+				</tr>
+			<tr class="spacer"></tr>
+				<tr>
+					<td class="left">Site web :</td>
+					<td class="right"><a href="{{ user.ligue.url }}">{{ user.ligue.url }}</a></td>
+				</tr>
+			</table>
+
+			<a href="{{ path( 'ppe_m2l_edit_maligue', {'id': user.ligue.id} ) }}">Modifier la ligue</a>
+		</div>
+	{% endif %}
+
 </div>

@@ -77,19 +77,3 @@
 		</form>
 	{{ form_end(form)}}
 </div>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('.date').prop('type', 'text').datepicker({
-		beforeShow: function(input, inst)
-		{
-			inst.dpDiv.css({marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 110 + 'px'});	
-			$('#ui-datepicker-div').addClass('ll-skin-melon');
-		},
-		changeMonth: true,
-    	changeYear: true,
-    	yearRange: "1935:2015",
-    	dateFormat: 'yy-mm-dd',
-    	regional: 'fr'
-    });
-});
-</script>
