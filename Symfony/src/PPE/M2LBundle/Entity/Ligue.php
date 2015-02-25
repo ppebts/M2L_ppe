@@ -67,8 +67,8 @@ class Ligue
     private $sportLigue;
 
     /**
-     * @ORM\OneToOne(targetEntity="PPE\UserBundle\Entity\User")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="PPE\UserBundle\Entity\User", inversedBy="ligue")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
      */
     private $userLigue;
 

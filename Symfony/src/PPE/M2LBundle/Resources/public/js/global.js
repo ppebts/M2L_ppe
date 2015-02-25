@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('input[type="file"]').parent('div').addClass('upload').prepend('<p class="upload_text">Choisir une image</p>');
+	$('input[type="file"]').parent('div').addClass('upload').prepend('<p class="upload_text">Image</p>');
 	$('input[type="file"]').hover(function(){
 		$('.upload_text').css('opacity', '0.5');
 	},function(){
@@ -25,4 +25,8 @@ $(document).ready(function(){
     	regional: 'fr'
     });
 
+	$('input[type=file]').on('change',function(){
+		var imageName = $('input[type=file]').val().replace(/.*\\/, '');
+		$('input[type=file]').parent('.upload').prepend('<p class="img-name-upload">'+imageName+'</p>');
+	});
 });

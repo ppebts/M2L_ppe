@@ -23,10 +23,10 @@ form{position: relative;}
 input{width: 350px!important}
 input[type=submit]{width: 200px!important}
 textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
-
+.img-name-upload{float: left;margin: 0;line-height: 30px}
 .upload{cursor: pointer;position: relative;width: 350px; margin: auto;height: 30px;background: #E1E1E1}
 input[type="file"]{opacity: 0;height: 30px;cursor: pointer;}
-.upload .upload_text{position: absolute;right:0;text-align: right;height: 10px;line-height:10px;background: rgba(0,0,0,0.5);width: 125px;color: #fff;padding: 10px;float: right;margin:0;}
+.upload .upload_text{position: absolute;right:0;text-align: right;height: 10px;line-height:10px;background: rgba(0,0,0,0.5);color: #fff;padding: 10px;float: right;margin:0;}
 #img-edit{margin: auto;font-family: lato}
 .img-edit-container{position: relative;}
 .edit-logo{width: 30px!important;position: absolute;top: 10px;left: 10px;opacity: 0.4;cursor: pointer;}

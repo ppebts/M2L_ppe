@@ -5,7 +5,6 @@
 	<span class="titre_back">LIGUES INSCRITES</span>
 	<table border="1" cellspacing="0">
 		<thead>
-				<th width="5px">Id</th>
 				<th>Gérant</th>
 				<th>Ligue</th>
 				<th>Description</th>
@@ -19,8 +18,11 @@
 
 
 			<tr>
-				<td>{{ ligue.id }}</td>
-				<td>{{ ligue.userLigue.email }}</td>
+				{% if ligue.userLigue != null %}
+					<td>{{ ligue.userLigue.username }}</td>
+				{% else %}
+					<td>Aucun gérant</td>
+				{% endif %}
 				<td>{{ ligue.nom }}</td>
 				<td>{{ ligue.description }}</td>
 				<td>{{ ligue.url }}</td>

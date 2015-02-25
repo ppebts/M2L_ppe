@@ -656,6 +656,7 @@ class AdminController extends Controller
         /* Vérification du formulaire */
 
         if ( $form->isValid()){
+                // $user->setRoles('');
                 $doctrine = $this->getDoctrine();
                 $em = $doctrine->getManager();
                 $em->persist($user);
@@ -665,6 +666,7 @@ class AdminController extends Controller
          return $this->render('PPEM2LBundle:Users:edituser.html.twig', array('form'=>$form->createView()));
      
     }
+    
     public function deleteuserAction($id)
     {
         $doctrine = $this->getDoctrine();
@@ -672,6 +674,12 @@ class AdminController extends Controller
         $repo = $em->getRepository("PPEUserBundle:User");
         $user = $repo->find($id);
 
+        if (!empty($user->getLigue())) {
+            $ligue = $user->getLigue();
+            $ligue->setUserLigue(null);
+        }
+
+  
         $em->remove($user);
         $em->flush();
 
