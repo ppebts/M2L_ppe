@@ -33,3 +33,4 @@ input[type="file"]{opacity: 0;height: 30px;cursor: pointer;}
 .edit-logo:hover{opacity: 1}
 .image{width: 100%}
 #ui-datepicker-div{background: #fff}
+.roles_check input{width: 20px!important;margin-left: 30px}

@@ -25,11 +25,16 @@ class UsersType extends AbstractType
                                                 'input' => 'datetime',
                                                 'attr' => array('class' => 'date')                                            
                                                 ))
-            ->add('roles', 'collection', array('type'=> 'choice', 'options' => array('label'=> false,'choices'=>array(
-                                                               'ROLE_USER' => 'user',
-                                                               'ROLE_LIGUE' => 'ligue',
+            ->add('roles', 'choice', array(
+                                            'label'=> false,
+                                            'multiple' => true,
+                                            'expanded'=>true,
+                                            'choices' => array(
+                                                                'ROLE_USER'  => 'user',
+                                                                'ROLE_LIGUE' => 'ligue',
                                                                 'ROLE_ADMIN' => 'admin'
-                                                                ))))
+                                                                ),
+                                            'attr'=> array('class' => 'roles_check')))
             ->add('phone_number', 'text')
             ->add('lastname', 'text')
             ->add('publier', 'submit', array('attr' => array('class' => 'submit_back' )))            

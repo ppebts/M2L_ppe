@@ -29,4 +29,6 @@ $(document).ready(function(){
 		var imageName = $('input[type=file]').val().replace(/.*\\/, '');
 		$('input[type=file]').parent('.upload').prepend('<p class="img-name-upload">'+imageName+'</p>');
 	});
+
+	$('#ppe_m2l_back_list_utilisateurs_roles_0').prop('disabled', true);
 });
