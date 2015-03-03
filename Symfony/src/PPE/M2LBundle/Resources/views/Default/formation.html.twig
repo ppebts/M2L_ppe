@@ -7,70 +7,70 @@
 
 	{% for formation in formationList %}
 
-	
-		{% if (formation.date|date('d-m-Y') >= date|date('d-m-Y')) and (formation.time|date('h:i') >= date|date('h:i'))  %}
-	<div class="formation block_shadow" id="{{ formation.id }}">
+		{% if (formation.date|date('d-m-Y') >= date|date('d-m-Y')) %}
 
-		{% if formation.nbinscrits < formation.nbparticipants %}
-			<a class="submit"  href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}) }}" >
-				<div class="inscription_formation">
-					<div class='infos_nb'>
-			    		<p>{{ formation.nbinscrits }}/{{ formation.nbparticipants }}</p>
-			    		<p>inscrits</p>
-			       	</div>
-		    		S'INSCRIRE
-				</div>
-			</a>
-		{% endif %}
+			<div class="formation block_shadow" id="{{ formation.id }}">
 
-		<div class="formation_container">
-			
-				<div class="img-formation-container">
-					<img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" />
-				</div>
-
-				<div class="formation_texte">
-						<div class="formation_nom">
-			    			<h1>{{ formation.nom|capitalize }}</h1>
-				    		<div class="trait"></div>
-			    		</div>
-			    		<div class="content">
-							<br/>			    		
-							<p>{{ formation.description }}</p>
-							<p>
-					    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
-					    		Durée : {{ formation.duree }}H  <br/>
-					    		Date dela formation : {{ formation.date|date('d-m-Y')}} <br/>
-					    		Heure : {{ formation.time|date('h:i')}}
-				    		</p>
-				    	</div>
-				</div>
-				{% if is_granted("ROLE_USER") %}
-					{% for user in app.user.formations %}
-						{% if user.id == formation.id %}
-				    		<script type="text/javascript">
-				    		$(document).ready(function(){
-				    			var formationId = '#'+{{ formation.id }};
-				    			$(formationId).children('a').css('display', 'none');
-				    			$(formationId).append("<a class='desinscription' href='{{ path( 'ppe_m2l_desinscription_formations',{'id': formation.id}   ) }}''><div class='desinscription_formation' id='{{ formation.id }}''>SE DESINSCRIRE</div></a>");		    			
-				    		});
-				    		</script>
-				    	{% endif %}
-				    {% endfor %}
-				    	{% if formation.nbinscrits >= formation.nbparticipants %}
-				    		<script type="text/javascript">
-				    		$(document).ready(function(){
-				    			var formationId = '#'+{{ formation.id }};
-				    			$(formationId).children('.submit').remove();
-				    			$(formationId).children('.formation_container').addClass('blur');
-				    			$(formationId).append("<div class='complet_formation' id='{{ formation.id }}''>COMPLET</div>");		    			
-				    		});
-				    		</script>
-				    	{% endif %}
+				{% if formation.nbinscrits < formation.nbparticipants %}
+					<a class="submit"  href="{{ path( 'ppe_m2l_inscription_formations',{'id': formation.id}) }}" >
+						<div class="inscription_formation">
+							<div class='infos_nb'>
+					    		<p>{{ formation.nbinscrits }}/{{ formation.nbparticipants }}</p>
+					    		<p>inscrits</p>
+					       	</div>
+				    		S'INSCRIRE
+						</div>
+					</a>
 				{% endif %}
-		</div>
-	</div>
-{% endif %}
+
+				<div class="formation_container">
+					
+						<div class="img-formation-container">
+							<img src="{{ asset('media/image/' ~ formation.image.filename) }}" class="img-responsive img-formation" />
+						</div>
+
+						<div class="formation_texte">
+								<div class="formation_nom">
+					    			<h1>{{ formation.nom|capitalize }}</h1>
+						    		<div class="trait"></div>
+					    		</div>
+					    		<div class="content">
+									<br/>			    		
+									<p>{{ formation.description }}</p>
+									<p>
+							    		Lieu : Salle {{ formation.lieu|capitalize}} <br/>
+							    		Durée : {{ formation.duree }}H  <br/>
+							    		Date dela formation : {{ formation.date|date('d-m-Y')}} <br/>
+							    		Heure : {{ formation.time|date('h:i')}}
+						    		</p>
+						    	</div>
+						</div>
+						{% if is_granted("ROLE_USER") %}
+							{% for user in app.user.formations %}
+								{% if user.id == formation.id %}
+						    		<script type="text/javascript">
+						    		$(document).ready(function(){
+						    			var formationId = '#'+{{ formation.id }};
+						    			$(formationId).children('a').css('display', 'none');
+						    			$(formationId).append("<a class='desinscription' href='{{ path( 'ppe_m2l_desinscription_formations',{'id': formation.id}   ) }}''><div class='desinscription_formation' id='{{ formation.id }}''>SE DESINSCRIRE</div></a>");		    			
+						    		});
+						    		</script>
+						    	{% endif %}
+						    {% endfor %}
+						    	{% if formation.nbinscrits >= formation.nbparticipants %}
+						    		<script type="text/javascript">
+						    		$(document).ready(function(){
+						    			var formationId = '#'+{{ formation.id }};
+						    			$(formationId).children('.submit').remove();
+						    			$(formationId).children('.formation_container').addClass('blur');
+						    			$(formationId).append("<div class='complet_formation' id='{{ formation.id }}''>COMPLET</div>");		    			
+						    		});
+						    		</script>
+						    	{% endif %}
+						{% endif %}
+				</div>
+			</div>
+		{% endif %}
 
 	{% endfor %}
 </div>

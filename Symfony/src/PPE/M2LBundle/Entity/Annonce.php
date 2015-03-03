@@ -38,7 +38,7 @@ class Annonce
      *
      * @ORM\Column(name="titre", type="string", length=255)
      * @Assert\Length(min=5)
-     * @Assert\Length(max=25)
+     * @Assert\Length(max=50)
      */
     private $titre;
 

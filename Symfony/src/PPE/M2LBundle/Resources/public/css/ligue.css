@@ -15,7 +15,7 @@
 #ligue_content #ligue #ligue_text h1 {margin-top : 10px;}
 
 .list_ligues{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
-.list_ligues .img-back-ligue{width:300px}
+.list_ligues .img-back-ligue{width:100px}
 .list_ligues table{border: none; width: 100%}
 .list_ligues thead{background: #1ABC9C;}
 .list_ligues table thead th{border: none;color: #fff}
@@ -26,7 +26,7 @@
 .add_ligue .upload {width : 200px!important;}
 .add_ligue textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
 .add_ligue{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
-#add_ligue{cursor:pointer;height: 45px;width: 45px;background: #18568C;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+#add_ligue{cursor:pointer;height: 45px;width: 45px;background: #C0392B;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
 
 .add_ligue ul {margin : 0; padding-left: 0;}
 .add_ligue ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}

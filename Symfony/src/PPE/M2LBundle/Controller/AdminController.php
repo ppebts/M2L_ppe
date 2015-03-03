@@ -70,7 +70,7 @@ class AdminController extends Controller
             $em->flush();
         return $this->redirect($this->generateUrl('ppe_m2l_back_actualite'));
         }
-         return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList, "formAddactu" => $form->createView(),));
+         return $this->render('PPEM2LBundle:Actualite:listeactualite.html.twig', array("actualiteList"=>$actualiteList, "formAddactu" => $form->createView(), ));
 
      }
 

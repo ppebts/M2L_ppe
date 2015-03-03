@@ -5,19 +5,25 @@
 	<span class="titre_back">Liste des utilisateurs</span>
 <table border="1" cellspacing="0">
 	<thead>
-			<th>Username</th>
+			<th>Civilite</th>
 			<th>Email</th>
 			<th>Prenom</th>
 			<th>Nom</th>
+			<th>Email</th>
+			<th>Téléphone</th>
+			<th>Role</th>
 			<th colspan="2">Edition</th>
 	</thead>
 {% for user in utilisateursList %}
 	<tr>
 
+			<td>{% if user.gender == 'h' %}Homme{% elseif user.gender == 'f' %}Femme{% endif %}</td>
 			<td>{{ user.username }}</td>
-			<td>{{ user.email }}</td>
 			<td>{{ user.firstname }}</td>
 			<td>{{ user.lastname }}</td>
+			<td>{{ user.username }}</td>
+			<td>{{ user.phoneNumber }}</td>
+			<td>{{ user.roles['0'] }}</td>
 
 			<td><a href="{{ path( 'ppe_m2l_back_edit_users',{'id': user.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/edit.png') }}"/></a></td>
 			<td><a href="{{ path( 'ppe_m2l_back_delete_users',{'id': user.id}   ) }}"><img style="width:30px" src="{{ asset('bundles/ppem2l/img/logos/delete.png') }}"/></a></td>

@@ -17,7 +17,7 @@ class InformationType extends AbstractType
         $builder
             ->add('titre', 'text')
             ->add('contenu', 'textarea')
-            ->add('publier', 'submit', array('attr' => array('class' => 'ppe_submit' )))
+            ->add('publier', 'submit', array('attr' => array('class' => 'submit_back' )))
             ->getForm();
     }
 

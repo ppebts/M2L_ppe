@@ -28,7 +28,7 @@ class Actualite
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
-     * @Assert\Length(max=24)
+     * @Assert\Length(max=50)
      */
     private $titre;
 

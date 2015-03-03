@@ -23,7 +23,7 @@ class DefaultController extends Controller
         $em = $doctrine->getManager();
         $repo = $em->getRepository("PPEM2LBundle:Actualite");
         $actualiteList = $repo->findAll();
-        return $this->render('PPEM2LBundle:Default:index.html.twig', array("actualiteList"=>$actualiteList));
+        return $this->render('PPEM2LBundle:Default:index.html.twig', array("actualiteList"=>$actualiteList, ));
     }
 
 public function informationAction()

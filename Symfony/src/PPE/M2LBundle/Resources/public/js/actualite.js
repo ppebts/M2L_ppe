@@ -1,16 +1,14 @@
-$( document ).ready(function() {
-
-	if ($(window).width() > 375) {
+$(document).ready(function() {
 		$('.fancybox').fancybox({
-			helpers : {
-			        overlay : {
-			            css : {
-			                'background' : 'rgba(58, 42, 45, 0.95)'
-			            }
-			        }
-			    },
-			'autoSize' : false,
-			'width' : '70%'
-		});
-	};
+		autoSize : false,
+		width : '70%',
+		height : 'auto',
+		helpers : {
+		        overlay : {
+		            css : {
+		                'background' : 'rgba(58, 42, 45, 0.95)'
+		            }
+		        }
+		    },
+	});
 });

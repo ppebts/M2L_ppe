@@ -6,9 +6,7 @@ $( document ).ready(function() {
 		$(this).css('background', '#18568C');
 	});
 
-	$(function(){
-	    $('#menu').data('size','big');
-	});
+
 	if ($(window).width() > 1149) { //desktop
 
 		if ($('#panel').length != 0) {

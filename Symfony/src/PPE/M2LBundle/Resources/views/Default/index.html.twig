@@ -24,7 +24,7 @@
 		{% if actualite.contenu|length > 300 %}
 	    	<div id="article_fancybox_{{ i }}" class="actualite_fancybox" style="display:none">
 				<div class="img_container">
-	    			<img src="{{ asset('bundles/ppem2l/img/' ~ actualite.image) }}" class="img_fancybox" />
+	    			<img src="{{ asset('media/image/' ~ actualite.image.filename) }}" class="img_fancybox" />
 				</div>
 	    		<div class="texte_fancybox">
 
