@@ -1,0 +1,69 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1150px) { 
+
+	/*page actualité*/
+	#actualite_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px}	
+	#actualite_content .article{background: #fff;width:1000px; height: 300px; margin: 10px auto;overflow: hidden}
+	#actualite_content .article .img-actualite{float: left;width: 600px;}
+	#actualite_content .article .article_texte{width:380px;margin:auto 10px ;height : 290px;float: right; text-align: center;padding: 5px 0px;overflow-y: auto}
+	#actualite_content .article .article_texte .article_titre{text-align: center;margin-top: 30px}
+	#actualite_content .article .article_texte .article_titre h2{margin: 0}
+	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:100%;margin:0 auto;}
+	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
+	.actualite_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
+	.actualite_fancybox .img_fancybox{width: 100%;margin-top: -25%}
+	.actualite_fancybox .texte_fancybox{text-align: justify;}
+	.actualite_fancybox .texte_fancybox h2{text-align: center}
+
+	/*backoffice*/
+	.list_actualites{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+	.list_actualites table{border: none; width: 100%}
+	.list_actualites thead{background: #1ABC9C;}
+	.list_actualites table thead th{border: none;color: #fff}
+	.list_actualites table tbody td{border: none;padding: 10px;text-align: center}
+	.list_actualites .img-back-actualite{width: 300px;}
+
+
+	.add_actualite span{cursor: pointer}
+	.add_actualite .upload {width : 200px!important;}
+	.add_actualite textarea{min-width: 200px;max-width:200px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.add_actualite input {width : 200px!important;}
+	.add_actualite input[type=file] {width : 200px!important;}
+	.add_actualite{position: absolute;width: 250px;background: #fff;text-align: center;top: 90px;right: -300;}
+	#add_actualite{cursor:pointer;height: 45px;width: 45px;background: #C0392B;color: #fff;text-align: center;line-height: 45px;font-size: 30;position: absolute;top: 90px;right: 0px;}
+
+	.add_actualite ul {margin : 0; padding-left: 0;}
+	.add_actualite ul li {list-style: none; color : red; padding-top: 2px; font-family: lato;}
+
+	.edit_actualite span{cursor: pointer}
+	.edit_actualite .img-edit-actualite{width: 350px}
+	.edit_actualite input{width: 350px!important}
+	.edit_actualite input[type=submit]{width: 200px!important}
+	.edit_actualite textarea{min-width: 350px;max-width:350px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+	.edit_actualite {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;}
+}
+
+/*VERSION TABLETTES*/
+@media (min-width: 501px) and (max-width: 1149px) { 
+	/*page actualité*/
+	#actualite_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}	
+	#actualite_content .article{background: #fff;width: 600px;margin: 10px auto;text-align: center;}
+	#actualite_content .article .img-actualite{width: 600px;}
+	#actualite_content .article .article_texte{width:380px;margin:0px auto;text-align: center;padding: 35px;overflow-y: auto}
+	#actualite_content .article .article_texte .article_titre{text-align: center;}
+	#actualite_content .article .article_texte .article_titre h2{margin: 0}
+	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
+	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
+	.actualite_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
+	.actualite_fancybox .img_fancybox{width: 100%;margin-top: -25%}
+	.actualite_fancybox .texte_fancybox{text-align: justify;}
+	.actualite_fancybox .texte_fancybox h2{text-align: center}
+}
+
+@media (max-width: 500px) {
+	#actualite_content{margin-top: 55px; background: #fff;margin-bottom: 10px} 
+	.article{width: 100%;margin-top: 10px}
+	.article_texte{padding: 10px}
+	.article img{width: 100%}
+	.actualite_fancybox{display: none}
+}

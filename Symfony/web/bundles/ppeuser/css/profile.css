@@ -1,0 +1,20 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1200px) { 
+	#profil_content{width: 100%;margin-top: 75px;}
+
+	.fos_user_user_show{padding-bottom:10px;margin: 0px auto;width: 400px;text-align: center; background: #fff;}
+	.fos_user_user_show #titre_info{background:#1ABC9C;width: 100%;height: 45px;line-height: 45px;}
+	.fos_user_user_show table{width: 100%;margin: 10px 0 10px 0;}
+	.fos_user_user_show .left{text-align:right;padding-right:15px ; width: 200px}
+	.fos_user_user_show .right{text-align:left;padding-left:15px; width: 200px }
+	.fos_user_user_show .spacer{height: 5px}
+	#form_container{height: 490px;margin-top: calc(25% - 267px);margin-top: -webkit-calc(25% - 267px);margin-top: -moz-calc(25% - 267px)margin-top: -ms-calc(25% - 300px);margin-left: auto;margin-right: auto;width: 400px;text-align: center; background: #fff}
+	
+	.fos_user_maligue_show{padding-bottom:10px;margin: 20px auto;width: 400px;text-align: center; background: #fff;}
+	.fos_user_maligue_show table{width: 100%;margin: 10px 0 10px 0;}
+	.fos_user_maligue_show .left{text-align:right;padding-right:15px ; width: 200px}
+	.fos_user_maligue_show .right{text-align:left;padding-right:15px ; width: 200px}
+	.maligue-img{width: 100%}
+
+
+}

@@ -1,0 +1,16 @@
+/*VERSION DESKTOP*/
+@media (min-width: 1150px) { 
+
+.list_utilisateurs{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
+.list_utilisateurs table{border: none; width: 100%}
+.list_utilisateurs thead{background: #1ABC9C;}
+.list_utilisateurs table thead th{border: none;color: #fff}
+.list_utilisateurs table tbody td{border: none;padding: 10px;text-align: center}
+
+.edit_user span{cursor: pointer}
+.edit_user input{width: 350px!important}
+.edit_user input[type=submit]{width: 200px!important}
+.edit_user textarea{min-width: 400px;max-width:400px;min-height: 150px;max-height: 150px;background: #E1E1E1;border:none;}
+.edit_user {width: 550px;background: #fff;text-align: center;margin: 150px auto 0 auto;height: 495px}
+
+}
