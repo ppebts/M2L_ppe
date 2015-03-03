@@ -7,13 +7,13 @@
 	#actualite_content .article .img-actualite{float: left;width: 600px;}
 	#actualite_content .article .article_texte{width:380px;margin:auto 10px ;height : 290px;float: right; text-align: center;padding: 5px 0px;overflow-y: auto}
 	#actualite_content .article .article_texte .article_titre{text-align: center;margin-top: 30px}
-	#actualite_content .article .article_texte .article_titre h1{margin: 0}
-	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
+	#actualite_content .article .article_texte .article_titre h2{margin: 0}
+	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:100%;margin:0 auto;}
 	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
 	.actualite_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
 	.actualite_fancybox .img_fancybox{width: 100%;margin-top: -25%}
 	.actualite_fancybox .texte_fancybox{text-align: justify;}
-	.actualite_fancybox .texte_fancybox h1{text-align: center}
+	.actualite_fancybox .texte_fancybox h2{text-align: center}
 
 	/*backoffice*/
 	.list_actualites{width:1000px;margin-top: 90px;margin-left:auto;margin-right: auto;text-align: center; background: #fff}
@@ -47,27 +47,23 @@
 @media (min-width: 501px) and (max-width: 1149px) { 
 	/*page actualité*/
 	#actualite_content{width: 100%;margin: 55px auto 0px auto;padding: 10px 0px;}	
-	#actualite_content .article{background: #fff;width: 600px;margin: 0px auto;text-align: center;}
+	#actualite_content .article{background: #fff;width: 600px;margin: 10px auto;text-align: center;}
 	#actualite_content .article .img-actualite{width: 600px;}
 	#actualite_content .article .article_texte{width:380px;margin:0px auto;text-align: center;padding: 35px;overflow-y: auto}
 	#actualite_content .article .article_texte .article_titre{text-align: center;}
-	#actualite_content .article .article_texte .article_titre h1{margin: 0}
+	#actualite_content .article .article_texte .article_titre h2{margin: 0}
 	#actualite_content .article .article_texte .article_titre .trait{height:1px;border-top:1px solid #000;width:150px;margin:0 auto;}
 	#actualite_content .article .article_texte a{text-decoration: none;color: #18568C;}
 	.actualite_fancybox .img_container{height: 200px; overflow: hidden;width: 100%}
 	.actualite_fancybox .img_fancybox{width: 100%;margin-top: -25%}
 	.actualite_fancybox .texte_fancybox{text-align: justify;}
-	.actualite_fancybox .texte_fancybox h1{text-align: center}
+	.actualite_fancybox .texte_fancybox h2{text-align: center}
 }
 
 @media (max-width: 500px) {
 	#actualite_content{margin-top: 55px; background: #fff;margin-bottom: 10px} 
-	.article{width: 100%;}
+	.article{width: 100%;margin-top: 10px}
 	.article_texte{padding: 10px}
 	.article img{width: 100%}
-	.actualite_fancybox{display: block!important;width: 100%}
-	.actualite_fancybox .img_container{width: 100%}
-	.actualite_fancybox .img_container img{width: 100%}
-	.texte_fancybox h1{text-align: center;}
-	.texte_fancybox{padding: 0px 20px 20px 20px;}
+	.actualite_fancybox{display: none}
 }
